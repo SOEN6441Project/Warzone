@@ -2,7 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 message="$(cat $1)"
-regex_commit_format='(^GT-[0-9]{1,5}): \[(ADD|REMOVE|CHANGE|FIX|WIP|REFACTOR|TEST)\] [A-Z]'
+regex_commit_format='(^GH-[0-9]{1,5}): \[(ADD|REMOVE|CHANGE|FIX|WIP|REFACTOR|TEST)\] [A-Z]'
 error_msg="Commit not allowed, message should have an issue number, a tag, and start with a capital letter  "
 
 # shellcheck disable=SC2039
