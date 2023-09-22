@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Java CI/CD
 
 on:
   push:
@@ -19,9 +19,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Auto Format
+      - name: Maven Clean
+        run: mvn clean
+      - name: Maven Compile
+        run: mvn compile
+      - name: Maven Test
+        run: mvn test
+      - name: Reformat
         run: mvn spotless:apply
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
-      - name: Maven Clean Install
-        run: mvn clean install
+      - name: Reformat
+        run: mvn spotless:check
