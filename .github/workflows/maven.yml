@@ -25,9 +25,9 @@ jobs:
         run: mvn compile
       - name: Maven Test
         run: mvn test
+      - name: Reformat Apply
+        run: mvn spotless:apply
+      - name: Reformat Check
+        run: mvn spotless:check
       - name: Maven Install
         run: mvn install -DskipTests
-      - name: Reformat
-        run: mvn spotless:apply
-      - name: Reformat
-        run: mvn spotless:check
