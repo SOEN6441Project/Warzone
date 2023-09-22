@@ -31,5 +31,3 @@ jobs:
         run: mvn spotless:check
       - name: Maven Install
         run: mvn install -DskipTests
-      - name: Sonar Coverage
-        run: mvn sonar:sonar -Pcoverage
