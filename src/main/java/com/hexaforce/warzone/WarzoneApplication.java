@@ -1,13 +1,8 @@
 package com.hexaforce.warzone;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
 public class WarzoneApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(WarzoneApplication.class, args);
-    }
-
+  public static void main(String[] args) {
+    System.out.println("Hey");
+  }
 }
