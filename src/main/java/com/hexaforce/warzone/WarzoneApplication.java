@@ -9,6 +9,6 @@ public class WarzoneApplication {
 
   public static void main(String[] args) {
 
-    l_logger.info("Hey");
+    l_logger.info("Hey World");
   }
 }
