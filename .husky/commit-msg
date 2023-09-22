@@ -8,7 +8,7 @@ error_msg="Commit not allowed, message should have an issue number, a tag, and s
 # shellcheck disable=SC2039
 if ! [[ $message =~ $regex_commit_format ]]; then
     echo "$error_msg" >&2
-    echo "Example: GT-2: [ADD] Message"
+    echo "Example: GH-2: [ADD] Message"
     echo "The rules are:"
     echo "$regex_commit_format"
     exit 1
