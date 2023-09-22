@@ -1,13 +1,14 @@
 package com.hexaforce.warzone;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-@SpringBootApplication
 public class WarzoneApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(WarzoneApplication.class, args);
-    }
+  protected static final Logger l_logger = LogManager.getLogger();
 
+  public static void main(String[] args) {
+
+    l_logger.info("Hey World");
+  }
 }
