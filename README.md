@@ -40,7 +40,7 @@ To Check Code Formatting:
 
 - Use main branch as development branch
 - When creating a branch, create it from Github issue (so we can track it),
-- Put your issue number into commit message as GH-<num>: [TAG] <Message> (for traceability)
+- Put your issue number into commit message as GH-<num>: [TAG] Message (for traceability)
 - TAG should be caps and can be: ADD, REMOVE, CHANGE, FIX, WIP (aka Work In Progress), REFACTOR, TEST (for readability)
 - Each feature should be tested
 - No direct pushes to the development branch (main), only pull requests(PRs).
