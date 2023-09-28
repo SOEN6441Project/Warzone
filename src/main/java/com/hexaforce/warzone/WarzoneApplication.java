@@ -19,6 +19,12 @@ public class WarzoneApplication {
    */
   public static void main(String[] args) {
 
-    l_logger.info("Hey World");
+    int numberThatDoeNotFollowConvention = 2;
+
+    int l_numberThatDoesFollowConvention = 2;
+
+    int result = numberThatDoeNotFollowConvention + l_numberThatDoesFollowConvention;
+
+    l_logger.info(result);
   }
 }
