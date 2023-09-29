@@ -1,12 +1,18 @@
 package com.hexaforce.warzone;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import com.hexaforce.warzone.Models.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import com.hexaforce.warzone.Models.*;
 
+/**
+ * This is the test class for the runner class of the application from which the game is triggered,
+ * it tests mainly the entry point to the app
+ *
+ * @author Deniz Dinchdonmez
+ */
 class WarzoneApplicationTest {
 
   @Test
