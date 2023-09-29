@@ -75,6 +75,14 @@ public class MapController {
     System.out.println("Map created: " + l_mapName);
   }
 
+  private boolean isGameMapNull() {
+    if (d_map == null) {
+      System.out.println("Please create a map first..");
+      return true;
+    }
+    return false;
+  }
+
   /**
    * Handles the "editcontinent -add" or "editcontinent -remove" command to add or remove a
    * continent from the map.
@@ -84,8 +92,8 @@ public class MapController {
    */
   private void handleEditContinent(String[] p_tokens) {
     // Ensure a map is created
-    if (d_map == null) {
-      System.out.println("Please create a map first.");
+    if (isGameMapNull()) {
+
       return;
     }
     if (p_tokens.length < 4) {
@@ -136,8 +144,8 @@ public class MapController {
    */
   private void handleEditCountry(String[] p_tokens) {
     // Ensure a map is created
-    if (d_map == null) {
-      System.out.println("Please create a map first.");
+    if (isGameMapNull()) {
+
       return;
     }
 
@@ -201,8 +209,8 @@ public class MapController {
    */
   private void handleEditNeighbor(String[] p_tokens) {
     // Ensure a map is created
-    if (d_map == null) {
-      System.out.println("Please create a map first.");
+    if (isGameMapNull()) {
+
       return;
     }
 
@@ -243,10 +251,8 @@ public class MapController {
    * a formatted text view.
    */
   public void handleShowMap() {
-    if (d_map != null) {
+    if (!isGameMapNull()) {
       d_map.displayMap();
-    } else {
-      System.out.println("Please create a map first.");
     }
   }
 }
