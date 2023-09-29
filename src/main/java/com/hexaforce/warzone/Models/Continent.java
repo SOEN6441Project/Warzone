@@ -85,4 +85,14 @@ public class Continent {
   public void addCountry(Country p_country) {
     d_countries.put(p_country.getName(), p_country);
   }
+
+  /**
+   * Remove Country method for the deletion of country from the continent.
+   *
+   * @return Updated countries in continent of the country
+   */
+  public HashMap<String, Country> removeCountry(Country p_country) {
+    d_countries.remove(p_country.getName(), p_country);
+    return d_countries;
+  }
 }
