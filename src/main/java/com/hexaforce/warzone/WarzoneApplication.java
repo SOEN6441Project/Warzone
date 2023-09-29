@@ -15,7 +15,7 @@ public class WarzoneApplication {
   /**
    * The main function of the app
    *
-   * @param args the parameters passed by cli
+   * @param args the parameters passed by the cli
    */
   public static void main(String[] args) {
 
