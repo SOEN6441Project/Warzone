@@ -4,6 +4,10 @@ import com.hexaforce.warzone.Helpers.MapHelper;
 import com.hexaforce.warzone.Models.Continent;
 import com.hexaforce.warzone.Models.Country;
 import com.hexaforce.warzone.Models.Map;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /** Map Controller for the Warzone Application. */
@@ -50,6 +54,12 @@ public class MapController {
           break;
         case "showmap":
           handleShowMap();
+          break;
+        case "savemap":
+          handleSaveMap(l_tokens);
+          break;
+        case "loadmap":
+          //          handleLoadMap(l_tokens);
           break;
         default:
           System.out.println("Unknown command.");
@@ -235,6 +245,7 @@ public class MapController {
 
     if (l_action.equals("-add")) {
       l_country.addNeighbor(l_neighborCountry);
+      l_neighborCountry.addNeighbor(l_country);
 
     } else if (l_action.equals("-remove")) {
       l_country.removeNeighbor(l_neighborCountry);
@@ -253,6 +264,45 @@ public class MapController {
   public void handleShowMap() {
     if (!isGameMapNull()) {
       d_map.displayMap();
+    }
+  }
+
+  /**
+   * Handles the 'savemap' command to save the game map to a file.
+   *
+   * @param p_tokens An array of tokens containing the command and file name.
+   */
+  private void handleSaveMap(String[] p_tokens) {
+    // Ensure a map is created
+    if (isGameMapNull()) {
+      return;
+    }
+
+    // Check if the command is valid
+    if (p_tokens.length < 2) {
+      System.out.println("Invalid command. Usage: savemap fileName");
+      return;
+    }
+
+    // Extract the file name from the command
+    String l_fileName = p_tokens[1];
+
+    try {
+      // Create a FileOutputStream to write the object to a file
+      FileOutputStream fileOutputStream = new FileOutputStream(l_fileName);
+      ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+      // Write the game map to the file
+      objectOutputStream.writeObject(d_map);
+
+      // Close the streams
+      objectOutputStream.close();
+      fileOutputStream.close();
+
+      System.out.println("Map saved to " + l_fileName);
+    } catch (IOException e) {
+      // Handle any IO exception that may occur during file operations
+      e.printStackTrace();
     }
   }
 }
