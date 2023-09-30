@@ -1,7 +1,7 @@
 package com.hexaforce.warzone;
 
-import com.hexaforce.warzone.Controllers.MapController;
-import com.hexaforce.warzone.Models.Map;
+import com.hexaforce.warzone.controllers.MapController;
+import com.hexaforce.warzone.models.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

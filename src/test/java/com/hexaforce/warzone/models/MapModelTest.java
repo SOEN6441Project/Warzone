@@ -1,7 +1,6 @@
-package com.hexaforce.warzone.Models;
+package com.hexaforce.warzone.models;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -42,6 +41,16 @@ class MapModelTest {
     Country neighbor = new Country(2, "NeighborCountry", "Asia");
     country.addNeighbor(neighbor);
     assertTrue(country.getNeighbors().containsKey("NeighborCountry"));
+  }
+
+  @Test
+  void testCountryRemoveNeighbor() {
+    Country neighbor = new Country(2, "NeighborCountry", "Asia");
+    country.addNeighbor(neighbor);
+    assertTrue(country.getNeighbors().containsKey("NeighborCountry"));
+
+    country.removeNeighbor(neighbor);
+    assertFalse(country.getNeighbors().containsKey("NeighborCountry"));
   }
 
   // Test cases for Continent class

@@ -1,9 +1,9 @@
-package com.hexaforce.warzone.Controllers;
+package com.hexaforce.warzone.controllers;
 
-import com.hexaforce.warzone.Helpers.MapHelper;
-import com.hexaforce.warzone.Models.Continent;
-import com.hexaforce.warzone.Models.Country;
-import com.hexaforce.warzone.Models.Map;
+import com.hexaforce.warzone.helpers.MapHelper;
+import com.hexaforce.warzone.models.Continent;
+import com.hexaforce.warzone.models.Country;
+import com.hexaforce.warzone.models.Map;
 import java.util.Scanner;
 
 /** Map Controller for the Warzone Application. */

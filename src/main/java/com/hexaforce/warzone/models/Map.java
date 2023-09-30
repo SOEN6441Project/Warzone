@@ -1,4 +1,4 @@
-package com.hexaforce.warzone.Models;
+package com.hexaforce.warzone.models;
 
 import java.util.HashMap;
 

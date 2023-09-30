@@ -1,4 +1,4 @@
-package com.hexaforce.warzone.Helpers;
+package com.hexaforce.warzone.helpers;
 
 import java.security.SecureRandom;
 
