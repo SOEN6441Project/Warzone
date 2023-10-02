@@ -1,5 +1,7 @@
 package com.hexaforce.warzone;
 
+import com.hexaforce.warzone.controllers.MapController;
+import com.hexaforce.warzone.models.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,5 +23,9 @@ public class WarzoneApplication {
 
     l_logger.info("Hey World");
     GameEngine.run();
+    l_logger.info("Game Started!");
+    Map l_mapModel = null;
+    MapController l_mapController = new MapController(null);
+    l_mapController.run();
   }
 }
