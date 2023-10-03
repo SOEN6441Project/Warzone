@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /** Model of a Country. */
 public class Country {
-  private final int d_id;
+  private final Integer d_id;
   private final String d_name;
   private final String d_continentId;
   private int d_armies;

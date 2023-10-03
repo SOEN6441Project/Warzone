@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /** Model of a Continent. */
 public class Continent {
-  private final int d_id;
+  private final Integer d_id;
   private final String d_name;
   private int d_controlValue;
   private HashMap<String, Country> d_countries;

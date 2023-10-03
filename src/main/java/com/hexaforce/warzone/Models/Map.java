@@ -1,13 +1,22 @@
 package com.hexaforce.warzone.Models;
 
-import java.util.HashMap;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.HashMap;
+@Getter
+@Setter
 /** Model of a Warzone Map. */
 public class Map {
+
   private int d_id;
   private String d_name;
   private HashMap<String, Continent> d_continents;
   private HashMap<String, Country> d_countries;
+  /**
+   * stores the map file name.
+   */
+  private String d_mapFile;
 
   /** Constructor for the Map model. */
   public Map() {
@@ -128,6 +137,10 @@ public class Map {
    */
   public boolean removeCountry(String p_country) {
     d_countries.remove(p_country);
+    return true;
+  }
+
+  public boolean ValidateMap() {
     return true;
   }
 
