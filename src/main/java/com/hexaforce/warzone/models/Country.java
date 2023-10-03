@@ -38,7 +38,8 @@ public class Country {
     d_continentId = p_continentId;
     d_armies = p_armies;
     d_occupantName = p_occupantName;
-    d_neighbors = new HashMap<>();
+    this.d_neighbors = new HashMap<>();
+    this.d_neighbors.put(this, new HashMap<>());
   }
 
   /**

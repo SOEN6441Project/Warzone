@@ -89,6 +89,7 @@ public class Continent {
   /**
    * Remove Country method for the deletion of country from the continent.
    *
+   * @param p_country Country that needs to be removed
    * @return Updated countries in continent of the country
    */
   public HashMap<String, Country> removeCountry(Country p_country) {

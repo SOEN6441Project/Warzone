@@ -1,6 +1,9 @@
 package com.hexaforce.warzone.models;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Stack;
 
 /** Model of a Warzone Map. */
 public class Map {
@@ -156,6 +159,50 @@ public class Map {
           System.out.println("No neighbors");
         }
         System.out.println();
+      }
+    }
+  }
+
+  /**
+   * Validates the map to ensure that every country is reachable from every other country. This
+   * method performs a depth-first search (DFS) starting from each country to check reachability. If
+   * any country is not reachable from another, the map is considered invalid.
+   *
+   * @return true if the map is fully connected (all countries are reachable from each other), false
+   *     otherwise.
+   */
+  public boolean validateMap() {
+
+    // Create a set to keep track of visited countries
+    Set<Country> l_visitedCountries = new HashSet<>();
+
+    // Choose a starting country (the first one)
+    Country l_startingCountry = this.getCountries().values().iterator().next();
+
+    // Perform depth-first search (DFS) starting from the initial country
+    validateMapConnectivity(l_startingCountry, l_visitedCountries);
+
+    // Check if all countries have been visited
+    if (l_visitedCountries.size() == this.getCountries().size()) {
+      return true;
+    } else {
+      System.out.println("Some countries are not reachable from others.");
+      return false;
+    }
+  }
+
+  /**
+   * Depth-First Search (DFS) method to visit all reachable countries from the starting country.
+   *
+   * @param p_currentCountry The current country being visited.
+   * @param p_visitedCountries A set to keep track of visited countries.
+   */
+  private void validateMapConnectivity(Country p_currentCountry, Set<Country> p_visitedCountries) {
+    p_visitedCountries.add(p_currentCountry);
+
+    for (Country neighbor : p_currentCountry.getNeighbors().values()) {
+      if (!p_visitedCountries.contains(neighbor)) {
+        validateMapConnectivity(neighbor, p_visitedCountries);
       }
     }
   }

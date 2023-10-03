@@ -19,7 +19,7 @@ public class MapController {
     d_map = p_map;
   }
 
-  /** Map-Editor. */
+  /** Map-Editor Phase. */
   public void run() {
     Scanner l_scanner = new Scanner(System.in);
     while (true) {
@@ -48,6 +48,9 @@ public class MapController {
         case "editneighbor":
           handleEditNeighbor(l_tokens);
           break;
+        case "validatemap":
+          handleValidateMap();
+          break;
         case "showmap":
           handleShowMap();
           break;
@@ -62,7 +65,7 @@ public class MapController {
   /**
    * Handles the "createmap" command to create a new game map.
    *
-   * @param p_tokens Command tokens including "createmap" and map name.
+   * @param p_tokens An array of command tokens , including "createmap" and the map name.
    */
   private void handleCreateMap(String[] p_tokens) {
     if (p_tokens.length != 2) {
@@ -75,6 +78,11 @@ public class MapController {
     System.out.println("Map created: " + l_mapName);
   }
 
+  /**
+   * Checks if current map is null.
+   *
+   * @return true if map is not null
+   */
   private boolean isGameMapNull() {
     if (d_map == null) {
       System.out.println("Please create a map first..");
@@ -93,7 +101,6 @@ public class MapController {
   private void handleEditContinent(String[] p_tokens) {
     // Ensure a map is created
     if (isGameMapNull()) {
-
       return;
     }
     if (p_tokens.length < 4) {
@@ -253,6 +260,14 @@ public class MapController {
   public void handleShowMap() {
     if (!isGameMapNull()) {
       d_map.displayMap();
+    }
+  }
+
+  /** Handles the validation of map. */
+  public void handleValidateMap() {
+    if (!isGameMapNull()) {
+      boolean l_isValid = d_map.validateMap();
+      System.out.println(l_isValid ? "Map is Valid." : "Map is not valid.");
     }
   }
 }
