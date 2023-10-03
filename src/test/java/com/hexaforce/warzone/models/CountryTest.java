@@ -11,18 +11,14 @@ import org.junit.jupiter.api.Test;
  *
  * @author Deniz Dinchdonmez
  */
-class MapModelTest {
+class CountryTest {
 
   private Country country;
-  private Continent continent;
-  private Map map;
 
   @BeforeEach
   void setUp() {
     // Initialize objects for testing
-    continent = new Continent(1, "Asia", 10);
     country = new Country(1, "Pakistan", "Asia");
-    map = new Map(1, "TestMap");
   }
 
   // Test cases for Country class
@@ -51,29 +47,5 @@ class MapModelTest {
 
     country.removeNeighbor(neighbor);
     assertFalse(country.getNeighbors().containsKey("NeighborCountry"));
-  }
-
-  // Test cases for Continent class
-  @Test
-  void testContinentGetName() {
-    assertEquals("Asia", continent.getName());
-  }
-
-  @Test
-  void testContinentGetControlValue() {
-    assertEquals(10, continent.getControlValue());
-  }
-
-  @Test
-  void testContinentAddCountry() {
-    Country countryInContinent = new Country(3, "India", "Asia");
-    continent.addCountry(countryInContinent);
-    assertTrue(continent.getCountries().containsKey("India"));
-  }
-
-  // Test cases for Map class
-  @Test
-  void testMapGetName() {
-    assertEquals("TestMap", map.getName());
   }
 }
