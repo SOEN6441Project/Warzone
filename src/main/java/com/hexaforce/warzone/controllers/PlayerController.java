@@ -117,7 +117,7 @@ public class PlayerController {
   public static void showPlayers() {
 
     for (String player : d_playerList) {
-      System.out.print(player + "\t");
+      System.out.print(player.toUpperCase() + " ");
     }
   }
 
