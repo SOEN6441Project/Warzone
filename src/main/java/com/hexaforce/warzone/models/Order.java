@@ -6,6 +6,6 @@ import java.util.*;
 public class Order {
   public static void createPlayers() {
     PlayerController executeOrder = new PlayerController();
-    executeOrder.run();
+    executeOrder.playerCreation();
   }
 }

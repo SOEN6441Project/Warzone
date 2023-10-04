@@ -29,7 +29,7 @@ public class Player {
    * Contains list of orders made by the respective player currently Lombok Getter implanted for
    * list of orders
    */
-  private List<String> d_currentOrder = new ArrayList<>();
+  private List<Order> d_currentOrder = new ArrayList<Order>();
 
   /**
    * Contains number of armies held by the respective player Lombok Getter implanted for list of
