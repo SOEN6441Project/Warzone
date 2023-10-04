@@ -1,5 +1,6 @@
 package com.hexaforce.warzone.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -14,22 +15,23 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Player {
+public class Player implements Serializable {
 
-  /** Contains player's name Lombok Getter implanted for the player's name */
-  private String d_playerName;
+  public static List<String> d_countryToPlayer = new ArrayList<>();
+  /** Contains player's list of names Lombok Getter implanted for the player's name */
+  public static List<String> d_playerNames = new ArrayList<>();
 
   /**
    * Contains list of countries captured by the respective player currently Lombok Getter implanted
    * for list of countries
    */
-  private List<Country> d_countryCaptured = new ArrayList<Country>();
+  private List<Country> d_countryCaptured = new ArrayList<>();
 
   /**
    * Contains list of orders made by the respective player currently Lombok Getter implanted for
    * list of orders
    */
-  private List<Order> d_currentOrder = new ArrayList<Order>();
+  private List<Order> d_currentOrder = new ArrayList<>();
 
   /**
    * Contains number of armies held by the respective player Lombok Getter implanted for list of
@@ -37,15 +39,8 @@ public class Player {
    */
   private Integer d_assignedArmy;
 
-  private boolean d_flag;
-
-  /**
-   * Parameterized constructor to initialize the player and assigned armies
-   *
-   * @param p_playerName is Player's name that is passed on to its local variable
-   */
-  public Player(String p_playerName) {
-    d_playerName = p_playerName;
+  /** Non-parameterized empty constructor to create object in Order class */
+  public Player() {
     d_assignedArmy = 0;
   }
 
@@ -56,12 +51,13 @@ public class Player {
   void next_order() {}
 
   /**
-   * Fetching respective country Ids from Country class
+   * Fetching respective country Ids from Country class Could be used to locate Continent name when
+   * needed
    *
    * @return list of country Ids
    */
   public List<Integer> getCountryID() {
-    List<Integer> l_countryID = new ArrayList<Integer>();
+    List<Integer> l_countryID = new ArrayList<>();
     for (Country c : d_countryCaptured) {
       l_countryID.add(c.getId());
     }
@@ -74,7 +70,7 @@ public class Player {
    * @return list of country names
    */
   public List<String> getCountryName() {
-    List<String> l_countryName = new ArrayList<String>();
+    List<String> l_countryName = new ArrayList<>();
     for (Country c : d_countryCaptured) {
       l_countryName.add(c.getName());
     }

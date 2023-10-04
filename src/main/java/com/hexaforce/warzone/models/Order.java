@@ -1,11 +1,15 @@
 package com.hexaforce.warzone.models;
 
-import com.hexaforce.warzone.controllers.PlayerController;
+import java.io.Serializable;
 import java.util.*;
 
-public class Order {
-  public static void createPlayers() {
-    PlayerController executeOrder = new PlayerController();
-    executeOrder.playerCreation();
-  }
+/**
+ * Order class contains models for the order execution
+ *
+ * @author Habeeb Dashti
+ * @version 1.0
+ */
+public class Order implements Serializable {
+  public static List<String> d_assignment = new ArrayList<String>();
+  public static List<String> d_players = new ArrayList<String>();
 }

@@ -28,7 +28,7 @@ public class PlayerController implements Serializable {
   }
 
   /** This method creates players depending on the commands entered by the user */
-  public List<String> playerCreation() {
+  public void playerCreation() {
     Scanner l_scanner = new Scanner(System.in);
     d_flag = true;
     while (d_flag) {
@@ -104,7 +104,6 @@ public class PlayerController implements Serializable {
                                     3. gameplayer -add <playername> -remove <player's name>""");
       }
     }
-    return d_playerList;
   }
 
   /**
@@ -125,14 +124,10 @@ public class PlayerController implements Serializable {
     d_playerList.remove(p_playerName);
   }
 
-  /**
-   * The following method assigns countries randomly to the players
-   *
-   * @return list of countries assigned to players randomly
-   */
-  public List<String> randomCountryAssignment() {
+  /** The following method assigns countries randomly to the players */
+  public void randomCountryAssignment() {
     Collection<String> countries = this.d_mapModel.getCountries().keySet();
-    List<String> l_countries = new ArrayList<String>(countries);
+    List<String> l_countries = new ArrayList<>(countries);
     int l_numberOfPlayer = d_playerList.size();
     int l_numberOfCountries = l_countries.size();
     int l_countriesPerPlayer = l_numberOfCountries / l_numberOfPlayer;
@@ -147,6 +142,5 @@ public class PlayerController implements Serializable {
       }
     }
     PlayerView.showAssignment(d_countryPlayerList);
-    return d_countryPlayerList;
   }
 }
