@@ -12,7 +12,7 @@ public class DisplayPlayer {
 
   public static void showAssignment(List<String> p_Assignment) {
     for (String assigned : p_Assignment) {
-      System.out.println(assigned + "\t");
+      System.out.println(assigned + "  ");
     }
   }
 }
