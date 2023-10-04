@@ -20,9 +20,14 @@ public class PlayerController implements Serializable {
   public static List<String> d_countryPlayerList = Player.d_countryToPlayer;
   /** Works as checker for entering, continuing and exiting the loop */
   boolean d_flag;
-
+  /** Creates an object of Map to fetch saved Country names from the Data structure. */
   public Map d_mapModel;
 
+  /**
+   * Constructor to initialize Map model's object
+   *
+   * @param p_mapModel returns object of the Map model
+   */
   public PlayerController(Map p_mapModel) {
     d_mapModel = p_mapModel;
   }
@@ -31,16 +36,25 @@ public class PlayerController implements Serializable {
   public void playerCreation() {
     Scanner l_scanner = new Scanner(System.in);
     d_flag = true;
+    // flag allowing to enter the loop
     while (d_flag) {
       System.out.print("\nEnter a command : ");
+      // accepting input from the user
       String l_playerCommand = l_scanner.nextLine();
+      // converting string of command into a string array
       String[] l_tokens = l_playerCommand.split(" ");
+      // checks for command in order to assign countries to the player randomly
       if (l_playerCommand.equals("assigncountries")) {
-        randomCountryAssignment();
-        System.out.println("\nPlayers Saved and Countries assigned.");
-        d_flag = false;
+        if (d_playerList.size() < 2) {
+          System.out.println("Error! Create at least 2 players before assigning the maps");
+        } else {
+          randomCountryAssignment();
+          System.out.println("\nPlayers Saved and Countries assigned.");
+          d_flag = false;
+        }
         break;
       }
+      // allows user to exit the program after adding players
       if (l_playerCommand.startsWith("exit") && (d_playerList.size() >= 2)) {
         System.out.println("\nPlayers saved");
         this.d_flag = false;
@@ -49,6 +63,7 @@ public class PlayerController implements Serializable {
         System.out.println("\nCreate at least 2 players to start the game!");
         playerCreation();
       }
+      // checks if your entered the gameplayer command in the wrong format
       for (int i = 0; i < l_tokens.length - 1; i++) {
         if (l_tokens[i].startsWith("-") && l_tokens[i + 1].startsWith("-")) {
           System.out.println(
@@ -64,6 +79,7 @@ public class PlayerController implements Serializable {
           break;
         }
       }
+      // adds or remove players according to the command input by the user
       if (l_tokens[0].equals("gameplayer")
           && (l_tokens[1].startsWith("-add") || l_tokens[1].startsWith("-remove"))) {
         String l_captureOption = "";
@@ -81,7 +97,7 @@ public class PlayerController implements Serializable {
               removePlayer(l_tokens[i]);
             }
           }
-
+          // forces user to create at least to players before moving on to saving them
           if (d_playerList.isEmpty()) {
             System.out.println("\nError! Players corrupted retry command.");
             playerCreation();
