@@ -3,7 +3,6 @@ package com.hexaforce.warzone.models;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Stack;
 
 /** Model of a Warzone Map. */
 public class Map {
@@ -175,6 +174,12 @@ public class Map {
 
     // Create a set to keep track of visited countries
     Set<Country> l_visitedCountries = new HashSet<>();
+
+    // Check if there are any countries in the map
+    if (this.getCountries().isEmpty()) {
+      System.out.println("No countries found in the map.");
+      return false;
+    }
 
     // Choose a starting country (the first one)
     Country l_startingCountry = this.getCountries().values().iterator().next();

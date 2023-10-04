@@ -21,11 +21,9 @@ public class WarzoneApplication {
    */
   public static void main(String[] args) {
 
-    l_logger.info("Hey World");
-    GameEngine.run();
     l_logger.info("Game Started!");
-    Map l_mapModel = null;
-    MapController l_mapController = new MapController(null);
+    Map l_mapModel = new Map();
+    MapController l_mapController = new MapController(l_mapModel);
     l_mapController.run();
   }
 }
