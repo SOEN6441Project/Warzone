@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.hexaforce.warzone"},{"l":"com.hexaforce.warzone.controllers"},{"l":"com.hexaforce.warzone.helpers"},{"l":"com.hexaforce.warzone.models"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.hexaforce.warzone"},{"l":"com.hexaforce.warzone.controllers"},{"l":"com.hexaforce.warzone.helpers"},{"l":"com.hexaforce.warzone.models"},{"l":"com.hexaforce.warzone.views"}];updateSearchResults();
