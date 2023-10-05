@@ -47,15 +47,11 @@ public class Player implements Serializable {
     d_assignedArmy = 0;
   }
 
-  /* Issue Order method adds an order to the list of orders */
-  //  public void issue_order() {
-  //    Stack.push(Order.executeOrder());
-  //  }
+  /** Issue Order method adds an order to the list of orders */
+  public void issue_order() {}
 
-  /* Next Order method returns the first order from the list of orders */
-  //  public void next_order() {
-  //    Stack.pop(Order.executeOrder());
-  //  }
+  /** Next Order method returns the first order from the list of orders */
+  public void next_order() {}
 
   /**
    * Fetching respective country's Ids from Country class Could be used to locate Continent name

@@ -19,10 +19,20 @@ public class MapController {
     d_map = p_map;
   }
 
+  /**
+   * Getter for Map.
+   *
+   * @return current Map
+   */
+  public Map getMap() {
+    return d_map;
+  }
+
   /** Map-Editor Phase. */
   public void run() {
     Scanner l_scanner = new Scanner(System.in);
-    while (true) {
+    boolean l_controlLoop = true;
+    while (l_controlLoop) {
       System.out.print("Enter a command: ");
       String l_input = l_scanner.nextLine();
       if (l_input.equalsIgnoreCase("exit")) {
@@ -54,12 +64,14 @@ public class MapController {
         case "showmap":
           handleShowMap();
           break;
+        case "exit":
+          l_controlLoop = false;
+          break;
         default:
           System.out.println("Unknown command.");
           break;
       }
     }
-    l_scanner.close();
   }
 
   /**
