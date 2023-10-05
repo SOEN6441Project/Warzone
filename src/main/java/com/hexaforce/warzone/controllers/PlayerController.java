@@ -127,7 +127,7 @@ public class PlayerController implements Serializable {
    *
    * @param p_playerName passes the name(s) to be added to the list
    */
-  public static void addPlayer(String p_playerName) {
+  public void addPlayer(String p_playerName) {
     d_playerList.add(p_playerName);
   }
 
@@ -136,7 +136,7 @@ public class PlayerController implements Serializable {
    *
    * @param p_playerName passes the name(s) to be removed from the list
    */
-  public static void removePlayer(String p_playerName) {
+  public void removePlayer(String p_playerName) {
     d_playerList.remove(p_playerName);
   }
 
