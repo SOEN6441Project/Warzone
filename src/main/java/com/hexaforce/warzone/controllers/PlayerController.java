@@ -35,6 +35,8 @@ public class PlayerController implements Serializable {
   /** This method creates players depending on the commands entered by the user */
   public void playerCreation() {
     Scanner l_scanner = new Scanner(System.in);
+    System.out.print("\nPlayer Creation Phase: ");
+
     d_flag = true;
     // flag allowing to enter the loop
     while (d_flag) {

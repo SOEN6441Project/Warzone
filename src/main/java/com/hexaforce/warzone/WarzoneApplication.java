@@ -1,7 +1,7 @@
 package com.hexaforce.warzone;
 
+import com.hexaforce.warzone.controllers.MapController;
 import com.hexaforce.warzone.controllers.PlayerController;
-import com.hexaforce.warzone.models.Country;
 import com.hexaforce.warzone.models.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,20 +23,11 @@ public class WarzoneApplication {
   public static void main(String[] args) {
 
     l_logger.info("Hello Players! Welcome to the Warzone");
-    // GameEngine.run();
     l_logger.info("The Risk game has started!");
     Map l_mapModel = new Map();
-    Country country1 = new Country(1, "Country1", "Continent1");
-    Country country2 = new Country(2, "Country2", "Continent1");
-    Country country3 = new Country(3, "Country3", "Continent1");
-    Country country4 = new Country(4, "Country4", "Continent1");
-    l_mapModel.addCountry(country1);
-    l_mapModel.addCountry(country2);
-    l_mapModel.addCountry(country3);
-    l_mapModel.addCountry(country4);
-    //    MapController l_mapController = new MapController(null);
-    PlayerController l_playerController = new PlayerController(l_mapModel);
-    //    l_mapController.run();
+    MapController l_mapController = new MapController(null);
+    l_mapController.run();
+    PlayerController l_playerController = new PlayerController(l_mapController.getMap());
     l_playerController.playerCreation();
   }
 }
