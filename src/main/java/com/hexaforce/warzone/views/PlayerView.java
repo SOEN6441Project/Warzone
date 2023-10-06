@@ -18,6 +18,7 @@ public class PlayerView {
     for (String player : p_playerList) {
       System.out.print(player.toUpperCase() + "\t");
     }
+    System.out.println();
   }
 
   /**

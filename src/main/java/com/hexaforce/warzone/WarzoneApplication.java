@@ -27,6 +27,7 @@ public class WarzoneApplication {
     Map l_mapModel = new Map();
     MapController l_mapController = new MapController(null);
     l_mapController.run();
+    System.out.println("Player Creation and Map Assignment phase begins . . .");
     PlayerController l_playerController = new PlayerController(l_mapController.getMap());
     l_playerController.playerCreation();
   }

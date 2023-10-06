@@ -35,12 +35,10 @@ public class PlayerController implements Serializable {
   /** This method creates players depending on the commands entered by the user */
   public void playerCreation() {
     Scanner l_scanner = new Scanner(System.in);
-    System.out.print("\nPlayer Creation Phase : ");
-
     d_flag = true;
     // flag allowing to enter the loop
     while (d_flag) {
-      System.out.print("\nEnter a command : ");
+      System.out.print("Enter a command : ");
       // accepting input from the user
       String l_playerCommand = l_scanner.nextLine();
       // converting string of command into a string array
@@ -51,7 +49,7 @@ public class PlayerController implements Serializable {
           System.out.println("Error! Create at least 2 players before assigning the maps");
         } else {
           randomCountryAssignment();
-          System.out.println("\nPlayers Saved and Countries assigned.");
+          //          System.out.println("\nPlayers Saved and Countries assigned.");
           d_flag = false;
         }
         break;
@@ -77,7 +75,8 @@ public class PlayerController implements Serializable {
               """
                                         1. gameplayer -add <player's name>
                                         2. gameplayer -remove <player's name>
-                                        3. gameplayer -add <playername> -remove <player's name>""");
+                                        3. gameplayer -add <playername> -remove <player's name>
+                                        4. "assigncountries" (if added at least 2 players)""");
           break;
         }
       }
@@ -119,7 +118,8 @@ public class PlayerController implements Serializable {
             """
                                     1. gameplayer -add <player's name>
                                     2. gameplayer -remove <player's name>
-                                    3. gameplayer -add <playername> -remove <player's name>""");
+                                    3. gameplayer -add <playername> -remove <player's name>
+                                    4. "assigncountries" (if added at least 2 players)""");
       }
     }
   }
@@ -148,13 +148,15 @@ public class PlayerController implements Serializable {
     List<String> l_countries = new ArrayList<>(countries);
     int l_numberOfPlayer = d_playerList.size();
     int l_numberOfCountries = l_countries.size();
-    int l_countriesPerPlayer = l_numberOfCountries / l_numberOfPlayer;
+    int l_countriesPerPlayer = Math.floorDiv(l_numberOfCountries - 1, l_numberOfPlayer);
     for (String player : d_playerList) {
       Random l_random = new Random();
       d_countryPlayerList.add(player.toUpperCase());
+      int l_randomToken;
+      String l_randomCountry;
       for (int i = 0; i < l_countriesPerPlayer; i++) {
-        int l_randomToken = l_random.nextInt(l_countriesPerPlayer);
-        String l_randomCountry = l_countries.get(l_randomToken);
+        l_randomToken = l_random.nextInt(l_countriesPerPlayer);
+        l_randomCountry = l_countries.get(l_randomToken);
         d_countryPlayerList.add(l_randomCountry);
         l_countries.remove(l_randomCountry);
       }
