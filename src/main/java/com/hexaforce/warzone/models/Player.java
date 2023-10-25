@@ -1,82 +1,68 @@
 package com.hexaforce.warzone.models;
 
-import java.io.Serializable;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
+
+import com.hexaforce.warzone.utils.CommonUtil;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- * Player class is under the model unit of the MVC architecture It holds a list of countries that
- * are assigned to the players It holds a list of orders that players are using on their turn
- *
- * @author Habeeb Dashti
- * @version 1.0
- */
+/** This class represents a player in the game, managing their information and services. */
 @Getter
 @Setter
-public class Player implements Serializable {
-  /** Stores the sequence of orders being passed on to it */
-  Stack<String> d_stack = new Stack<>();
-  /** Contains list of countries assigned to the players randomly */
-  public static List<String> d_countryToPlayer = new ArrayList<>();
-  /** Contains player's list of names Lombok Getter implanted for the player's name */
-  public static List<String> d_playerNames = new ArrayList<>();
+@NoArgsConstructor
+public class Player {
+  /** The color used to display player details on the map. */
+  private String d_color;
+
+  /** The name of the player. */
+  private String d_name;
+
+  /** The list of countries owned by the player. */
+  List<Country> d_countriesOwned;
+
+  /** The list of continents owned by the player. */
+  List<Continent> d_continentsOwned;
+
+  /** The list of orders issued by the player. */
+  List<Order> d_ordersToExecute;
+
+  /** The number of armies allocated to the player. */
+  Integer d_noOfUnallocatedArmies;
 
   /**
-   * Contains list of countries captured by the respective player currently Lombok Getter implanted
-   * for list of countries
-   */
-  private List<Country> d_countryCaptured = new ArrayList<>();
-
-  /**
-   * Contains list of orders made by the respective player currently Lombok Getter implanted for
-   * list of orders
-   */
-  private List<Order> d_currentOrder = new ArrayList<>();
-
-  /**
-   * Contains number of armies held by the respective player Lombok Getter implanted for list of
-   * armies
-   */
-  private Integer d_assignedArmy;
-
-  /** Non-parameterized empty constructor to create object in Order class */
-  public Player() {
-    d_assignedArmy = 0;
-  }
-
-  /** Issue Order method adds an order to the list of orders */
-  public void issue_order() {}
-
-  /** Next Order method returns the first order from the list of orders */
-  public void next_order() {}
-
-  /**
-   * Fetching respective country's Ids from Country class Could be used to locate Continent name
-   * when needed
+   * Creates a player with a specified name and a default number of armies.
    *
-   * @return list of country Ids
+   * @param p_playerName The name of the player.
    */
-  public List<Integer> getCountryID() {
-    List<Integer> l_countryID = new ArrayList<>();
-    for (Country c : d_countryCaptured) {
-      l_countryID.add(c.getId());
-    }
-    return l_countryID;
+  public Player(String p_playerName) {
+    this.d_name = p_playerName;
+    this.d_noOfUnallocatedArmies = 0;
+    this.d_ordersToExecute = new ArrayList<>();
   }
 
   /**
-   * Fetching country's names from Country class
+   * Issues an order and adds it to the player's unassigned orders pool.
    *
-   * @return list of country names
+   * @throws IOException if there is an exception while reading inputs from the user.
    */
-  public List<String> getCountryName() {
-    List<String> l_countryName = new ArrayList<>();
-    for (Country c : d_countryCaptured) {
-      l_countryName.add(c.getName());
+  public void issue_order() {
+    // TODO: Implement the 'issue_order' functionality.
+  }
+
+  /**
+   * Retrieves and removes the first order from the player's list of orders.
+   *
+   * @return The first order from the list of the player's orders.
+   */
+  public Order next_order() {
+    if (CommonUtil.isCollectionEmpty(this.d_ordersToExecute)) {
+      return null;
     }
-    return l_countryName;
+    Order l_order = this.d_ordersToExecute.get(0);
+    this.d_ordersToExecute.remove(l_order);
+    return l_order;
   }
 }
