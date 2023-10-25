@@ -1,99 +1,66 @@
 package com.hexaforce.warzone.models;
 
-import java.util.HashMap;
+import com.hexaforce.warzone.utils.CommonUtil;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-/** Model of a Continent. */
+import java.util.List;
+
+/** The Continent class manages all the continents on the map. */
+@Getter
+@Setter
+@NoArgsConstructor
 public class Continent {
-  private final int d_id;
-  private final String d_name;
-  private int d_controlValue;
-  private HashMap<String, Country> d_countries;
+
+  /** The unique identifier for this continent. */
+  Integer d_continentID;
+
+  /** The name of the continent. */
+  String d_continentName;
+
+  /** The control value associated with this continent. */
+  Integer d_continentValue;
+
+  /** The list of countries belonging to this continent. */
+  List<Country> d_countries;
 
   /**
-   * Constructor for the Continent model.
+   * Constructor for this class, specifying the continent details.
    *
-   * @param p_id id of the continent
-   * @param p_name name of the continent
-   * @param p_controlValue control value of the continent
+   * @param p_continentID The unique identifier for the continent.
+   * @param p_continentName The name of the continent.
+   * @param p_continentValue The control value associated with the continent.
    */
-  public Continent(int p_id, String p_name, int p_controlValue) {
-    this.d_id = p_id;
-    this.d_name = p_name;
-    this.d_controlValue = p_controlValue;
-    d_countries = new HashMap<>();
+  public Continent(Integer p_continentID, String p_continentName, int p_continentValue) {
+    this.d_continentID = p_continentID;
+    this.d_continentName = p_continentName;
+    this.d_continentValue = p_continentValue;
   }
 
   /**
-   * Setter for the Countries in the continent.
+   * Constructor for this class, specifying the continent name.
    *
-   * @param p_countries Countries in the continent
+   * @param p_continentName The name of the continent.
    */
-  public void setCountries(HashMap<String, Country> p_countries) {
-    d_countries = p_countries;
+  public Continent(String p_continentName) {
+    this.d_continentName = p_continentName;
   }
 
   /**
-   * Setter for the Control value of the continent.
+   * Removes a particular country ID from the neighbor list of all countries in this continent.
    *
-   * @param p_controlValue Control value of the continent
+   * @param p_countryId The ID of the country to be removed from the neighbor lists.
    */
-  public void setControlValue(int p_controlValue) {
-    this.d_controlValue = p_controlValue;
-  }
-
-  /**
-   * Getter for the Control value of the continent.
-   *
-   * @return Control value of the continent
-   */
-  public int getControlValue() {
-    return d_controlValue;
-  }
-
-  /**
-   * Getter for the Name of the continent.
-   *
-   * @return Name of the continent
-   */
-  public String getName() {
-    return d_name;
-  }
-
-  /**
-   * Getter for the id of the continent.
-   *
-   * @return id of the continent
-   */
-  public int getId() {
-    return d_id;
-  }
-
-  /**
-   * Getter for the Countries in the continent.
-   *
-   * @return Countries in the continent
-   */
-  public HashMap<String, Country> getCountries() {
-    return d_countries;
-  }
-
-  /**
-   * Add Country method for the addition of countries in the continent.
-   *
-   * @param p_country Country that needs to be added
-   */
-  public void addCountry(Country p_country) {
-    d_countries.put(p_country.getName(), p_country);
-  }
-
-  /**
-   * Remove Country method for the deletion of country from the continent.
-   *
-   * @param p_country Country that needs to be removed
-   * @return Updated countries in continent of the country
-   */
-  public HashMap<String, Country> removeCountry(Country p_country) {
-    d_countries.remove(p_country.getName(), p_country);
-    return d_countries;
+  public void removeCountryNeighboursFromAll(Integer p_countryId) {
+    if (d_countries != null && !d_countries.isEmpty()) {
+      for (Country c : d_countries) {
+        if (!CommonUtil.isNull(c.d_adjacentCountryIds)) {
+          if (c.getD_adjacentCountryIds().contains(p_countryId)) {
+            c.removeNeighbour(p_countryId);
+          }
+        }
+      }
+    }
   }
 }
