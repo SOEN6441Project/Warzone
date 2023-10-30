@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /** The Continent class manages all the continents on the map. */
@@ -45,6 +46,31 @@ public class Continent {
    */
   public Continent(String p_continentName) {
     this.d_continentName = p_continentName;
+  }
+
+  /**
+   * Add the specified country to the list of countries.
+   *
+   * @param p_country The country to be added.
+   */
+  public void addCountry(Country p_country) {
+    if (d_countries == null) {
+      d_countries = new ArrayList<>();
+    }
+    d_countries.add(p_country);
+  }
+
+  /**
+   * Remove the specified country from the list of countries within the continent.
+   *
+   * @param p_country The country to be removed.
+   */
+  public void removeCountry(Country p_country) {
+    if (d_countries == null) {
+      System.out.println("No such country exists");
+    } else {
+      d_countries.remove(p_country);
+    }
   }
 
   /**
