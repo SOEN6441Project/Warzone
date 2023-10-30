@@ -50,8 +50,7 @@ To Check Code Formatting:
 ### HexaForce
 
 - Azamat Ochilov
-- Deniz Dinchdonmez
 - Habeeb Dashti
-- Hammad Ali
 - Usaib Khan
+- Hammad Ali
 - Waseem Jan
