@@ -1,4 +1,5 @@
 package com.hexaforce.warzone.models;
+
 import com.hexaforce.warzone.WarzoneEngine;
 import com.hexaforce.warzone.exceptions.InvalidCommand;
 import com.hexaforce.warzone.exceptions.InvalidMap;
@@ -191,6 +192,13 @@ public abstract class Phase {
      * Main method executed when the game phase changes.
      */
     public abstract void onPhaseInitialization();
+
+    /**
+     * Method to Log and Print if the command can't be executed in current phase.
+     */
+    public void printInvalidCommandInCurrentState() {
+        System.out.println("Invalid Command in Current State");
+    }
 
     /**
      * This method handles the "deploy order" in gameplay.
