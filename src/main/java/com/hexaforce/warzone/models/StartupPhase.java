@@ -26,22 +26,34 @@ public class StartupPhase extends Phase {
         super(p_gameEngine, p_gameContext);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void handleCardCommands(String p_enteredCommand, Player p_player) {
         printInvalidCommandInCurrentState();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void manageShowMap(Command p_command, Player p_player) {
         MapView l_mapView = new MapView(d_gameContext);
         l_mapView.showMap();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void executeAdvanceOrder(String p_command, Player p_player) {
         printInvalidCommandInCurrentState();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void processDeployOrder(String p_command, Player p_player) {
         printInvalidCommandInCurrentState();
