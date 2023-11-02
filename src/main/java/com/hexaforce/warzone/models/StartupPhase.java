@@ -55,7 +55,7 @@ public class StartupPhase extends Phase {
      * {@inheritDoc}
      */
     @Override
-    protected void processDeployOrder(String p_command, Player p_player) {
+    protected void executeDeployOrder(String p_command, Player p_player) {
         printInvalidCommandInCurrentState();
     }
 

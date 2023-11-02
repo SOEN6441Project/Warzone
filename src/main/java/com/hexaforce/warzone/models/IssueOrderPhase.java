@@ -34,8 +34,7 @@ public class IssueOrderPhase extends Phase {
      */
     public void promptForOrders(Player p_player) throws InvalidCommand, InvalidMap {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("\nPlease enter a command to issue orders for player: " + p_player
-                + " or enter 'showmap' to view the current game state.");
+        System.out.println("\nEnter commands to issue orders for player: " + p_player);
         String enteredCommand;
         try {
             enteredCommand = reader.readLine();
@@ -66,6 +65,188 @@ public class IssueOrderPhase extends Phase {
         } catch (InvalidCommand e) {
             e.printStackTrace();
         } catch (InvalidMap e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void executeAdvanceOrder(String p_command, Player p_player) {
+        System.out.println("Advance Order Logic Will be here.");
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void onPhaseInitialization() {
+        while (d_gameEngine.getD_currentPhase() instanceof IssueOrderPhase) {
+            System.out.println("Issue Order Logic Will be here.");
+
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void executeDeployOrder(String p_command, Player p_player) {
+        System.out.println("Deploy Order Logic Will be here.");
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void validateAssignCountries(Command p_command, Player p_player) {
+        printInvalidCommandInCurrentState();
+        try {
+            promptForOrders(p_player);
+        } catch (InvalidCommand e) {
+
+            e.printStackTrace();
+        } catch (InvalidMap e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void manageGamePlayers(Command p_command, Player p_player) {
+        printInvalidCommandInCurrentState();
+        try {
+            promptForOrders(p_player);
+        } catch (InvalidCommand e) {
+
+            e.printStackTrace();
+        } catch (InvalidMap e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void validateEditNeighbor(Command p_command, Player p_player) {
+        printInvalidCommandInCurrentState();
+        try {
+            promptForOrders(p_player);
+        } catch (InvalidCommand e) {
+
+            e.printStackTrace();
+        } catch (InvalidMap e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void validateEditCountry(Command p_command, Player p_player) {
+        printInvalidCommandInCurrentState();
+        try {
+            promptForOrders(p_player);
+        } catch (InvalidCommand e) {
+
+            e.printStackTrace();
+        } catch (InvalidMap e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void validateMapValidation(Command p_command, Player p_player) {
+        printInvalidCommandInCurrentState();
+        try {
+            promptForOrders(p_player);
+        } catch (InvalidCommand e) {
+
+            e.printStackTrace();
+        } catch (InvalidMap e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void validateLoadMap(Command p_command, Player p_player) {
+        printInvalidCommandInCurrentState();
+        try {
+            promptForOrders(p_player);
+        } catch (InvalidCommand e) {
+
+            e.printStackTrace();
+        } catch (InvalidMap e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void validateSaveMap(Command p_command, Player p_player) {
+        printInvalidCommandInCurrentState();
+        try {
+            promptForOrders(p_player);
+        } catch (InvalidCommand e) {
+
+            e.printStackTrace();
+        } catch (InvalidMap e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void validateEditContinent(Command p_command, Player p_player) {
+        printInvalidCommandInCurrentState();
+        try {
+            promptForOrders(p_player);
+        } catch (InvalidCommand e) {
+
+            e.printStackTrace();
+        } catch (InvalidMap e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void validateEditMap(Command p_command, Player p_player) {
+        printInvalidCommandInCurrentState();
+        try {
+            promptForOrders(p_player);
+        } catch (InvalidCommand e) {
+
+            e.printStackTrace();
+        } catch (InvalidMap e) {
+
             e.printStackTrace();
         }
     }

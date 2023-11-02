@@ -140,7 +140,7 @@ public abstract class Phase {
                 break;
             }
             case "deploy": {
-                processDeployOrder(p_enteredCommand, p_player);
+                executeDeployOrder(p_enteredCommand, p_player);
                 break;
             }
             case "advance": {
@@ -207,7 +207,7 @@ public abstract class Phase {
      * @param command Command entered by the user.
      * @param player  Player instance.
      */
-    protected abstract void processDeployOrder(String command, Player player);
+    protected abstract void executeDeployOrder(String command, Player player);
 
     /**
      * Performs basic validation for the "assigncountries" command, checking
