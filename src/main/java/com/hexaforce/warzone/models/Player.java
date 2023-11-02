@@ -1,10 +1,9 @@
 package com.hexaforce.warzone.models;
 
+import com.hexaforce.warzone.utils.CommonUtil;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.hexaforce.warzone.utils.CommonUtil;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -48,7 +47,7 @@ public class Player {
    *
    * @throws IOException if there is an exception while reading inputs from the user.
    */
-  public void issue_order() {
+  public void issue_order() throws IOException {
     // TODO: Implement the 'issue_order' functionality.
   }
 
@@ -64,5 +63,22 @@ public class Player {
     Order l_order = this.d_ordersToExecute.get(0);
     this.d_ordersToExecute.remove(l_order);
     return l_order;
+  }
+
+  /**
+   * Fetches the continents captured by the respective player
+   *
+   * @return List of Continents
+   */
+  public List<String> getContinentList() {
+    List<String> l_continentList = new ArrayList<>();
+    if (d_continentsOwned == null) {
+      return null;
+    } else {
+      for (Continent c : d_continentsOwned) {
+        l_continentList.add(c.getD_continentName());
+      }
+      return l_continentList;
+    }
   }
 }
