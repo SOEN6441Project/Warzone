@@ -102,10 +102,6 @@ public abstract class Phase {
                 validateEditMap(l_command, p_player);
                 break;
             }
-            case "editcontinent": {
-                validateEditContinent(l_command, p_player);
-                break;
-            }
             case "savemap": {
                 validateSaveMap(l_command, p_player);
                 break;
@@ -118,10 +114,15 @@ public abstract class Phase {
                 validateMapValidation(l_command, p_player);
                 break;
             }
+            case "editcontinent": {
+                validateEditContinent(l_command, p_player);
+                break;
+            }
             case "editcountry": {
                 validateEditCountry(l_command, p_player);
                 break;
             }
+
             case "editneighbor": {
                 validateEditNeighbor(l_command, p_player);
                 break;

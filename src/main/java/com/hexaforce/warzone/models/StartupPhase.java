@@ -1,7 +1,8 @@
 package com.hexaforce.warzone.models;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.List;
+import java.io.InputStreamReader;
 
 import com.hexaforce.warzone.WarzoneEngine;
 import com.hexaforce.warzone.exceptions.InvalidCommand;
@@ -58,8 +59,89 @@ public class StartupPhase extends Phase {
      * {@inheritDoc}
      */
     @Override
+    public void validateSaveMap(Command p_command, Player p_player) {
+        System.out.println("Map saving Logic Will be here.");
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void validateLoadMap(Command p_command, Player p_player) {
+        System.out.println("Map loading Logic Will be here.");
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public void validateEditContinent(Command p_command, Player p_player) {
         System.out.println("Continent Edit Logic Will be here.");
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void validateMapValidation(Command p_command, Player p_player) {
+        System.out.println("Map Validation Logic Will be here.");
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void validateEditCountry(Command p_command, Player p_player) {
+        System.out.println("Country Edit Logic Will be here.");
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void validateEditNeighbor(Command p_command, Player p_player) {
+        System.out.println("Neighbor Edit Logic Will be here.");
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void manageGamePlayers(Command p_command, Player p_player) {
+        System.out.println("Players Edit Logic Will be here.");
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void onPhaseInitialization() {
+        BufferedReader l_reader = new BufferedReader(new InputStreamReader(System.in));
+
+        while (d_gameEngine.getD_currentPhase() instanceof StartupPhase) {
+            try {
+                System.out.println("Enter Game Play Commands or type 'exit' to quit.");
+                String l_commandEntered = l_reader.readLine();
+
+                handleCommand(l_commandEntered);
+            } catch (InvalidCommand | InvalidMap | IOException l_exception) {
+            }
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void validateAssignCountries(Command p_command, Player p_player) {
+        System.out.println("Country assignment Logic Will be here.");
 
     }
 

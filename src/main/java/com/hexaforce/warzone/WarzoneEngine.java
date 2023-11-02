@@ -2,18 +2,30 @@ package com.hexaforce.warzone;
 
 import com.hexaforce.warzone.controllers.MapController;
 import com.hexaforce.warzone.controllers.PlayerController;
+import com.hexaforce.warzone.models.GameContext;
 import com.hexaforce.warzone.models.Map;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.hexaforce.warzone.models.Phase;
+import com.hexaforce.warzone.models.StartupPhase;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * This is the runner class of the application from which the game is triggered
  *
  * @author Usaib Khan
  */
+@Getter
+@Setter
 public class WarzoneEngine {
+    /**
+     * d_gameState stores the information about current GamePlay.
+     */
+    GameContext d_gameContext = new GameContext();
 
-    protected static final Logger l_logger = LogManager.getLogger();
+    /**
+     * It is the current game play phase as per state pattern.
+     */
+    Phase d_currentPhase = new StartupPhase(this, d_gameContext);
 
     /**
      * The main function of the app
@@ -22,8 +34,8 @@ public class WarzoneEngine {
      */
     public static void main(String[] args) {
 
-        l_logger.info("Hello Players! Welcome to the Warzone");
-        l_logger.info("The Risk game has started!");
+        System.out.println("Hello Players! Welcome to the Warzone");
+        System.out.println("The Risk game has started!");
         Map l_mapModel = new Map();
         MapController l_mapController = new MapController(null);
         l_mapController.run();
