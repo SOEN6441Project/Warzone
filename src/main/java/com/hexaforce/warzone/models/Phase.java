@@ -1,4 +1,5 @@
 package com.hexaforce.warzone.models;
+
 import com.hexaforce.warzone.WarzoneEngine;
 import com.hexaforce.warzone.exceptions.InvalidCommand;
 import com.hexaforce.warzone.exceptions.InvalidMap;
@@ -101,10 +102,6 @@ public abstract class Phase {
                 validateEditMap(l_command, p_player);
                 break;
             }
-            case "editcontinent": {
-                validateEditContinent(l_command, p_player);
-                break;
-            }
             case "savemap": {
                 validateSaveMap(l_command, p_player);
                 break;
@@ -117,10 +114,15 @@ public abstract class Phase {
                 validateMapValidation(l_command, p_player);
                 break;
             }
+            case "editcontinent": {
+                validateEditContinent(l_command, p_player);
+                break;
+            }
             case "editcountry": {
                 validateEditCountry(l_command, p_player);
                 break;
             }
+
             case "editneighbor": {
                 validateEditNeighbor(l_command, p_player);
                 break;
@@ -191,6 +193,13 @@ public abstract class Phase {
      * Main method executed when the game phase changes.
      */
     public abstract void onPhaseInitialization();
+
+    /**
+     * Method to Log and Print if the command can't be executed in current phase.
+     */
+    public void printInvalidCommandInCurrentState() {
+        System.out.println("Invalid Command in Current State");
+    }
 
     /**
      * This method handles the "deploy order" in gameplay.
