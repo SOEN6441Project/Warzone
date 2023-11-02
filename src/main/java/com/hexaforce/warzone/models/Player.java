@@ -81,4 +81,21 @@ public class Player {
       return l_continentList;
     }
   }
+
+  /**
+   * Fetches the countries captured by the respective player
+   *
+   * @return List of Countries
+   */
+  public List<String> getCountryList() {
+    List<String> l_countryList = new ArrayList<>();
+    if (d_countriesOwned == null) {
+      return null;
+    } else {
+      for (Country c : d_countriesOwned) {
+        l_countryList.add(c.getD_countryName());
+      }
+      return l_countryList;
+    }
+  }
 }
