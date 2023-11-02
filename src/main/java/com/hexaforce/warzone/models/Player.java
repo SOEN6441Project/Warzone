@@ -1,7 +1,11 @@
 package com.hexaforce.warzone.models;
 
+import com.hexaforce.warzone.services.PlayerService;
+import com.hexaforce.warzone.utils.Command;
 import com.hexaforce.warzone.utils.CommonUtil;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -48,7 +52,20 @@ public class Player {
    * @throws IOException if there is an exception while reading inputs from the user.
    */
   public void issue_order() throws IOException {
-    // TODO: Implement the 'issue_order' functionality.
+    InputStreamReader l_inputStreamReader = new InputStreamReader(System.in);
+    BufferedReader l_bufferedReader = new BufferedReader(l_inputStreamReader);
+    PlayerService l_playerService = new PlayerService();
+    System.out.println(
+        "\nCurrent Player - "
+            + this.getD_name()
+            + "\nEnter a command to deploy reinforcement armies on the map: ");
+    String l_inputCommand = l_bufferedReader.readLine();
+    Command l_command = new Command(l_inputCommand);
+    if (l_inputCommand.split(" ").length == 3 && l_command.getRootCommand().equals("deploy")) {
+      l_playerService.deployOrder(l_inputCommand, this);
+    } else {
+      System.out.println("Error! Invalid order deployment.");
+    }
   }
 
   /**
