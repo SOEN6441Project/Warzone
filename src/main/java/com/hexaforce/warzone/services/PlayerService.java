@@ -133,9 +133,17 @@ public class PlayerService {
     return l_updatedPlayers;
   }
 
+  /**
+   * This function validates if a player name is unique or not
+   *
+   * @param p_playerList contains current player list
+   * @param p_playerName contains player name to validate
+   * @return gets 'true' if name is unique and 'false' if not
+   */
   private boolean isPlayerNameUnique(List<Player> p_playerList, String p_playerName) {
     // TODO: implement the 'isPlayerNameUnique' functionality
-    return false;
+    boolean l_flag = false;
+    return l_flag;
   }
 
   public void randomCountryAssignment() {
