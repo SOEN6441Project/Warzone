@@ -47,12 +47,12 @@ public class PlayerService {
    * This function validates if the player has enough remaining armies before deployment
    *
    * @param p_player contains the respective player who passed the order
-   * @param l_armies contains the number of armies passed by the player
+   * @param p_armies contains the number of armies passed by the player
    * @return l_flag 'true' for not having enough army and 'false' for having enough
    */
-  private boolean validateDeployArmy(Player p_player, String l_armies) {
+  private boolean validateDeployArmy(Player p_player, String p_armies) {
     boolean l_flag = false;
-    if (p_player.getD_noOfUnallocatedArmies() >= Integer.parseInt(l_armies)) {
+    if (p_player.getD_noOfUnallocatedArmies() >= Integer.parseInt(p_armies)) {
       return l_flag;
     } else {
       l_flag = true;
@@ -133,8 +133,9 @@ public class PlayerService {
     return l_updatedPlayers;
   }
 
-  private boolean isPlayerNameUnique(List<Player> pPlayerList, String lPlayerName) {
+  private boolean isPlayerNameUnique(List<Player> p_playerList, String p_playerName) {
     // TODO: implement the 'isPlayerNameUnique' functionality
+    return false;
   }
 
   public void randomCountryAssignment() {
