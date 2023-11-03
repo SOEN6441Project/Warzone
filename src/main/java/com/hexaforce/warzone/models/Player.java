@@ -92,8 +92,8 @@ public class Player {
     if (d_continentsOwned == null) {
       return null;
     } else {
-      for (Continent c : d_continentsOwned) {
-        l_continentList.add(c.getD_continentName());
+      for (Continent l_continent : d_continentsOwned) {
+        l_continentList.add(l_continent.getD_continentName());
       }
       return l_continentList;
     }
@@ -109,8 +109,8 @@ public class Player {
     if (d_countriesOwned == null) {
       return null;
     } else {
-      for (Country c : d_countriesOwned) {
-        l_countryList.add(c.getD_countryName());
+      for (Country l_country : d_countriesOwned) {
+        l_countryList.add(l_country.getD_countryName());
       }
       return l_countryList;
     }
