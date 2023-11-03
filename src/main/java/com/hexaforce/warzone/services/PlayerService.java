@@ -63,29 +63,45 @@ public class PlayerService {
   /**
    * Adds player's name(s) to the list
    *
-   * @param p_updatedPlayerList updated player list with new player
+   * @param p_updatedPlayerList contains updated player list with new player
    * @param p_playerName passes the name(s) to be added to the list
    * @param p_validateName is 'true' if player already exists; else 'false' to add new player's name
    */
   public void addPlayer(
       List<Player> p_updatedPlayerList, String p_playerName, boolean p_validateName) {
     if (p_validateName) {
-      System.out.println("Error! Player " + p_playerName + " already exists.");
+      System.out.println("\nError! Player " + p_playerName + " already exists.");
     } else {
       Player l_addNewPlayer = new Player(p_playerName);
       p_updatedPlayerList.add(l_addNewPlayer);
-      System.out.println("Player " + p_playerName + " added successfully.");
+      System.out.println("\nPlayer " + p_playerName + " added successfully.");
     }
   }
 
   /**
    * Removes player's name(s) from the list
    *
+   * @param p_playerList fetches the current player list
+   * @param p_updatedPlayers contains updated player list after deletion of player
    * @param p_playerName passes the name(s) to be removed from the list
+   * @param p_validateName is 'true' if player already exists for deletion; else 'false' causes
+   *     Error message
    */
-  public void removePlayer(String p_playerName) {
-    // TODO: implement the 'removePlayer' functionality
-    //    d_playerList.remove(p_playerName);
+  public void removePlayer(
+      List<Player> p_playerList,
+      List<Player> p_updatedPlayers,
+      String p_playerName,
+      boolean p_validateName) {
+    if (p_validateName) {
+      for (Player l_player : p_playerList) {
+        if (l_player.getD_name().equalsIgnoreCase(p_playerName)) {
+          p_updatedPlayers.remove(l_player);
+          System.out.println("\nPlayer " + p_playerName + " removed successfully.");
+        }
+      }
+    } else {
+      System.out.println("\nError! Player " + p_playerName + " not found.");
+    }
   }
 
   public void randomCountryAssignment() {
