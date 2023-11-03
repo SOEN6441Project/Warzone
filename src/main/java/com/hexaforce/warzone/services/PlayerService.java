@@ -51,13 +51,13 @@ public class PlayerService {
    * @return l_flag 'true' for not having enough army and 'false' for having enough
    */
   private boolean validateDeployArmy(Player p_player, String l_armies) {
-    boolean l_flag;
+    boolean l_flag = false;
     if (p_player.getD_noOfUnallocatedArmies() >= Integer.parseInt(l_armies)) {
-      l_flag = false;
+      return l_flag;
     } else {
       l_flag = true;
+      return l_flag;
     }
-    return l_flag;
   }
 
   /**
@@ -65,9 +65,15 @@ public class PlayerService {
    *
    * @param p_playerName passes the name(s) to be added to the list
    */
-  public void addPlayer(String p_playerName) {
-    // TODO: implement the 'addPlayer' functionality
-    //    d_playerList.add(p_playerName);
+  public void addPlayer(
+      List<Player> p_updatedPlayers, String p_playerName, boolean p_validateName) {
+    if (p_validateName) {
+      System.out.println("Error! Player " + p_playerName + " already exists.");
+    } else {
+      Player l_addNewPlayer = new Player(p_playerName);
+      p_updatedPlayers.add(l_addNewPlayer);
+      System.out.println("Player " + p_playerName + " added successfully.");
+    }
   }
 
   /**
