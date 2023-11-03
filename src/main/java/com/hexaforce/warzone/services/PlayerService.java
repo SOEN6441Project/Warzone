@@ -104,6 +104,39 @@ public class PlayerService {
     }
   }
 
+  /**
+   * This function manages player creation and deletion
+   *
+   * @param p_playerList contains current players
+   * @param p_token contains keyword 'add' or/and 'remove' for players
+   * @param p_name contains name of the player that is to created or deleted in the command
+   * @return gets updated player list
+   */
+  public List<Player> managePlayers(List<Player> p_playerList, String p_token, String p_name) {
+    String l_playerName = p_name.split(" ")[0];
+    boolean l_validatePlayer = false;
+    List<Player> l_updatedPlayers = new ArrayList<Player>();
+    if (!CommonUtil.isCollectionEmpty(p_playerList)) {
+      l_updatedPlayers.addAll(p_playerList);
+    }
+    l_validatePlayer = !isPlayerNameUnique(p_playerList, l_playerName);
+    switch (p_token) {
+      case "add":
+        addPlayer(l_updatedPlayers, l_playerName, l_validatePlayer);
+        break;
+      case "remove":
+        removePlayer(p_playerList, l_updatedPlayers, l_playerName, l_validatePlayer);
+        break;
+      default:
+        System.out.println("Error! Invalid command");
+    }
+    return l_updatedPlayers;
+  }
+
+  private boolean isPlayerNameUnique(List<Player> pPlayerList, String lPlayerName) {
+    // TODO: implement the 'isPlayerNameUnique' functionality
+  }
+
   public void randomCountryAssignment() {
     // TODO: implement the 'assign random country' functionality
   }
