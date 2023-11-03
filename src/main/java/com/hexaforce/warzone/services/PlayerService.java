@@ -63,15 +63,17 @@ public class PlayerService {
   /**
    * Adds player's name(s) to the list
    *
+   * @param p_updatedPlayerList updated player list with new player
    * @param p_playerName passes the name(s) to be added to the list
+   * @param p_validateName is 'true' if player already exists; else 'false' to add new player's name
    */
   public void addPlayer(
-      List<Player> p_updatedPlayers, String p_playerName, boolean p_validateName) {
+      List<Player> p_updatedPlayerList, String p_playerName, boolean p_validateName) {
     if (p_validateName) {
       System.out.println("Error! Player " + p_playerName + " already exists.");
     } else {
       Player l_addNewPlayer = new Player(p_playerName);
-      p_updatedPlayers.add(l_addNewPlayer);
+      p_updatedPlayerList.add(l_addNewPlayer);
       System.out.println("Player " + p_playerName + " added successfully.");
     }
   }
