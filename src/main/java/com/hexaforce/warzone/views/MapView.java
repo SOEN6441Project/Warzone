@@ -92,7 +92,7 @@ public class MapView {
     String l_continentName =
         p_continentName
             + " ( "
-            + "Control Value"
+            + "Leadership Points"
             + " : "
             + d_gameContext.getD_map().getContinent(p_continentName).getD_continentValue()
             + " )";
@@ -211,7 +211,7 @@ public class MapView {
     int l_counter = 0;
 
     displaySeparator();
-    displayCenteredString(80, "GAME PLAYERS");
+    displayCenteredString(80, "Warzone Players");
     displaySeparator();
 
     for (Player p : d_players) {
