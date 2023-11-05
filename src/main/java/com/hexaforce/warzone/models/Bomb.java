@@ -3,8 +3,8 @@ package com.hexaforce.warzone.models;
 import com.hexaforce.warzone.utils.CommonUtil;
 
 /**
- * This is the Bomb Card Class which is when use by player target country loses half of their army units when bomb card is used by
- * the player.
+ * This is the Bomb Card Class which is when used by player the target country
+ * loses half of its army units.
  */
 public class Bomb implements Card {
     /**
