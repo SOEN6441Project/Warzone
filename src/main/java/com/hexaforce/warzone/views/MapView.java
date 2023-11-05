@@ -1,5 +1,6 @@
 package com.hexaforce.warzone.views;
 
+<<<<<<< HEAD
 import java.util.*;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -260,3 +261,24 @@ public class MapView {
 	}
 }
 
+=======
+import com.hexaforce.warzone.models.GameContext;
+
+public class MapView {
+    GameContext d_gameContext;
+
+    /**
+     * Constructor for initializing the MapView.
+     *
+     * @param p_gameCd_gameContext Current GameContext.
+     */
+    public MapView(GameContext p_gameCd_gameContext) {
+        d_gameContext = p_gameCd_gameContext;
+
+    }
+
+    public void showMap() {
+    }
+
+}
+>>>>>>> 4613e3d1568fd7480ea3c349d693ada628997d42
