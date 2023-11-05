@@ -108,15 +108,6 @@ public class Diplomacy implements Card {
     }
 
     /**
-     * Retrieves the current diplomacy order being executed.
-     *
-     * @return The diplomacy order command.
-     */
-    private String currentOrder() {
-        return "Diplomacy Order: " + "negotiate" + " " + this.d_targetPlayer;
-    }
-
-    /**
      * Returns the order name.
      * 
      * @return A string representing the order name.
