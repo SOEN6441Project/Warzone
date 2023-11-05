@@ -1,12 +1,11 @@
 package com.hexaforce.warzone.models;
 
 import com.hexaforce.warzone.utils.CommonUtil;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /** The Continent class manages all the continents on the map. */
 @Getter
