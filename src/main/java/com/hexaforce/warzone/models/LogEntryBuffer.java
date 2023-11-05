@@ -49,6 +49,9 @@ public class LogEntryBuffer extends Observable {
       case "effect":
         d_logMessage = "Log: " + p_message + System.lineSeparator();
         break;
+      case "start":
+        d_logMessage = p_message + System.lineSeparator();
+        break;
       case "end":
         d_logMessage = p_message + System.lineSeparator();
         break;
