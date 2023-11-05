@@ -1,5 +1,4 @@
 package com.hexaforce.warzone.views;
-
 import com.hexaforce.warzone.exceptions.InvalidMap;
 import com.hexaforce.warzone.models.*;
 import com.hexaforce.warzone.utils.CommonUtil;
@@ -292,4 +291,4 @@ public class MapView {
       System.out.println("No continents to display!");
     }
   }
-}
+

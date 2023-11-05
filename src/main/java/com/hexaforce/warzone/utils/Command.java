@@ -2,10 +2,15 @@ package com.hexaforce.warzone.utils;
 
 import java.util.*;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * Represents a command entered by the user and provides methods to process and extract information
  * from it.
  */
+@Getter
+@Setter
 public class Command {
 
   /** The raw command entered by the player. */
