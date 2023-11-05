@@ -216,24 +216,24 @@ public class Map {
   }
 
   /**
-   * Retrieve the list of adjacent country objects.
+   * Gets the Adjacent Country Objects.
    *
-   * @param country The country for which adjacent countries are requested.
-   * @return A list of adjacent country objects.
-   * @throws InvalidMap pointing out countries that are not connected.
-   * @throws InvalidMap Exception.
+   * @param p_country the adjacent country
+   * @return list of Adjacent Country Objects
+   * @throws InvalidMap pointing out which Country is not connected
+   * @throws InvalidMap Exception
    */
-  public List<Country> getAdjacentCountry(Country country) throws InvalidMap {
-    List<Country> adjacentCountries = new ArrayList<>();
+  public List<Country> getAdjacentCountry(Country p_country) throws InvalidMap {
+    List<Country> l_adjCountries = new ArrayList<Country>();
 
-    if (country.getD_adjacentCountryIds().size() > 0) {
-      for (int i : country.getD_adjacentCountryIds()) {
-        adjacentCountries.add(getCountry(i));
+    if (p_country.getD_adjacentCountryIds().size() > 0) {
+      for (int i : p_country.getD_adjacentCountryIds()) {
+        l_adjCountries.add(getCountry(i));
       }
     } else {
-      throw new InvalidMap(country.getD_countryName() + " has no adjacent countries.");
+      throw new InvalidMap(p_country.getD_countryName() + " doesn't have any adjacent countries");
     }
-    return adjacentCountries;
+    return l_adjCountries;
   }
 
   /**

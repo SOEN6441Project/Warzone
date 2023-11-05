@@ -6,32 +6,44 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
-/** This class represents individual countries on the map. */
+/**
+ * This model class manages all the countries on the map.
+ */
 @Getter
 @Setter
 public class Country {
 
-  /** The number of armies stationed in the country. */
+  /**
+   * the number of armies.
+   */
   Integer d_armies;
 
-  /** A unique identifier for the country. */
+  /**
+   * country ID.
+   */
   Integer d_countryId;
 
-  /** The continent ID to which this country is assigned. */
+  /**
+   * continent ID.
+   */
   Integer d_continentId;
 
-  /** The name of the country. */
+  /**
+   * country name.
+   */
   String d_countryName;
 
-  /** A list of unique identifiers representing countries neighboring this one. */
-  List<Integer> d_adjacentCountryIds = new ArrayList<>();
+  /**
+   * list of the countries which are adjacent to the existing one.
+   */
+  List<Integer> d_adjacentCountryIds = new ArrayList<Integer>();;
 
   /**
-   * Creates an instance of the Country class with specific details.
+   * constructor of this class.
    *
-   * @param p_countryId The unique identifier of the country.
-   * @param p_countryName The name of the country.
-   * @param p_continentId The identifier of the continent to which this country belongs.
+   * @param p_countryId country ID
+   * @param p_countryName country name
+   * @param p_continentId continent ID
    */
   public Country(int p_countryId, String p_countryName, int p_continentId) {
     d_countryId = p_countryId;
@@ -40,10 +52,10 @@ public class Country {
   }
 
   /**
-   * Creates an instance of the Country class with specific country and continent details.
+   * constructor of this class.
    *
-   * @param p_countryId The unique identifier of the country.
-   * @param p_continentId The identifier of the continent to which this country belongs.
+   * @param p_countryId country ID
+   * @param p_continentId continent ID
    */
   public Country(int p_countryId, int p_continentId) {
     d_countryId = p_countryId;
@@ -51,35 +63,120 @@ public class Country {
   }
 
   /**
-   * Creates an instance of the Country class with only the country name.
+   * single parameter constructor.
    *
-   * @param p_countryName The name of the country.
+   * @param p_countryName name of the country
    */
   public Country(String p_countryName) {
     d_countryName = p_countryName;
   }
 
   /**
-   * Adds a neighboring country to the list of adjacent countries.
+   * getter method to get the armies.
    *
-   * @param p_countryId The unique identifier of the neighboring country.
+   * @return armies
    */
-  public void addNeighbour(Integer p_countryId) {
-    if (!d_adjacentCountryIds.contains(p_countryId)) {
-      d_adjacentCountryIds.add(p_countryId);
-    }
+  public Integer getD_armies() {
+    return d_armies;
   }
 
   /**
-   * Removes a neighboring country from the list of adjacent countries.
+   * setter method to set the armies.
    *
-   * @param p_countryId The unique identifier of the neighboring country to be removed.
+   * @param p_armies armies
    */
-  public void removeNeighbour(Integer p_countryId) {
-    if (d_adjacentCountryIds.contains(p_countryId)) {
-      d_adjacentCountryIds.remove(p_countryId);
-    } else {
-      System.out.println("No such neighboring country exists.");
+  public void setD_armies(Integer p_armies) {
+    this.d_armies = p_armies;
+  }
+
+  /**
+   * getter method to get the country ID.
+   *
+   * @return country ID
+   */
+  public Integer getD_countryId() {
+    return d_countryId;
+  }
+
+  /**
+   * setter method to set the country ID.
+   *
+   * @param p_countryId country ID
+   */
+  public void setD_countryId(Integer p_countryId) {
+    this.d_countryId = p_countryId;
+  }
+
+  /**
+   * getter method to get the continent ID.
+   *
+   * @return continent ID
+   */
+  public Integer getD_continentId() {
+    return d_continentId;
+  }
+
+  /**
+   * setter method to set the continent ID.
+   *
+   * @param p_continentId continent ID
+   */
+  public void setD_continentId(Integer p_continentId) {
+    this.d_continentId = p_continentId;
+  }
+
+  /**
+   * getter method to get the adjacent country IDs.
+   *
+   * @return list of adjacent country IDs
+   */
+  public List<Integer> getD_adjacentCountryIds() {
+    if(d_adjacentCountryIds==null){
+      d_adjacentCountryIds=new ArrayList<Integer>();
+    }
+
+    return d_adjacentCountryIds;
+  }
+
+  /**
+   * setter method to set the adjacent country IDs.
+   *
+   * @param p_adjacentCountryIds list of adjacent country IDs
+   */
+  public void setD_adjacentCountryIds(List<Integer> p_adjacentCountryIds) {
+    this.d_adjacentCountryIds = p_adjacentCountryIds;
+  }
+
+
+  /**
+   * setter method to set the name of the country.
+   *
+   * @param p_countryName name of the country
+   */
+  public void setD_countryName(String p_countryName) {
+    this.d_countryName = p_countryName;
+  }
+
+  /**
+   * Adds country Id to the neighbor list.
+   *
+   * @param p_countryId Id of country to be added
+   */
+  public void addNeighbour(Integer p_countryId){
+    if(!d_adjacentCountryIds.contains(p_countryId))
+      d_adjacentCountryIds.add(p_countryId);
+  }
+
+  /**
+   * removes country Id from  neighbor list.
+   *
+   * @param p_countryId Id of country to be removed
+   */
+  public void removeNeighbour(Integer p_countryId){
+    if(d_adjacentCountryIds.contains(p_countryId)){
+      d_adjacentCountryIds.remove(d_adjacentCountryIds.indexOf(p_countryId));
+    }else{
+      System.out.println("No Such Neighbour Exists");
     }
   }
 }

@@ -1,7 +1,7 @@
 package com.hexaforce.warzone;
 
-import com.hexaforce.warzone.controllers.MapController;
-import com.hexaforce.warzone.controllers.PlayerController;
+//import com.hexaforce.warzone.controllers.MapController;
+//import com.hexaforce.warzone.controllers.PlayerController;
 import com.hexaforce.warzone.models.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,10 +25,10 @@ public class WarzoneApplication {
     l_logger.info("Hello Players! Welcome to the Warzone");
     l_logger.info("The Risk game has started!");
     Map l_mapModel = new Map();
-    MapController l_mapController = new MapController(null);
-    l_mapController.run();
-    System.out.println("Player Creation and Map Assignment phase begins . . .");
-    PlayerController l_playerController = new PlayerController(l_mapController.getMap());
-    l_playerController.playerCreation();
+//    MapController l_mapController = new MapController(null);
+//    l_mapController.handleCommand();
+//    System.out.println("Player Creation and Map Assignment phase begins . . .");
+//    PlayerController l_playerController = new PlayerController(l_mapController.getMap());
+//    l_playerController.playerCreation();
   }
 }

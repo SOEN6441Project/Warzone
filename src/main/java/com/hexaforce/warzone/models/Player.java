@@ -21,7 +21,7 @@ public class Player {
   private String d_name;
 
   /** The list of countries owned by the player. */
-  List<Country> d_countriesOwned;
+  List<Models.Country> d_countriesOwned;
 
   /** The list of continents owned by the player. */
   List<Continent> d_continentsOwned;
@@ -41,6 +41,35 @@ public class Player {
     this.d_name = p_playerName;
     this.d_noOfUnallocatedArmies = 0;
     this.d_ordersToExecute = new ArrayList<>();
+  }
+
+  /**
+   * Extracts the list of names of countries owned by the player.
+   *
+   * @return list of country names
+   */
+  public List<String> getCountryNames(){
+    List<String> l_countryNames=new ArrayList<String>();
+    for(Country c: d_countriesOwned){
+      l_countryNames.add(c.getD_countryName());
+    }
+    return l_countryNames;
+  }
+
+  /**
+   * Retrieves the list of continent names owned by the player.
+   *
+   * @return list of continent names
+   */
+  public List<String> getContinentNames(){
+    List<String> l_continentNames = new ArrayList<String>();
+    if (d_continentsOwned != null) {
+      for(Continent c: d_continentsOwned){
+        l_continentNames.add(c.getD_continentName());
+      }
+      return l_continentNames;
+    }
+    return null;
   }
 
   /**

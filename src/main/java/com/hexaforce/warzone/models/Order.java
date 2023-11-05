@@ -1,5 +1,6 @@
 package com.hexaforce.warzone.models;
 
+import Models.GameState;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -44,7 +45,7 @@ public class Order {
    * @param p_gameContext The current state of the game.
    * @param p_player The player whose order is being executed.
    */
-  public void execute(GameContext p_gameContext, Player p_player) {
+  public void execute(Models.GameState p_gameContext, Player p_player) {
     if ("deploy".equals(this.d_orderAction)) {
       if (this.validateDeployOrderCountry(p_player, this)) {
         this.executeDeployOrder(this, p_gameContext, p_player);
@@ -72,10 +73,10 @@ public class Order {
    * @return true if the target country belongs to the player's countries; false otherwise.
    */
   public boolean validateDeployOrderCountry(Player p_player, Order p_order) {
-    return p_player.getD_countriesOwned().stream()
-        .anyMatch(
-            l_country ->
-                l_country.getD_countryName().equalsIgnoreCase(p_order.getD_targetCountryName()));
+    Country l_country = p_player.getD_countriesOwned().stream()
+            .filter(l_pl -> l_pl.getD_countryName().equalsIgnoreCase(p_order.getD_targetCountryName())).findFirst()
+            .orElse(null);
+    return l_country != null;
   }
 
   /**
@@ -85,7 +86,7 @@ public class Order {
    * @param p_gameContext The current state of the game.
    * @param p_player The player whose order is being executed.
    */
-  private void executeDeployOrder(Order p_order, GameContext p_gameContext, Player p_player) {
+  private void executeDeployOrder(Order p_order, GameState p_gameContext, Player p_player) {
     for (Country l_country : p_gameContext.getD_map().getD_countries()) {
       if (l_country.getD_countryName().equalsIgnoreCase(p_order.getD_targetCountryName())) {
         Integer l_armiesToUpdate =
