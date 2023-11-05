@@ -6,6 +6,10 @@ import java.util.List;
 import com.hexaforce.warzone.services.PlayerService;
 import com.hexaforce.warzone.utils.CommonUtil;
 
+/**
+ * A concrete implementation of the Command pattern representing the 'Advance'
+ * order.
+ */
 public class Advance implements Order {
     /**
      * The name of the destination country.
