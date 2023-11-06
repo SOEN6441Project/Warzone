@@ -404,51 +404,47 @@ public class MapService {
      * @return true/false based on successful save operation of map to file
      * @throws InvalidMap InvalidMap exception
      */
+
     public boolean saveMap(GameContext p_gameState, String p_fileName) throws InvalidMap {
-        boolean l_flagValidate = false;
+
+        //Minor changes have been made to conditional statements to make them more concise.
         try {
-
-            // Verifies if the file linked to savemap and edited by user are same
             if (!p_fileName.equalsIgnoreCase(p_gameState.getD_map().getD_mapFile())) {
-                p_gameState.setD_error(
-                        "Kindly provide same file name to save which you have given for edit");
+                p_gameState.setD_error("Kindly provide the same file name to save as the one used for editing");
                 return false;
-            } else {
-                if (null != p_gameState.getD_map()) {
-                    Map l_currentMap = p_gameState.getD_map();
+            }
 
-                    // Proceeds to save the map if it passes the validation check
-                    this.setD_MapServiceLog("Validating Map......", p_gameState);
-                    // boolean l_mapValidationStatus = l_currentMap.Validate();
-                    if (l_currentMap.validate()) {
-                        Files.deleteIfExists(Paths.get(CommonUtil.getMapFilePath(p_fileName)));
-                        FileWriter l_writer = new FileWriter(CommonUtil.getMapFilePath(p_fileName));
+            if (p_gameState.getD_map() != null) {
+                Map l_currentMap = p_gameState.getD_map();
 
-                        if (null != p_gameState.getD_map().getD_continents()
-                                && !p_gameState.getD_map().getD_continents().isEmpty()) {
-                            writeContinentMetadata(p_gameState, l_writer);
-                        }
-                        if (null != p_gameState.getD_map().getD_countries()
-                                && !p_gameState.getD_map().getD_countries().isEmpty()) {
-                            writeCountryAndBoarderMetaData(p_gameState, l_writer);
-                        }
-                        p_gameState.updateLog("Map Saved Successfully", "effect");
-                        l_writer.close();
+                if (l_currentMap.validate()) {
+                    Files.deleteIfExists(Paths.get(CommonUtil.getMapFilePath(p_fileName)));
+                    FileWriter l_writer = new FileWriter(CommonUtil.getMapFilePath(p_fileName));
+
+                    if (!p_gameState.getD_map().getD_continents().isEmpty()) {
+                        writeContinentMetadata(p_gameState, l_writer);
                     }
+                    if (!p_gameState.getD_map().getD_countries().isEmpty()) {
+                        writeCountryAndBoarderMetaData(p_gameState, l_writer);
+                    }
+                    p_gameState.updateLog("Map Saved Successfully", "effect");
+                    l_writer.close();
                 } else {
                     p_gameState.updateLog("Validation failed! Cannot Save the Map file!", "effect");
                     p_gameState.setD_error("Validation Failed");
                     return false;
                 }
             }
+
             return true;
         } catch (IOException | InvalidMap l_e) {
             this.setD_MapServiceLog(l_e.getMessage(), p_gameState);
-            p_gameState.updateLog("Couldn't save the changes in map file!", "effect");
+            p_gameState.updateLog("Couldn't save the changes in the map file!", "effect");
             p_gameState.setD_error("Error in saving map file");
             return false;
         }
     }
+
 
     /**
      * Retrieves country and boarder data from game state and writes it to file
