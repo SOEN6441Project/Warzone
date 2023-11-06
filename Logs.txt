@@ -3,3 +3,4 @@ Game is Starting...
 
 =====Game Startup Phase=====
 
+Log: warzone.map File has been created for user to edit
