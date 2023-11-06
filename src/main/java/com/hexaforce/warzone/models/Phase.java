@@ -173,7 +173,8 @@ public abstract class Phase {
    * @param enteredCommand String representing the entered command.
    * @param player Player instance.
    */
-  protected abstract void handleCardCommands(String enteredCommand, Player player);
+  protected abstract void handleCardCommands(String enteredCommand, Player player)
+      throws IOException;
 
   /**
    * This method manages the "show map" command.
@@ -181,7 +182,8 @@ public abstract class Phase {
    * @param command Command entered by the user.
    * @param player Player instance.
    */
-  protected abstract void manageShowMap(Command command, Player player);
+  protected abstract void manageShowMap(Command command, Player player)
+      throws InvalidCommand, InvalidMap;
 
   /**
    * This method deals with the "advance order" in gameplay.
@@ -189,7 +191,7 @@ public abstract class Phase {
    * @param command Command entered by the user.
    * @param player Player instance.
    */
-  protected abstract void executeAdvanceOrder(String command, Player player);
+  protected abstract void executeAdvanceOrder(String command, Player player) throws IOException;
 
   /** Main method executed when the game phase changes. */
   public abstract void onPhaseInitialization();
@@ -205,7 +207,7 @@ public abstract class Phase {
    * @param command Command entered by the user.
    * @param player Player instance.
    */
-  protected abstract void executeDeployOrder(String command, Player player);
+  protected abstract void executeDeployOrder(String command, Player player) throws IOException;
 
   /**
    * Performs basic validation for the "assigncountries" command, checking required arguments and
@@ -216,7 +218,7 @@ public abstract class Phase {
    * @throws InvalidCommand Indicates that the command is invalid.
    */
   protected abstract void validateAssignCountries(Command command, Player player)
-      throws InvalidCommand;
+      throws InvalidCommand, InvalidMap;
 
   /**
    * Performs basic validation for the "gameplayer" command, checking required arguments and
@@ -226,7 +228,8 @@ public abstract class Phase {
    * @param player Player instance.
    * @throws InvalidCommand Indicates that the command is invalid.
    */
-  protected abstract void manageGamePlayers(Command command, Player player) throws InvalidCommand;
+  protected abstract void manageGamePlayers(Command command, Player player)
+      throws InvalidCommand, InvalidMap;
 
   /**
    * Performs basic validation for the "editneighbor" command, checking required arguments and
