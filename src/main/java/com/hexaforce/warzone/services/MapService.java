@@ -267,7 +267,7 @@ public class MapService {
           l_updatedMap = addRemoveCountry(p_gameState, l_mapToBeUpdated, p_operation, p_argument);
           break;
         case 3:
-          l_updatedMap = addRemoveNeighbour(p_gameState, l_mapToBeUpdated, p_operation, p_argument);
+          l_updatedMap = addRemoveNeighbor(p_gameState, l_mapToBeUpdated, p_operation, p_argument);
           break;
         default:
           throw new IllegalStateException("Unexpected value: " + p_switchParameter);
@@ -357,7 +357,7 @@ public class MapService {
    * @return map to be updated
    * @throws InvalidMap invalidmap exception
    */
-  public Map addRemoveNeighbour(
+  public Map addRemoveNeighbor(
       GameContext p_gameState, Map p_mapToBeUpdated, String p_argument, String p_operation)
       throws InvalidMap {
 

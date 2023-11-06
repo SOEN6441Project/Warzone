@@ -9,6 +9,8 @@ import com.hexaforce.warzone.utils.Command;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.IOException;
+
 /** State Class for phases in game which enforce state specific methods */
 @Getter
 @Setter
@@ -50,7 +52,8 @@ public abstract class Phase {
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates that the map is invalid.
    */
-  public void handleCommand(String p_enteredCommand) throws InvalidMap, InvalidCommand {
+  public void handleCommand(String p_enteredCommand)
+      throws InvalidMap, InvalidCommand, IOException {
     commandHandler(p_enteredCommand, null);
   }
 
@@ -64,7 +67,7 @@ public abstract class Phase {
    * @throws InvalidMap Indicates that the map is invalid.
    */
   public void handleCommand(String p_enteredCommand, Player p_player)
-      throws InvalidMap, InvalidCommand {
+      throws InvalidMap, InvalidCommand, IOException {
     commandHandler(p_enteredCommand, p_player);
   }
 
@@ -78,7 +81,7 @@ public abstract class Phase {
    * @throws InvalidMap Indicates that the map is invalid.
    */
   private void commandHandler(String p_enteredCommand, Player p_player)
-      throws InvalidMap, InvalidCommand {
+      throws InvalidMap, InvalidCommand, IOException {
     Command l_command = new Command(p_enteredCommand);
     String l_rootCommand = l_command.getRootCommand();
     l_isMapLoaded = d_gameContext.getD_map() != null;
@@ -211,9 +214,9 @@ public abstract class Phase {
    * @param command Command entered by the user in the CLI.
    * @param player Player instance.
    * @throws InvalidCommand Indicates that the command is invalid.
-   * @throws InvalidMap Indicates that the map is invalid.
    */
-  protected abstract void validateAssignCountries(Command command, Player player);
+  protected abstract void validateAssignCountries(Command command, Player player)
+      throws InvalidCommand;
 
   /**
    * Performs basic validation for the "gameplayer" command, checking required arguments and
@@ -222,9 +225,8 @@ public abstract class Phase {
    * @param command Command entered by the user in the CLI.
    * @param player Player instance.
    * @throws InvalidCommand Indicates that the command is invalid.
-   * @throws InvalidMap Indicates that the map is invalid.
    */
-  protected abstract void manageGamePlayers(Command command, Player player);
+  protected abstract void manageGamePlayers(Command command, Player player) throws InvalidCommand;
 
   /**
    * Performs basic validation for the "editneighbor" command, checking required arguments and
@@ -235,7 +237,8 @@ public abstract class Phase {
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates that the map is invalid.
    */
-  protected abstract void validateEditNeighbor(Command command, Player player);
+  protected abstract void validateEditNeighbor(Command command, Player player)
+      throws InvalidCommand, InvalidMap, IOException;
 
   /**
    * Performs basic validation for the "editcountry" command, checking required arguments and
@@ -246,7 +249,8 @@ public abstract class Phase {
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates that the map is invalid.
    */
-  protected abstract void validateEditCountry(Command command, Player player);
+  protected abstract void validateEditCountry(Command command, Player player)
+      throws InvalidCommand, InvalidMap, IOException;
 
   /**
    * Performs basic validation for the "validatemap" command, checking required arguments and
@@ -257,7 +261,8 @@ public abstract class Phase {
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates that the map is invalid.
    */
-  protected abstract void validateMapValidation(Command command, Player player);
+  protected abstract void validateMapValidation(Command command, Player player)
+      throws InvalidMap, InvalidCommand;
 
   /**
    * Performs basic validation for the "loadmap" command, checking required arguments and directing
@@ -268,7 +273,8 @@ public abstract class Phase {
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates that the map is invalid.
    */
-  protected abstract void validateLoadMap(Command command, Player player);
+  protected abstract void validateLoadMap(Command command, Player player)
+      throws InvalidCommand, InvalidMap;
 
   /**
    * Performs basic validation for the "savemap" command, checking required arguments and directing
@@ -279,7 +285,8 @@ public abstract class Phase {
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates that the map is invalid.
    */
-  protected abstract void validateSaveMap(Command command, Player player);
+  protected abstract void validateSaveMap(Command command, Player player)
+      throws InvalidCommand, InvalidMap, IOException;
 
   /**
    * Performs basic validation for the "editcontinent" command, checking required arguments and
@@ -290,7 +297,8 @@ public abstract class Phase {
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates that the map is invalid.
    */
-  protected abstract void validateEditContinent(Command command, Player player);
+  protected abstract void validateEditContinent(Command command, Player player)
+      throws InvalidCommand, InvalidMap, IOException;
 
   /**
    * Performs basic validation for the "editmap" command, checking required arguments and directing
@@ -301,5 +309,6 @@ public abstract class Phase {
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates that the map is invalid.
    */
-  protected abstract void validateEditMap(Command command, Player player);
+  protected abstract void validateEditMap(Command command, Player player)
+      throws InvalidCommand, InvalidMap, IOException;
 }
