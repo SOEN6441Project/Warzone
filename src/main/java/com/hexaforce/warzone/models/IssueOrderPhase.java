@@ -119,49 +119,56 @@ public class IssueOrderPhase extends Phase {
 
   /** {@inheritDoc} */
   @Override
-  protected void validateEditNeighbor(Command p_command, Player p_player) throws InvalidCommand, InvalidMap {
+  protected void validateEditNeighbor(Command p_command, Player p_player)
+      throws InvalidCommand, InvalidMap {
     printInvalidCommandInCurrentState();
     promptForOrders(p_player);
   }
 
   /** {@inheritDoc} */
   @Override
-  protected void validateEditCountry(Command p_command, Player p_player) throws InvalidCommand, InvalidMap {
+  protected void validateEditCountry(Command p_command, Player p_player)
+      throws InvalidCommand, InvalidMap {
     printInvalidCommandInCurrentState();
     promptForOrders(p_player);
   }
 
   /** {@inheritDoc} */
   @Override
-  protected void validateMapValidation(Command p_command, Player p_player) throws InvalidCommand, InvalidMap {
+  protected void validateMapValidation(Command p_command, Player p_player)
+      throws InvalidCommand, InvalidMap {
     printInvalidCommandInCurrentState();
     promptForOrders(p_player);
   }
 
   /** {@inheritDoc} */
   @Override
-  protected void validateLoadMap(Command p_command, Player p_player) throws InvalidCommand, InvalidMap {
+  protected void validateLoadMap(Command p_command, Player p_player)
+      throws InvalidCommand, InvalidMap {
     printInvalidCommandInCurrentState();
     promptForOrders(p_player);
   }
 
   /** {@inheritDoc} */
   @Override
-  protected void validateSaveMap(Command p_command, Player p_player) throws InvalidCommand, InvalidMap {
+  protected void validateSaveMap(Command p_command, Player p_player)
+      throws InvalidCommand, InvalidMap {
     printInvalidCommandInCurrentState();
     promptForOrders(p_player);
   }
 
   /** {@inheritDoc} */
   @Override
-  protected void validateEditContinent(Command p_command, Player p_player) throws InvalidCommand, InvalidMap {
+  protected void validateEditContinent(Command p_command, Player p_player)
+      throws InvalidCommand, InvalidMap {
     printInvalidCommandInCurrentState();
     promptForOrders(p_player);
   }
 
   /** {@inheritDoc} */
   @Override
-  protected void validateEditMap(Command p_command, Player p_player) throws InvalidCommand, InvalidMap {
+  protected void validateEditMap(Command p_command, Player p_player)
+      throws InvalidCommand, InvalidMap {
     printInvalidCommandInCurrentState();
     promptForOrders(p_player);
   }

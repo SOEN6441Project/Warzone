@@ -1,7 +1,12 @@
 package com.hexaforce.warzone.models;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import com.hexaforce.warzone.WarzoneEngine;
 import com.hexaforce.warzone.utils.Command;
+import com.hexaforce.warzone.utils.CommonUtil;
 import com.hexaforce.warzone.views.MapView;
 
 /** Order Execution Phase state of the Warzone Game */
@@ -41,7 +46,67 @@ public class OrderExecutionPhase extends Phase {
     @Override
     public void onPhaseInitialization() {
         while (d_gameEngine.getD_currentPhase() instanceof OrderExecutionPhase) {
-            System.out.println("Order Execution Logic Will be here.");
+            executeOrders();
+
+            MapView l_map_view = new MapView(d_gameContext);
+            l_map_view.showMap();
+
+            while (!CommonUtil.isCollectionEmpty(d_gameContext.getD_players())) {
+                System.out.println("Press Y/y if you want to continue for next turn or else press N/n");
+                BufferedReader l_reader = new BufferedReader(new InputStreamReader(System.in));
+
+                try {
+                    String l_continue = l_reader.readLine();
+
+                    if (l_continue.equalsIgnoreCase("N")) {
+                        break;
+                    } else if (l_continue.equalsIgnoreCase("Y")) {
+                        d_playerService.assignArmies(d_gameContext);
+                        d_gameEngine.setIssueOrderPhase();
+                    } else {
+                        System.out.println("Invalid Input");
+                    }
+                } catch (IOException l_e) {
+                    System.out.println("Invalid Input");
+                }
+            }
+        }
+    }
+
+    /**
+     * Execute orders for all players.
+     */
+    protected void executeOrders() {
+        addNeutralPlayer(d_gameContext);
+        // Executing orders
+        d_gameEngine.setD_gameEngineLog("\nStarting Execution Of Orders.....", "start");
+        while (d_playerService.unexecutedOrdersExists(d_gameContext.getD_players())) {
+            for (Player l_player : d_gameContext.getD_players()) {
+                Order l_order = l_player.next_order();
+                if (l_order != null) {
+                    l_order.printOrder();
+                    d_gameContext.updateLog(l_order.getExecutionLog(), "effect");
+                    l_order.execute(d_gameContext);
+                }
+            }
+        }
+        d_playerService.resetPlayersFlag(d_gameContext.getD_players());
+    }
+
+    /**
+     * Add a neutral player to game.
+     *
+     * @param p_gameState GameContext
+     */
+    public void addNeutralPlayer(GameContext p_gameState) {
+        Player l_player = p_gameState.getD_players().stream()
+                .filter(l_pl -> l_pl.getPlayerName().equalsIgnoreCase("Neutral")).findFirst().orElse(null);
+        if (CommonUtil.isNull(l_player)) {
+            Player l_neutralPlayer = new Player("Neutral");
+            l_neutralPlayer.setD_moreOrders(false);
+            p_gameState.getD_players().add(l_neutralPlayer);
+        } else {
+            return;
         }
     }
 
