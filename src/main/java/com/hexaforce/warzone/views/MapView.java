@@ -4,7 +4,6 @@ import com.hexaforce.warzone.exceptions.InvalidMap;
 import com.hexaforce.warzone.models.*;
 import com.hexaforce.warzone.utils.CommonUtil;
 import com.hexaforce.warzone.utils.Constants;
-
 import java.util.List;
 import org.davidmoten.text.utils.WordWrap;
 
@@ -199,10 +198,7 @@ public class MapView {
      * @param p_player The player's information.
      */
     private void displayPlayerInfo(Integer p_index, Player p_player) {
-        String l_playerInfo = String.format(
-                "%02d. %s %-8s",
-                p_index,
-                p_player.getD_name(), getPlayerArmies(p_player));
+        String l_playerInfo = String.format("%02d. %s %-8s", p_index, p_player.getD_name(), getPlayerArmies(p_player));
         System.out.println(l_playerInfo);
     }
 
@@ -228,7 +224,6 @@ public class MapView {
             l_counter++;
             displayPlayerInfo(l_counter, p);
             displayCardsOwnedByPlayers(p);
-
         }
     }
 
@@ -290,7 +285,6 @@ public class MapView {
      * .map files.
      */
     public void showMap() {
-        System.out.println(d_players);
         if (d_players != null) {
             displayPlayers();
         }
