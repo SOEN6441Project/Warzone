@@ -67,21 +67,7 @@ public class MapService {
      * @return List of lines from map file.
      * @throws InvalidMap indicates Map Object Validation failure
      */
-//    public List<String> loadFile(String p_loadFileName) throws InvalidMap {
-//
-//        String l_filePath = CommonUtil.getMapFilePath(p_loadFileName);
-//        List<String> l_lineList = new ArrayList<>();
-//
-//        BufferedReader l_reader;
-//        try {
-//            l_reader = new BufferedReader(new FileReader(l_filePath));
-//            l_lineList = l_reader.lines().collect(Collectors.toList());
-//            l_reader.close();
-//        } catch (IOException l_e1) {
-//            throw new InvalidMap("Map File not Found!");
-//        }
-//        return l_lineList;
-//    }
+
 
     public List<String> loadFile(String p_loadFileName) throws InvalidMap {
         String l_filePath = CommonUtil.getMapFilePath(p_loadFileName);
@@ -223,27 +209,6 @@ public class MapService {
      * @throws IOException triggered in case the file does not exist or the file
      *                     name is invalid
      */
-//    public void editMap(GameContext p_gameState, String p_editFilePath)
-//            throws IOException, InvalidMap {
-//        String l_filePath = CommonUtil.getMapFilePath(p_editFilePath);
-//        File l_fileToBeEdited = new File(l_filePath);
-//
-//        if (l_fileToBeEdited.createNewFile()) {
-//            System.out.println("File has been created.");
-//            Map l_map = new Map();
-//            l_map.setD_mapFile(p_editFilePath);
-//            p_gameState.setD_map(l_map);
-//            p_gameState.updateLog(p_editFilePath + " File has been created for user to edit", "effect");
-//        } else {
-//            System.out.println("File already exists.");
-//            this.loadMap(p_gameState, p_editFilePath);
-//            if (null == p_gameState.getD_map()) {
-//                p_gameState.setD_map(new Map());
-//            }
-//            p_gameState.getD_map().setD_mapFile(p_editFilePath);
-//            p_gameState.updateLog(p_editFilePath + " already exists and is loaded for editing", "effect");
-//        }
-//    }
 
     public void editMap(GameContext p_gameState, String p_editFilePath)
             throws IOException, InvalidMap {
