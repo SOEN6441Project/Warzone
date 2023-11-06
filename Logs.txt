@@ -4,3 +4,15 @@ Game is Starting...
 =====Game Startup Phase=====
 
 Log: warzone.map has been loaded to start the game
+Log: Player with name : usaib has been added successfully.
+Log: Player with name : khan has been added successfully.
+Log: Country/Continent Assignment:
+ Player : usaib is assigned with country : pakistan
+ Player : usaib is assigned with country : nepal
+ Player : khan is assigned with country : india
+ Player : khan is assigned with country : china
+Log: Player : usaib has been assigned with 3 armies
+Log: Player : khan has been assigned with 3 armies
+
+=====Issue Order Phase=====
+
