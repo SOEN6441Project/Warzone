@@ -353,10 +353,7 @@ public class PlayerService {
             return;
         }
         List<Player> l_updatedPlayers = this.addRemovePlayers(p_gameContext.getD_players(), p_operation, p_argument);
-        System.out.println(l_updatedPlayers);
         if (!CommonUtil.isNull(l_updatedPlayers)) {
-            System.out.println("updaring gamecontext player");
-
             p_gameContext.setD_players(l_updatedPlayers);
             p_gameContext.updateLog(d_playerLog, "effect");
         }
