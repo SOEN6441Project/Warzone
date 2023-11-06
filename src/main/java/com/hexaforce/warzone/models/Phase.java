@@ -6,12 +6,11 @@ import com.hexaforce.warzone.exceptions.InvalidMap;
 import com.hexaforce.warzone.services.MapService;
 import com.hexaforce.warzone.services.PlayerService;
 import com.hexaforce.warzone.utils.Command;
+import java.io.IOException;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * State Class for phases in game which enforce state specific methods
- */
+/** State Class for phases in game which enforce state specific methods */
 @Getter
 @Setter
 public abstract class Phase {
@@ -29,18 +28,15 @@ public abstract class Phase {
 
     /**
      * The d_mapService instance is used to manage the loading, reading, parsing,
-     * editing, and saving of map files.
+     * editing, and saving
+     * of map files.
      */
     MapService d_mapService = new MapService();
 
-    /**
-     * PlayerService instance for player management and order issuing.
-     */
+    /** PlayerService instance for player management and order issuing. */
     PlayerService d_playerService = new PlayerService();
 
-    /**
-     * A boolean flag to indicate whether the map has been loaded.
-     */
+    /** A boolean flag to indicate whether the map has been loaded. */
     boolean l_isMapLoaded;
 
     /**
@@ -57,20 +53,23 @@ public abstract class Phase {
 
     /**
      * The handleCommand method processes user-entered commands that are specific to
-     * the current game state.
+     * the current game
+     * state.
      *
      * @param p_enteredCommand The command entered by the user in the Command Line
      *                         Interface (CLI).
      * @throws InvalidCommand Indicates that the command is invalid.
      * @throws InvalidMap     Indicates that the map is invalid.
      */
-    public void handleCommand(String p_enteredCommand) throws InvalidMap, InvalidCommand {
+    public void handleCommand(String p_enteredCommand)
+            throws InvalidMap, InvalidCommand, IOException {
         commandHandler(p_enteredCommand, null);
     }
 
     /**
      * The handleCommand method processes user-entered commands that are specific to
-     * the current game state.
+     * the current game
+     * state.
      *
      * @param p_enteredCommand The command entered by the user in the CLI.
      * @param p_player         An instance of the Player Object associated with the
@@ -78,14 +77,16 @@ public abstract class Phase {
      * @throws InvalidCommand Indicates that the command is invalid.
      * @throws InvalidMap     Indicates that the map is invalid.
      */
-    public void handleCommand(String p_enteredCommand, Player p_player) throws InvalidMap, InvalidCommand {
+    public void handleCommand(String p_enteredCommand, Player p_player)
+            throws InvalidMap, InvalidCommand, IOException {
         commandHandler(p_enteredCommand, p_player);
     }
 
     /**
      * The commandHandler method processes the command entered by the user and
-     * redirects them to specific phase implementations.
-     * 
+     * redirects them to
+     * specific phase implementations.
+     *
      * @param p_enteredCommand The command entered by the user in the CLI.
      * @param p_player         An instance of the Player Object associated with the
      *                         command.
@@ -93,7 +94,7 @@ public abstract class Phase {
      * @throws InvalidMap     Indicates that the map is invalid.
      */
     private void commandHandler(String p_enteredCommand, Player p_player)
-            throws InvalidMap, InvalidCommand {
+            throws InvalidMap, InvalidCommand, IOException {
         Command l_command = new Command(p_enteredCommand);
         String l_rootCommand = l_command.getRootCommand();
         l_isMapLoaded = d_gameContext.getD_map() != null;
@@ -162,7 +163,6 @@ public abstract class Phase {
                 break;
             }
         }
-
     }
 
     /**
@@ -171,15 +171,20 @@ public abstract class Phase {
      * @param enteredCommand String representing the entered command.
      * @param player         Player instance.
      */
-    protected abstract void handleCardCommands(String enteredCommand, Player player);
+    protected abstract void handleCardCommands(String enteredCommand, Player player)
+            throws IOException;
 
     /**
      * This method manages the "show map" command.
      *
      * @param command Command entered by the user.
      * @param player  Player instance.
+     * @throws InvalidCommand indicates command is invalid
+     * @throws InvalidMap     indicates map is invalid
+     * @throws IOException    indicates failure in I/O operation
      */
-    protected abstract void manageShowMap(Command command, Player player);
+    protected abstract void manageShowMap(Command command, Player player)
+            throws InvalidCommand, InvalidMap, IOException;
 
     /**
      * This method deals with the "advance order" in gameplay.
@@ -187,11 +192,9 @@ public abstract class Phase {
      * @param command Command entered by the user.
      * @param player  Player instance.
      */
-    protected abstract void executeAdvanceOrder(String command, Player player);
+    protected abstract void executeAdvanceOrder(String command, Player player) throws IOException;
 
-    /**
-     * Main method executed when the game phase changes.
-     */
+    /** Main method executed when the game phase changes. */
     public abstract void onPhaseInitialization();
 
     /**
@@ -207,106 +210,130 @@ public abstract class Phase {
      * @param command Command entered by the user.
      * @param player  Player instance.
      */
-    protected abstract void executeDeployOrder(String command, Player player);
+    protected abstract void executeDeployOrder(String command, Player player) throws IOException;
 
     /**
      * Performs basic validation for the "assigncountries" command, checking
-     * required arguments and directing control to the model for assigning countries
-     * to players.
+     * required arguments and
+     * directing control to the model for assigning countries to players.
      *
      * @param command Command entered by the user in the CLI.
      * @param player  Player instance.
      * @throws InvalidCommand Indicates that the command is invalid.
-     * @throws InvalidMap     Indicates that the map is invalid.
      */
-    protected abstract void validateAssignCountries(Command command, Player player);
+    protected abstract void validateAssignCountries(Command command, Player player)
+            throws InvalidCommand, InvalidMap;
 
     /**
      * Performs basic validation for the "gameplayer" command, checking required
-     * arguments and directing control to the model for adding or removing players.
-     * 
+     * arguments and
+     * directing control to the model for adding or removing players.
+     *
      * @param command Command entered by the user in the CLI.
      * @param player  Player instance.
      * @throws InvalidCommand Indicates that the command is invalid.
-     * @throws InvalidMap     Indicates that the map is invalid.
      */
-    protected abstract void manageGamePlayers(Command command, Player player);
+    protected abstract void manageGamePlayers(Command command, Player player)
+            throws InvalidCommand, InvalidMap;
 
     /**
      * Performs basic validation for the "editneighbor" command, checking required
-     * arguments and directing control to the model for actual processing.
+     * arguments and
+     * directing control to the model for actual processing.
      *
      * @param command Command entered by the user in the CLI.
      * @param player  Player instance.
      * @throws InvalidCommand Indicates that the command is invalid.
-     * @throws InvalidMap     Indicates that the map is invalid.
+     * @throws InvalidMap     indicates map is invalid
+     * @throws IOException    indicates failure in I/O operations that the map is
+     *                        invalid.
      */
-    protected abstract void validateEditNeighbor(Command command, Player player);
+    protected abstract void validateEditNeighbor(Command command, Player player)
+            throws InvalidCommand, InvalidMap, IOException;
 
     /**
      * Performs basic validation for the "editcountry" command, checking required
-     * arguments and directing control to the model for actual processing.
+     * arguments and
+     * directing control to the model for actual processing.
      *
      * @param command Command entered by the user in the CLI.
      * @param player  Player instance.
      * @throws InvalidCommand Indicates that the command is invalid.
-     * @throws InvalidMap     Indicates that the map is invalid.
+     * @throws InvalidMap     indicates map is invalid
+     * @throws IOException    indicates failure in I/O operations that the map is
+     *                        invalid.
      */
-    protected abstract void validateEditCountry(Command command, Player player);
+    protected abstract void validateEditCountry(Command command, Player player)
+            throws InvalidCommand, InvalidMap, IOException;
 
     /**
      * Performs basic validation for the "validatemap" command, checking required
-     * arguments and directing control to the model for actual processing.
+     * arguments and
+     * directing control to the model for actual processing.
      *
      * @param command Command entered by the user in the CLI.
      * @param player  Player instance.
      * @throws InvalidCommand Indicates that the command is invalid.
      * @throws InvalidMap     Indicates that the map is invalid.
      */
-    protected abstract void validateMapValidation(Command command, Player player);
+    protected abstract void validateMapValidation(Command command, Player player)
+            throws InvalidMap, InvalidCommand;
 
     /**
      * Performs basic validation for the "loadmap" command, checking required
-     * arguments and directing control to the model for actual processing.
+     * arguments and directing
+     * control to the model for actual processing.
      *
      * @param command Command entered by the user in the CLI.
      * @param player  Player instance.
      * @throws InvalidCommand Indicates that the command is invalid.
      * @throws InvalidMap     Indicates that the map is invalid.
      */
-    protected abstract void validateLoadMap(Command command, Player player);
+    protected abstract void validateLoadMap(Command command, Player player)
+            throws InvalidCommand, InvalidMap;
 
     /**
      * Performs basic validation for the "savemap" command, checking required
-     * arguments and directing control to the model for actual processing.
+     * arguments and directing
+     * control to the model for actual processing.
      *
      * @param command Command entered by the user in the CLI.
      * @param player  Player instance.
      * @throws InvalidCommand Indicates that the command is invalid.
-     * @throws InvalidMap     Indicates that the map is invalid.
+     * @throws InvalidMap     indicates map is invalid
+     * @throws IOException    indicates failure in I/O operations that the map is
+     *                        invalid.
      */
-    protected abstract void validateSaveMap(Command command, Player player);
+    protected abstract void validateSaveMap(Command command, Player player)
+            throws InvalidCommand, InvalidMap, IOException;
 
     /**
      * Performs basic validation for the "editcontinent" command, checking required
-     * arguments and directing control to the model for actual processing.
+     * arguments and
+     * directing control to the model for actual processing.
      *
      * @param command Command entered by the user in the CLI.
      * @param player  Player instance.
      * @throws InvalidCommand Indicates that the command is invalid.
-     * @throws InvalidMap     Indicates that the map is invalid.
+     * @throws InvalidMap     indicates map is invalid
+     * @throws IOException    indicates failure in I/O operations that the map is
+     *                        invalid.
      */
-    protected abstract void validateEditContinent(Command command, Player player);
+    protected abstract void validateEditContinent(Command command, Player player)
+            throws InvalidCommand, InvalidMap, IOException;
 
     /**
      * Performs basic validation for the "editmap" command, checking required
-     * arguments and directing control to the model for actual processing.
+     * arguments and directing
+     * control to the model for actual processing.
      *
      * @param command Command entered by the user in the CLI.
      * @param player  Player instance.
      * @throws InvalidCommand Indicates that the command is invalid.
-     * @throws InvalidMap     Indicates that the map is invalid.
+     * @throws InvalidMap     indicates map is invalid
+     * @throws IOException    indicates failure in I/O operations that the map is
+     *                        invalid.
      */
-    protected abstract void validateEditMap(Command command, Player player);
-
+    protected abstract void validateEditMap(Command command, Player player)
+            throws InvalidCommand, InvalidMap, IOException;
 }
