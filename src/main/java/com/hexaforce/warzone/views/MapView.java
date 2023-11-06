@@ -3,6 +3,8 @@ package com.hexaforce.warzone.views;
 import com.hexaforce.warzone.exceptions.InvalidMap;
 import com.hexaforce.warzone.models.*;
 import com.hexaforce.warzone.utils.CommonUtil;
+import com.hexaforce.warzone.utils.Constants;
+
 import java.util.List;
 import org.davidmoten.text.utils.WordWrap;
 
@@ -24,7 +26,7 @@ public class MapView {
      */
     public MapView(GameContext p_gameContext) {
         d_gameContext = p_gameContext;
-        d_map = p_gameContext.getD_map();
+        d_players = p_gameContext.getD_players();
         d_map = p_gameContext.getD_map();
         d_countries = d_map.getD_countries();
         d_continents = d_map.getD_continents();
@@ -198,11 +200,20 @@ public class MapView {
      */
     private void displayPlayerInfo(Integer p_index, Player p_player) {
         String l_playerInfo = String.format(
-                "%02d. %-8s %s",
+                "%02d. %s %-8s",
                 p_index,
-                p_player.getD_name(),
-                " -> " + getColorizedString(p_player.getD_color(), " COLOR "));
+                p_player.getD_name(), getPlayerArmies(p_player));
         System.out.println(l_playerInfo);
+    }
+
+    /**
+     * Returns unallocated armies of player.
+     *
+     * @param p_player Player Object.
+     * @return String to fit with Player.
+     */
+    private String getPlayerArmies(Player p_player) {
+        return "(Unallocated Armies: " + p_player.getD_noOfUnallocatedArmies() + ")";
     }
 
     /** Display the list of players in a well-formatted way. */
@@ -216,7 +227,29 @@ public class MapView {
         for (Player p : d_players) {
             l_counter++;
             displayPlayerInfo(l_counter, p);
+            displayCardsOwnedByPlayers(p);
+
         }
+    }
+
+    /**
+     * Display the number of cards owned by the player.
+     *
+     * @param p_player Player Instance
+     */
+    private void displayCardsOwnedByPlayers(Player p_player) {
+        StringBuilder l_cards = new StringBuilder();
+
+        for (int i = 0; i < p_player.getD_cardsOwnedByPlayer().size(); i++) {
+            l_cards.append(p_player.getD_cardsOwnedByPlayer().get(i));
+            if (i < p_player.getD_cardsOwnedByPlayer().size() - 1)
+                l_cards.append(", ");
+        }
+
+        String l_cardsOwnedByPlayer = "Cards Owned : "
+                + WordWrap.from(l_cards.toString()).maxWidth(Constants.CONSOLE_WIDTH).wrap();
+        System.out.println(l_cardsOwnedByPlayer);
+        System.out.println();
     }
 
     /**

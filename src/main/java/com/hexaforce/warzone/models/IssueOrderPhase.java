@@ -56,6 +56,7 @@ public class IssueOrderPhase extends Phase {
     protected void manageShowMap(Command p_command, Player p_player)
             throws InvalidCommand, InvalidMap {
         MapView l_mapView = new MapView(d_gameContext);
+        System.out.println(d_gameContext.d_players);
         l_mapView.showMap();
         promptForOrders(p_player);
     }
