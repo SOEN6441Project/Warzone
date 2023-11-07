@@ -28,7 +28,7 @@ public class MapService {
     public static final String ARMIES = "Armies";
     public static final String CONTROL_VALUE = "Control Value";
     public static final String CONNECTIVITY = "Connections";
-    public static final String SRC_MAIN_RESOURCES = "src/main/resources";
+    public static final String SRC_MAIN_RESOURCES = "src/main/maps";
 
     /**
      * The loadmap method  will process the map file.

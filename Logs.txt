@@ -6,12 +6,4 @@ Game is Starting...
 Log: No map found to save, Please `editmap` first
 Log: No map found to save, Please `editmap` first
 Log: warzone.map has been loaded to start the game
-Log: Country with name india already exists!
-Log: Country bangladesh added successfully!
-Log: warzone.map already exists and is loaded for editing
-Log: Country bangladesh added successfully!
-Log: bangladesh does not have any neighbors and is therefore not reachable!
-Log: Couldn't save the changes in the map file!
-Log: Neighbour Pair bangladesh pakistan added successfully!
-Log: bangladesh in Continent asia is not reachable.
-Log: Couldn't save the changes in the map file!
+

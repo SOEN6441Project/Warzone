@@ -58,7 +58,6 @@ public class WarzoneEngine {
    */
   public static void main(String[] p_args) {
     WarzoneEngine l_game = new WarzoneEngine();
-
     l_game
         .getD_currentPhase()
         .getD_gameContext()
