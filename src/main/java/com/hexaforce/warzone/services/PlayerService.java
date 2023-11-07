@@ -12,13 +12,29 @@ import java.util.Random;
 
 /** This service class handles the players. */
 public class PlayerService {
+
+  /** the RED contains the colors red*/
   public static final String RED = "\033[0;31m";
+
+  /** the GREEN contains the colors green*/
   public static final String GREEN = "\033[0;32m";
+
+  /** the YELLOW contains the colors yellow*/
   public static final String YELLOW = "\033[0;33m";
+
+  /**the Blue contains the color blue*/
   public static final String BLUE = "\033[0;34m";
+
+  /** the PURPLE contains the colors purple*/
   public static final String PURPLE = "\033[0;35m";
+
+  /** the CYAN contains the colors cyan*/
   public static final String CYAN = "\033[0;36m";
+
+  /** the WHITE contains the colors white*/
   public static final String WHITE = "\u001B[47m";
+
+  /**Colors is an array as list containing all the colors mentioned above */
   public static final List<String> COLORS = Arrays.asList(RED, GREEN, YELLOW, BLUE, PURPLE, CYAN);
 
   /** Log of Player operations in player methods. */

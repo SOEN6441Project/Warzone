@@ -17,8 +17,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Player {
+
+  /**the Cards contains all the actions that one country or player can do*/
   public static final List<String> CARDS =
       Arrays.asList("bomb", "blockade", "airlift", "negotiate");
+
+  /**the Card.size() can get the number of cards available*/
   public static final int SIZE = CARDS.size();
   /** color to show details with on map. */
   private String d_color;

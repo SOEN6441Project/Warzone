@@ -22,12 +22,26 @@ import java.util.stream.Collectors;
 
 /** The MapService class load, read, parse, edit, and save map file. */
 public class MapService {
+
+    /**CONTINENTS */
     public static final String CONTINENTS = "[continents]";
+
+    /**COUNTRIES */
     public static final String COUNTRIES = "[countries]";
+
+    /**BORDERS */
     public static final String BORDERS = "[borders]";
+
+    /**ARMIES */
     public static final String ARMIES = "Armies";
+
+    /**CONTROL_VALUE */
     public static final String CONTROL_VALUE = "Control Value";
+
+    /**CONNECTIVITY */
     public static final String CONNECTIVITY = "Connections";
+
+    /**SRC_MAIN_RESOURCES */
     public static final String SRC_MAIN_RESOURCES = "src/main/maps";
 
     /**
