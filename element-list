@@ -1,5 +1,8 @@
 com.hexaforce.warzone
 com.hexaforce.warzone.controllers
+com.hexaforce.warzone.exceptions
 com.hexaforce.warzone.helpers
 com.hexaforce.warzone.models
+com.hexaforce.warzone.services
+com.hexaforce.warzone.utils
 com.hexaforce.warzone.views
