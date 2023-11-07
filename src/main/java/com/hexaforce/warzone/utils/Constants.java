@@ -7,6 +7,7 @@ import java.util.List;
  * the Class constant all the constants that are used throughout the project
  */
 public class Constants {
+    
     public static final String INVALID_COMMAND_ERROR_EDITMAP = "Invalid command. Kindly provide command in Format of : editmap filename";
     public static final String INVALID_COMMAND_ERROR_EDITCONTINENT = "Invalid command. Kindly provide command in Format of : editcontinent -add continentID"
             + " continentvalue -remove continentID";
