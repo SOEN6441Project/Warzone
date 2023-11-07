@@ -3,4 +3,7 @@ Game is Starting...
 
 =====Game Startup Phase=====
 
+Log: No map found to save, Please `editmap` first
+Log: No map found to save, Please `editmap` first
 Log: warzone.map has been loaded to start the game
+
