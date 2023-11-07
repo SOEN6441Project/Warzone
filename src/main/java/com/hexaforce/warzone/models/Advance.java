@@ -29,7 +29,7 @@ public class Advance implements Order {
    * @param p_playerInitiator The player who created the order.
    * @param p_sourceCountryName The country from which armies will be transferred.
    * @param p_targetCountry The country receiving the new armies.
-   * @param p_numberOfArmiesToMove The number of armies to be moved.
+   * @param p_numberOfArmiesToPlace The number of armies to be moved.
    */
   public Advance(
       Player p_playerInitiator,
