@@ -25,35 +25,34 @@ import java.util.stream.Collectors;
 public class MapService {
 
     /**
-     * The loadmap method process map file.
+     * The loadmap method  will process the map file.
      *
      * @param p_gameState    current state of game.
      * @param p_loadFileName map file name.
      * @return Map object after processing map file.
      * @throws InvalidMap indicates Map Object Validation failure
      */
+
     public Map loadMap(GameContext p_gameState, String p_loadFileName) throws InvalidMap {
         Map l_map = new Map();
         List<String> l_linesOfFile = loadFile(p_loadFileName);
 
-        if (null != l_linesOfFile && !l_linesOfFile.isEmpty()) {
-
-            // Parses the file and stores information in objects
+        if (l_linesOfFile != null && !l_linesOfFile.isEmpty()) {
             List<String> l_continentData = getMetaData(l_linesOfFile, "continent");
-            List<Continent> l_continentObjects = parseContinentsMetaData(l_continentData);
+            List<Continent> l_continentObjects = parseContinentData(l_continentData);
             List<String> l_countryData = getMetaData(l_linesOfFile, "country");
             List<String> l_bordersMetaData = getMetaData(l_linesOfFile, "border");
-            List<Country> l_countryObjects = parseCountriesMetaData(l_countryData);
+            List<Country> l_countryObjects = parseCountryData(l_countryData);
 
-            // Updates the neighbour of countries in Objects
-            l_countryObjects = parseBorderMetaData(l_countryObjects, l_bordersMetaData);
-            l_continentObjects = linkCountryContinents(l_countryObjects, l_continentObjects);
+            l_countryObjects = updateCountryNeighbors(l_countryObjects, l_bordersMetaData);
+            l_continentObjects = linkCountryToContinents(l_countryObjects, l_continentObjects);
             l_map.setD_continents(l_continentObjects);
             l_map.setD_countries(l_countryObjects);
             p_gameState.setD_map(l_map);
         }
         return l_map;
     }
+
 
     /**
      * The loadFile method load and read map file.
@@ -62,19 +61,18 @@ public class MapService {
      * @return List of lines from map file.
      * @throws InvalidMap indicates Map Object Validation failure
      */
-    public List<String> loadFile(String p_loadFileName) throws InvalidMap {
 
+
+    public List<String> loadFile(String p_loadFileName) throws InvalidMap {
         String l_filePath = CommonUtil.getMapFilePath(p_loadFileName);
         List<String> l_lineList = new ArrayList<>();
 
-        BufferedReader l_reader;
-        try {
-            l_reader = new BufferedReader(new FileReader(l_filePath));
+        try (BufferedReader l_reader = new BufferedReader(new FileReader(l_filePath))) {
             l_lineList = l_reader.lines().collect(Collectors.toList());
-            l_reader.close();
         } catch (IOException l_e1) {
             throw new InvalidMap("Map File not Found!");
         }
+
         return l_lineList;
     }
 
@@ -105,13 +103,13 @@ public class MapService {
     }
 
     /**
-     * The parseContinentsMetaData method parse extracted continent data of map
+     * The parseContinentData method parse extracted continent data of map
      * file.
      *
      * @param p_continentList includes continent data in list from map file
      * @return List of processed continent meta data
      */
-    public List<Continent> parseContinentsMetaData(List<String> p_continentList) {
+    public List<Continent> parseContinentData(List<String> p_continentList) {
         int l_continentId = 1;
         List<Continent> l_continents = new ArrayList<Continent>();
 
@@ -125,13 +123,13 @@ public class MapService {
     }
 
     /**
-     * The parseCountriesMetaData method parse extracted country and border data of
+     * The parseCountryData method parse extracted country and border data of
      * map file.
      *
      * @param p_countriesList includes country data in list from map file.
      * @return List of processed country meta data.
      */
-    public List<Country> parseCountriesMetaData(List<String> p_countriesList) {
+    public List<Country> parseCountryData(List<String> p_countriesList) {
 
         LinkedHashMap<Integer, List<Integer>> l_countryNeighbors = new LinkedHashMap<Integer, List<Integer>>();
         List<Country> l_countriesList = new ArrayList<Country>();
@@ -154,7 +152,7 @@ public class MapService {
      * @param p_bordersList   Border Data Lines
      * @return List Updated Country Objects
      */
-    public List<Country> parseBorderMetaData(
+    public List<Country> updateCountryNeighbors(
             List<Country> p_countriesList, List<String> p_bordersList) {
         LinkedHashMap<Integer, List<Integer>> l_countryNeighbors = new LinkedHashMap<Integer, List<Integer>>();
 
@@ -183,7 +181,7 @@ public class MapService {
      * @param p_continents Total Continent Objects
      * @return List of updated continents
      */
-    public List<Continent> linkCountryContinents(
+    public List<Continent> linkCountryToContinents(
             List<Country> p_countries, List<Continent> p_continents) {
         for (Country c : p_countries) {
             for (Continent cont : p_continents) {
@@ -196,7 +194,7 @@ public class MapService {
     }
 
     /**
-     * Method is responsible for creating a new map if map to be edited does not
+     * Method is responsible for creating a new map if a map to be edited does not
      * exists, and if it
      * exists it parses the map file to game state object.
      *
@@ -206,6 +204,7 @@ public class MapService {
      * @throws IOException triggered in case the file does not exist or the file
      *                     name is invalid
      */
+
     public void editMap(GameContext p_gameState, String p_editFilePath)
             throws IOException, InvalidMap {
         String l_filePath = CommonUtil.getMapFilePath(p_editFilePath);
@@ -219,14 +218,23 @@ public class MapService {
             p_gameState.updateLog(p_editFilePath + " File has been created for user to edit", "effect");
         } else {
             System.out.println("File already exists.");
-            this.loadMap(p_gameState, p_editFilePath);
-            if (null == p_gameState.getD_map()) {
+            loadMapOrInitialize(p_gameState, p_editFilePath);
+            if (p_gameState.getD_map() == null) {
                 p_gameState.setD_map(new Map());
             }
             p_gameState.getD_map().setD_mapFile(p_editFilePath);
             p_gameState.updateLog(p_editFilePath + " already exists and is loaded for editing", "effect");
         }
     }
+
+    private void loadMapOrInitialize(GameContext p_gameState, String p_editFilePath) {
+        try {
+            loadMap(p_gameState, p_editFilePath);
+        } catch (InvalidMap e) {
+            p_gameState.setD_map(null);
+        }
+    }
+
 
     /**
      * Controls the Flow of Edit Operations: editcontinent, editcountry,
@@ -391,51 +399,47 @@ public class MapService {
      * @return true/false based on successful save operation of map to file
      * @throws InvalidMap InvalidMap exception
      */
+
     public boolean saveMap(GameContext p_gameState, String p_fileName) throws InvalidMap {
-        boolean l_flagValidate = false;
+
+        //Minor changes have been made to conditional statements to make them more concise.
         try {
-
-            // Verifies if the file linked to savemap and edited by user are same
             if (!p_fileName.equalsIgnoreCase(p_gameState.getD_map().getD_mapFile())) {
-                p_gameState.setD_error(
-                        "Kindly provide same file name to save which you have given for edit");
+                p_gameState.setD_error("Kindly provide the same file name to save as the one used for editing");
                 return false;
-            } else {
-                if (null != p_gameState.getD_map()) {
-                    Map l_currentMap = p_gameState.getD_map();
+            }
 
-                    // Proceeds to save the map if it passes the validation check
-                    this.setD_MapServiceLog("Validating Map......", p_gameState);
-                    // boolean l_mapValidationStatus = l_currentMap.Validate();
-                    if (l_currentMap.validate()) {
-                        Files.deleteIfExists(Paths.get(CommonUtil.getMapFilePath(p_fileName)));
-                        FileWriter l_writer = new FileWriter(CommonUtil.getMapFilePath(p_fileName));
+            if (p_gameState.getD_map() != null) {
+                Map l_currentMap = p_gameState.getD_map();
 
-                        if (null != p_gameState.getD_map().getD_continents()
-                                && !p_gameState.getD_map().getD_continents().isEmpty()) {
-                            writeContinentMetadata(p_gameState, l_writer);
-                        }
-                        if (null != p_gameState.getD_map().getD_countries()
-                                && !p_gameState.getD_map().getD_countries().isEmpty()) {
-                            writeCountryAndBoarderMetaData(p_gameState, l_writer);
-                        }
-                        p_gameState.updateLog("Map Saved Successfully", "effect");
-                        l_writer.close();
+                if (l_currentMap.validate()) {
+                    Files.deleteIfExists(Paths.get(CommonUtil.getMapFilePath(p_fileName)));
+                    FileWriter l_writer = new FileWriter(CommonUtil.getMapFilePath(p_fileName));
+
+                    if (!p_gameState.getD_map().getD_continents().isEmpty()) {
+                        writeContinentMetadata(p_gameState, l_writer);
                     }
+                    if (!p_gameState.getD_map().getD_countries().isEmpty()) {
+                        writeCountryAndBoarderMetaData(p_gameState, l_writer);
+                    }
+                    p_gameState.updateLog("Map Saved Successfully", "effect");
+                    l_writer.close();
                 } else {
                     p_gameState.updateLog("Validation failed! Cannot Save the Map file!", "effect");
                     p_gameState.setD_error("Validation Failed");
                     return false;
                 }
             }
+
             return true;
         } catch (IOException | InvalidMap l_e) {
             this.setD_MapServiceLog(l_e.getMessage(), p_gameState);
-            p_gameState.updateLog("Couldn't save the changes in map file!", "effect");
+            p_gameState.updateLog("Couldn't save the changes in the map file!", "effect");
             p_gameState.setD_error("Error in saving map file");
             return false;
         }
     }
+
 
     /**
      * Retrieves country and boarder data from game state and writes it to file
@@ -511,7 +515,7 @@ public class MapService {
      * @param p_fileToLoad File which couldn't be loaded
      */
     public void resetMap(GameContext p_gameState, String p_fileToLoad) {
-        System.out.println("Map cannot be loaded, as it is invalid. Kindly provide valid map");
+        System.out.println("Map cannot be loaded, as it is invalid. Kindly provide a valid map");
         p_gameState.updateLog(p_fileToLoad + " map could not be loaded as it is invalid!", "effect");
         p_gameState.setD_map(new Map());
     }
