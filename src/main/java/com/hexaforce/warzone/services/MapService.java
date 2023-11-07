@@ -9,7 +9,6 @@ import com.hexaforce.warzone.models.Map;
 import com.hexaforce.warzone.utils.CommonUtil;
 import com.hexaforce.warzone.utils.Constants;
 
-import java.io.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -97,7 +96,8 @@ public class MapService {
                         p_fileLines.indexOf(Constants.COUNTRIES) + 1, p_fileLines.indexOf(Constants.BORDERS) - 1);
                 return l_countryLines;
             case "border":
-                List<String> l_bordersLines = p_fileLines.subList(p_fileLines.indexOf(Constants.BORDERS) + 1, p_fileLines.size());
+                List<String> l_bordersLines = p_fileLines.subList(p_fileLines.indexOf(Constants.BORDERS) + 1,
+                        p_fileLines.size());
                 return l_bordersLines;
             default:
                 return null;
@@ -522,7 +522,7 @@ public class MapService {
      * @param p_MapServiceLog String containing log
      * @param p_gameState     current gamestate instance
      */
-    public void setD_MapServiceLog(String p_MapServiceLog, GameContext p_gameState) {
+    private void setD_MapServiceLog(String p_MapServiceLog, GameContext p_gameState) {
         System.out.println(p_MapServiceLog);
         p_gameState.updateLog(p_MapServiceLog, "effect");
     }
