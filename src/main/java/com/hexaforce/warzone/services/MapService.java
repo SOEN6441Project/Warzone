@@ -7,7 +7,8 @@ import com.hexaforce.warzone.models.Country;
 import com.hexaforce.warzone.models.GameContext;
 import com.hexaforce.warzone.models.Map;
 import com.hexaforce.warzone.utils.CommonUtil;
-import java.io.*;
+import com.hexaforce.warzone.utils.Constants;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -22,13 +23,6 @@ import java.util.stream.Collectors;
 
 /** The MapService class load, read, parse, edit, and save map file. */
 public class MapService {
-    public static final String CONTINENTS = "[continents]";
-    public static final String COUNTRIES = "[countries]";
-    public static final String BORDERS = "[borders]";
-    public static final String ARMIES = "Armies";
-    public static final String CONTROL_VALUE = "Control Value";
-    public static final String CONNECTIVITY = "Connections";
-    public static final String SRC_MAIN_RESOURCES = "src/main/maps";
 
     /**
      * The loadmap method  will process the map file.
@@ -93,14 +87,15 @@ public class MapService {
         switch (p_switchParameter) {
             case "continent":
                 List<String> l_continentLines = p_fileLines.subList(
-                        p_fileLines.indexOf(CONTINENTS) + 1, p_fileLines.indexOf(COUNTRIES) - 1);
+                        p_fileLines.indexOf(Constants.CONTINENTS) + 1, p_fileLines.indexOf(Constants.COUNTRIES) - 1);
                 return l_continentLines;
             case "country":
                 List<String> l_countryLines = p_fileLines.subList(
-                        p_fileLines.indexOf(COUNTRIES) + 1, p_fileLines.indexOf(BORDERS) - 1);
+                        p_fileLines.indexOf(Constants.COUNTRIES) + 1, p_fileLines.indexOf(Constants.BORDERS) - 1);
                 return l_countryLines;
             case "border":
-                List<String> l_bordersLines = p_fileLines.subList(p_fileLines.indexOf(BORDERS) + 1, p_fileLines.size());
+                List<String> l_bordersLines = p_fileLines.subList(p_fileLines.indexOf(Constants.BORDERS) + 1,
+                        p_fileLines.size());
                 return l_bordersLines;
             default:
                 return null;
@@ -461,7 +456,7 @@ public class MapService {
         List<String> l_bordersList = new ArrayList<>();
 
         // Writes Country Objects to File And Organizes Border Data for each of them
-        p_writer.write(System.lineSeparator() + COUNTRIES + System.lineSeparator());
+        p_writer.write(System.lineSeparator() + Constants.COUNTRIES + System.lineSeparator());
         for (Country l_country : p_gameState.getD_map().getD_countries()) {
             l_countryMetaData = new String();
             l_countryMetaData = l_country
@@ -486,7 +481,7 @@ public class MapService {
 
         // Writes Border data to the File
         if (null != l_bordersList && !l_bordersList.isEmpty()) {
-            p_writer.write(System.lineSeparator() + BORDERS + System.lineSeparator());
+            p_writer.write(System.lineSeparator() + Constants.BORDERS + System.lineSeparator());
             for (String l_borderStr : l_bordersList) {
                 p_writer.write(l_borderStr + System.lineSeparator());
             }
@@ -502,7 +497,7 @@ public class MapService {
      */
     private void writeContinentMetadata(GameContext p_gameState, FileWriter p_writer)
             throws IOException {
-        p_writer.write(System.lineSeparator() + CONTINENTS + System.lineSeparator());
+        p_writer.write(System.lineSeparator() + Constants.CONTINENTS + System.lineSeparator());
         for (Continent l_continent : p_gameState.getD_map().getD_continents()) {
             p_writer.write(
                     l_continent
@@ -531,7 +526,7 @@ public class MapService {
      * @param p_MapServiceLog String containing log
      * @param p_gameState     current gamestate instance
      */
-    public void setD_MapServiceLog(String p_MapServiceLog, GameContext p_gameState) {
+    private void setD_MapServiceLog(String p_MapServiceLog, GameContext p_gameState) {
         System.out.println(p_MapServiceLog);
         p_gameState.updateLog(p_MapServiceLog, "effect");
     }
