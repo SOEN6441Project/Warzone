@@ -46,7 +46,7 @@ public class Player {
 
   /** String holding Log for individual Player methods. */
   String d_playerLog;
-
+z
   /** Name of the card Player owns. */
   List<String> d_cardsOwnedByPlayer = new ArrayList<String>();
 
