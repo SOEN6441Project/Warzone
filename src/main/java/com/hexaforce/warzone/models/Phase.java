@@ -222,7 +222,6 @@ public abstract class Phase {
    * directing control to the model for assigning countries to players.
    *
    * @param command Command entered by the user in the CLI.
-   * @throws IOException indicated the input output exception
    * @param player Player instance.
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicated that the map is invalid
@@ -236,7 +235,6 @@ public abstract class Phase {
    *
    * @param command Command entered by the user in the CLI.
    * @param player Player instance.
-   * @throws IOException indicated the input output exception
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates that the map is invalid.
    */

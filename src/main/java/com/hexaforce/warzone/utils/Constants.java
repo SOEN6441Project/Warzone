@@ -59,6 +59,7 @@ public class Constants {
       "Invalid command. Kindly provide command in Format of : deploy countryID <CountryName> <num>"
           + " (until all reinforcements have been placed)";
 
+  /** Vallidmap is used for checking is the map is valid. */
   public static final String VALID_MAP = "The loaded map is valid!";
 
   /** arguments that has been used */
