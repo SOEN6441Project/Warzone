@@ -64,8 +64,10 @@ public class Constants {
   /** arguments that has been used */
   public static final String ARGUMENTS = "arguments";
 
+  /** Constant for the operations. */
   public static final String OPERATION = "operation";
 
+  /** .map has the extentions for the map files */
   public static final String MAPFILEEXTENSION = ".map";
 
   /** contains the red colors */
