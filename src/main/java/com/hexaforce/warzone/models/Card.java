@@ -1,5 +1,6 @@
 package com.hexaforce.warzone.models;
 
+/** the card class which extends the order classs */
 public interface Card extends Order {
   /**
    * Performs pre-validation for a card type order.

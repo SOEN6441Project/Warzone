@@ -17,9 +17,13 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Player {
+  /** the CARDS contains the action to be performed */
   public static final List<String> CARDS =
       Arrays.asList("bomb", "blockade", "airlift", "negotiate");
+
+  /** this contains the size of the card */
   public static final int SIZE = CARDS.size();
+
   /** color to show details with on map. */
   private String d_color;
 
@@ -46,7 +50,7 @@ public class Player {
 
   /** String holding Log for individual Player methods. */
   String d_playerLog;
-z
+
   /** Name of the card Player owns. */
   List<String> d_cardsOwnedByPlayer = new ArrayList<String>();
 
