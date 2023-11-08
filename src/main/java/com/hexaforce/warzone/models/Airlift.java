@@ -179,21 +179,21 @@ public class Airlift implements Card {
   /**
    * Validates the order before issuing commands.
    *
-   * @param p_GameState The current GameContext instance.
+   * @param p_gameContext The current GameContext instance.
    * @return A boolean indicating if the order is valid.
    */
   @Override
-  public Boolean checkValidOrder(GameContext p_GameState) {
-    Country l_sourceCountry = p_GameState.getD_map().getCountryByName(d_sourceCountryName);
-    Country l_targetCountry = p_GameState.getD_map().getCountryByName(d_targetCountryName);
+  public Boolean checkValidOrder(GameContext p_gameContext) {
+    Country l_sourceCountry = p_gameContext.getD_map().getCountryByName(d_sourceCountryName);
+    Country l_targetCountry = p_gameContext.getD_map().getCountryByName(d_targetCountryName);
     if (l_sourceCountry == null) {
       this.setD_orderExecutionLog("Invalid Source Country! It doesn't exist on the map.", "error");
-      p_GameState.updateLog(getExecutionLog(), "effect");
+      p_gameContext.updateLog(getExecutionLog(), "effect");
       return false;
     }
     if (l_targetCountry == null) {
       this.setD_orderExecutionLog("Invalid Target Country! It doesn't exist on the map.", "error");
-      p_GameState.updateLog(getExecutionLog(), "effect");
+      p_gameContext.updateLog(getExecutionLog(), "effect");
       return false;
     }
     return true;

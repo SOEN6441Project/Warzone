@@ -1,84 +1,97 @@
-// package com.hexaforce.warzone.models;
+package com.hexaforce.warzone.models;
 
-// import static org.junit.jupiter.api.Assertions.*;
+import com.hexaforce.warzone.exceptions.InvalidMap;
+import com.hexaforce.warzone.services.MapService;
 
-// import org.junit.jupiter.api.BeforeEach;
-// import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
 
-// /**
-//  * This is the test class for the runner class of the application from which the game is
-// triggered,
-//  * it tests mainly the entry point to the app
-//  *
-//  * @author Usaib Khan
-//  */
-// class MapTest {
-//   private Map map;
+import java.util.ArrayList;
+import java.util.List;
 
-//   @BeforeEach
-//   void setUp() {
-//     map = new Map(1, "TestMap");
-//   }
+/**
+ * This class serves as a testing suite for evaluating the functionality of the Map class's methods.
+ */
+public class MapTest {
 
-//   @Test
-//   void testMapGetName() {
-//     assertEquals("TestMap", map.getName());
-//   }
+  Map d_map;
+  MapService d_ms;
+  GameContext d_gameContext;
 
-//   @Test
-//   public void testSingleCountryMap() {
-//     // Add a single country to the map
-//     Country country = new Country(1, "Country1", "Continent1");
-//     map.addCountry(country);
+  /** Initialization of Map Testing */
+  @Before
+  public void beforeValidateTest() {
+    d_map = new Map();
+    d_gameContext = new GameContext();
+    d_ms = new MapService();
+  }
 
-//     assertTrue(map.validateMap(), "A map with a single country should be valid.");
-//   }
+  /**
+   * Verifies the behavior of the validate method when there are no continents in the Map.
+   *
+   * @throws InvalidMap Exception
+   */
+  @Test(expected = InvalidMap.class)
+  public void testValidateNoContinent() throws InvalidMap {
+    assertEquals(d_map.validate(), false);
+  }
 
-//   @Test
-//   public void testDisconnectedCountries() {
-//     // Add two disconnected countries to the map
-//     Country country1 = new Country(1, "Country1", "Continent1");
-//     Country country2 = new Country(2, "Country2", "Continent1");
-//     map.addCountry(country1);
-//     map.addCountry(country2);
+  /**
+   * Tests the validate function with both valid and invalid Map instances.
+   *
+   * @throws InvalidMap
+   */
+  @Test(expected = InvalidMap.class)
+  public void testValidate() throws InvalidMap {
+    d_map = d_ms.loadMap(d_gameContext, "canada.map");
 
-//     assertFalse(map.validateMap(), "Disconnected countries should result in an invalid map.");
-//   }
+    assertEquals(d_map.validate(), true);
+    d_map = d_ms.loadMap(d_gameContext, "swiss.map");
+    d_map.validate();
+  }
 
-//   @Test
-//   public void testConnectedCountries() {
-//     // Add connected countries to the map
-//     Country country1 = new Country(1, "Country1", "Continent1");
-//     Country country2 = new Country(2, "Country2", "Continent1");
-//     Country country3 = new Country(3, "Country3", "Continent1");
+  /**
+   * Verifies the behavior of the validate method when there are no countries in the Map.
+   *
+   * @throws InvalidMap Exception
+   */
+  @Test(expected = InvalidMap.class)
+  public void testValidateNoCountry() throws InvalidMap {
+    Continent l_continent = new Continent();
+    List<Continent> l_continents = new ArrayList<Continent>();
 
-//     // Connect the countries
-//     country1.addNeighbor(country2);
-//     country2.addNeighbor(country3);
-//     country3.addNeighbor(country1);
+    l_continents.add(l_continent);
+    d_map.setD_continents(l_continents);
+    d_map.validate();
+  }
 
-//     map.addCountry(country1);
-//     map.addCountry(country2);
-//     map.addCountry(country3);
+  /**
+   * Checks the connectivity of continents, specifically targeting unconnected continents.
+   *
+   * @throws InvalidMap Exception
+   */
+  @Test(expected = InvalidMap.class)
+  public void testContinentConnectivity() throws InvalidMap {
+    d_map = d_ms.loadMap(d_gameContext, "continentConnectivity.map");
+    d_map.validate();
+  }
 
-//     assertTrue(map.validateMap(), "Connected countries should result in a valid map.");
-//   }
-
-//   @Test
-//   public void testPartiallyConnectedCountries() {
-//     // Add partially connected countries to the map
-//     Country country1 = new Country(1, "Country1", "Continent1");
-//     Country country2 = new Country(2, "Country2", "Continent1");
-//     Country country3 = new Country(3, "Country3", "Continent1");
-
-//     // Connect the first two countries but leave the third one disconnected
-//     country1.addNeighbor(country2);
-
-//     map.addCountry(country1);
-//     map.addCountry(country2);
-//     map.addCountry(country3);
-
-//     assertFalse(
-//         map.validateMap(), "Partially connected countries should result in an invalid map.");
-//   }
-// }
+  /**
+   * Evaluates the connectivity of countries, focusing on situations where countries are not
+   * connected.
+   *
+   * @throws InvalidMap Exception
+   */
+  @Test(expected = InvalidMap.class)
+  public void testCountryConnectivity() throws InvalidMap {
+    d_map.addContinent("Asia", 10);
+    d_map.addCountry("Japan", "Asia");
+    d_map.addCountry("China", "Asia");
+    d_map.addCountry("Korea", "Asia");
+    d_map.addCountryNeighbour("Korea", "China");
+    d_map.addCountryNeighbour("China", "Korea");
+    d_map.addCountry("Korea", "Japan");
+    d_map.checkCountryConnectivity();
+  }
+}
