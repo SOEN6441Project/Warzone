@@ -1,9 +1,10 @@
 package com.hexaforce.warzone.models;
 
 import com.hexaforce.warzone.WarzoneEngine;
+import com.hexaforce.warzone.controllers.MapController;
+import com.hexaforce.warzone.controllers.PlayerController;
 import com.hexaforce.warzone.exceptions.InvalidCommand;
 import com.hexaforce.warzone.exceptions.InvalidMap;
-import com.hexaforce.warzone.services.MapService;
 import com.hexaforce.warzone.services.PlayerService;
 import com.hexaforce.warzone.utils.Command;
 import java.io.IOException;
@@ -19,7 +20,6 @@ public abstract class Phase {
 
   /** The variable d_gameEngine stores information about the current state of the game. */
   WarzoneEngine d_gameEngine;
-
   /**
    * The d_mapService instance is used to manage the loading, reading, parsing, editing, and saving
    * of map files.
@@ -28,6 +28,15 @@ public abstract class Phase {
 
   /** PlayerService instance for player management and order issuing. */
   PlayerService d_playerService = new PlayerService();
+    /**
+     * The Map Controller instance is used to manage the loading, reading, parsing,
+     * editing, and saving
+     * of map files.
+     */
+    MapController d_mapController = new MapController();
+
+    /** The Player Service instance for player management and order issuing. */
+    PlayerController d_playerController = new PlayerController();
 
   /** A boolean flag to indicate whether the map has been loaded. */
   boolean l_isMapLoaded;
@@ -118,7 +127,6 @@ public abstract class Phase {
           validateEditCountry(l_command, p_player);
           break;
         }
-
       case "editneighbor":
         {
           validateEditNeighbor(l_command, p_player);
@@ -165,6 +173,48 @@ public abstract class Phase {
       default:
         {
           break;
+            case "editneighbor": {
+                validateEditNeighbor(l_command, p_player);
+                break;
+            }
+            case "gameplayer": {
+                manageGamePlayers(l_command, p_player);
+                break;
+            }
+            case "assigncountries": {
+                validateAssignCountries(l_command, p_player);
+                break;
+            }
+            case "showmap": {
+                manageShowMap(l_command, p_player);
+                break;
+            }
+            case "deploy": {
+                executeDeployOrder(p_enteredCommand, p_player);
+                break;
+            }
+            case "advance": {
+                executeAdvanceOrder(p_enteredCommand, p_player);
+                break;
+            }
+            case "airlift":
+            case "blockade":
+            case "negotiate":
+            case "bomb": {
+                handleCardCommands(p_enteredCommand, p_player);
+                break;
+            }
+            case "exit": {
+                System.exit(0);
+                break;
+            }
+            case "showcommands": {
+                showCommands();
+                break;
+            }
+            default: {
+                break;
+            }
         }
     }
   }
@@ -207,6 +257,15 @@ public abstract class Phase {
   public void printInvalidCommandInCurrentState() {
     System.out.println("Invalid Command in Current State");
   }
+    /** Show commands according to the current game phase. */
+    public abstract void showCommands();
+
+    /**
+     * Method to Log and Print if the command can't be executed in current phase.
+     */
+    public void printInvalidCommandInCurrentState() {
+        System.out.println("Invalid Command in Current State");
+    }
 
   /**
    * This method handles the "deploy order" in gameplay.

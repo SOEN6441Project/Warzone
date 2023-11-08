@@ -5,13 +5,40 @@ import com.hexaforce.warzone.models.Country;
 import com.hexaforce.warzone.models.GameContext;
 import com.hexaforce.warzone.models.Player;
 import com.hexaforce.warzone.utils.CommonUtil;
+import com.hexaforce.warzone.utils.Constants;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 /** This service class handles the players. */
 public class PlayerService {
+
+    /** Log of Player operations in player methods. */
+    String d_playerLog;
+
+    /** Country Assignment Log. */
+    String d_assignmentLog = "Country/Continent Assignment:";
+
+    /**
+     * Checks if player name is exists in given existing player list.
+     *
+     * @param p_existingPlayerList existing players list present in game
+     * @param p_playerName         player name which needs to be looked upon
+     * @return boolean true if player name is unique, false if its not
+     */
+    public boolean isPlayerNameUnique(List<Player> p_existingPlayerList, String p_playerName) {
+        boolean l_isUnique = true;
+        if (!CommonUtil.isCollectionEmpty(p_existingPlayerList)) {
+            for (Player l_player : p_existingPlayerList) {
+                if (l_player.getPlayerName().equalsIgnoreCase(p_playerName)) {
+                    l_isUnique = false;
+                    break;
+                }
+            }
+        }
+        return l_isUnique;
+    }
 
   /** the color red */
   public static final String RED = "\033[0;31m";
@@ -32,6 +59,11 @@ public class PlayerService {
   public static final String CYAN = "\033[0;36m";
 
   public static final String WHITE = "\u001B[47m";
+
+        for (int i = 0; i < l_players.size(); i++) {
+            l_players.get(i).setD_color(Constants.COLORS.get(i));
+        }
+    }
 
   /** the colors are assigned to an array as arraylist */
   public static final List<String> COLORS = Arrays.asList(RED, GREEN, YELLOW, BLUE, PURPLE, CYAN);

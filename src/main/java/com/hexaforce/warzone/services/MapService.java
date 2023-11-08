@@ -7,7 +7,8 @@ import com.hexaforce.warzone.models.Country;
 import com.hexaforce.warzone.models.GameContext;
 import com.hexaforce.warzone.models.Map;
 import com.hexaforce.warzone.utils.CommonUtil;
-import java.io.*;
+import com.hexaforce.warzone.utils.Constants;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -22,6 +23,38 @@ import java.util.stream.Collectors;
 
 /** The MapService class load, read, parse, edit, and save map file. */
 public class MapService {
+
+
+    /**
+     * The loadmap method process map file.
+     *
+     * @param p_gameState    current state of game.
+     * @param p_loadFileName map file name.
+     * @return Map object after processing map file.
+     * @throws InvalidMap indicates Map Object Validation failure
+     */
+    public Map loadMap(GameContext p_gameState, String p_loadFileName) throws InvalidMap {
+        Map l_map = new Map();
+        List<String> l_linesOfFile = loadFile(p_loadFileName);
+
+        if (null != l_linesOfFile && !l_linesOfFile.isEmpty()) {
+
+            // Parses the file and stores information in objects
+            List<String> l_continentData = getMetaData(l_linesOfFile, "continent");
+            List<Continent> l_continentObjects = parseContinentsMetaData(l_continentData);
+            List<String> l_countryData = getMetaData(l_linesOfFile, "country");
+            List<String> l_bordersMetaData = getMetaData(l_linesOfFile, "border");
+            List<Country> l_countryObjects = parseCountriesMetaData(l_countryData);
+
+            // Updates the neighbour of countries in Objects
+            l_countryObjects = parseBorderMetaData(l_countryObjects, l_bordersMetaData);
+            l_continentObjects = linkCountryContinents(l_countryObjects, l_continentObjects);
+            l_map.setD_continents(l_continentObjects);
+            l_map.setD_countries(l_countryObjects);
+            p_gameState.setD_map(l_map);
+        }
+        return l_map;
+    }
 
   /** contains the continents */
   public static final String CONTINENTS = "[continents]";
@@ -94,6 +127,32 @@ public class MapService {
       l_reader.close();
     } catch (IOException l_e1) {
       throw new InvalidMap("Map File not Found!");
+=======
+
+    /**
+     * Returns the corresponding map file lines.
+     *
+     * @param p_fileLines       All Lines in the map document
+     * @param p_switchParameter Type of lines needed : country, continent, borders
+     * @return List required set of lines
+     */
+    public List<String> getMetaData(List<String> p_fileLines, String p_switchParameter) {
+        switch (p_switchParameter) {
+            case "continent":
+                List<String> l_continentLines = p_fileLines.subList(
+                        p_fileLines.indexOf(Constants.CONTINENTS) + 1, p_fileLines.indexOf(Constants.COUNTRIES) - 1);
+                return l_continentLines;
+            case "country":
+                List<String> l_countryLines = p_fileLines.subList(
+                        p_fileLines.indexOf(Constants.COUNTRIES) + 1, p_fileLines.indexOf(Constants.BORDERS) - 1);
+                return l_countryLines;
+            case "border":
+                List<String> l_bordersLines = p_fileLines.subList(p_fileLines.indexOf(Constants.BORDERS) + 1,
+                        p_fileLines.size());
+                return l_bordersLines;
+            default:
+                return null;
+        }
     }
     return l_lineList;
   }
@@ -437,6 +496,50 @@ public class MapService {
             if (null != p_gameState.getD_map().getD_countries()
                 && !p_gameState.getD_map().getD_countries().isEmpty()) {
               writeCountryAndBoarderMetaData(p_gameState, l_writer);
+
+    /**
+     * Retrieves country and boarder data from game state and writes it to file
+     * writer.
+     *
+     * @param p_gameState Current GameContext Object
+     * @param p_writer    Writer object for file
+     * @throws IOException handles I/0
+     */
+    private void writeCountryAndBoarderMetaData(GameContext p_gameState, FileWriter p_writer)
+            throws IOException {
+        String l_countryMetaData = new String();
+        String l_bordersMetaData = new String();
+        List<String> l_bordersList = new ArrayList<>();
+
+        // Writes Country Objects to File And Organizes Border Data for each of them
+        p_writer.write(System.lineSeparator() + Constants.COUNTRIES + System.lineSeparator());
+        for (Country l_country : p_gameState.getD_map().getD_countries()) {
+            l_countryMetaData = new String();
+            l_countryMetaData = l_country
+                    .getD_countryId()
+                    .toString()
+                    .concat(" ")
+                    .concat(l_country.getD_countryName())
+                    .concat(" ")
+                    .concat(l_country.getD_continentId().toString());
+            p_writer.write(l_countryMetaData + System.lineSeparator());
+
+            if (null != l_country.getD_adjacentCountryIds()
+                    && !l_country.getD_adjacentCountryIds().isEmpty()) {
+                l_bordersMetaData = new String();
+                l_bordersMetaData = l_country.getD_countryId().toString();
+                for (Integer l_adjCountry : l_country.getD_adjacentCountryIds()) {
+                    l_bordersMetaData = l_bordersMetaData.concat(" ").concat(l_adjCountry.toString());
+                }
+                l_bordersList.add(l_bordersMetaData);
+            }
+        }
+
+        // Writes Border data to the File
+        if (null != l_bordersList && !l_bordersList.isEmpty()) {
+            p_writer.write(System.lineSeparator() + Constants.BORDERS + System.lineSeparator());
+            for (String l_borderStr : l_bordersList) {
+                p_writer.write(l_borderStr + System.lineSeparator());
             }
             p_gameState.updateLog("Map Saved Successfully", "effect");
             l_writer.close();
@@ -489,6 +592,24 @@ public class MapService {
         l_bordersMetaData = l_country.getD_countryId().toString();
         for (Integer l_adjCountry : l_country.getD_adjacentCountryIds()) {
           l_bordersMetaData = l_bordersMetaData.concat(" ").concat(l_adjCountry.toString());
+
+    /**
+     * Retrieves continents' data from game state and writes it to file.
+     *
+     * @param p_gameState Current GameContext
+     * @param p_writer    Writer Object for file
+     * @throws IOException handles I/O
+     */
+    private void writeContinentMetadata(GameContext p_gameState, FileWriter p_writer)
+            throws IOException {
+        p_writer.write(System.lineSeparator() + Constants.CONTINENTS + System.lineSeparator());
+        for (Continent l_continent : p_gameState.getD_map().getD_continents()) {
+            p_writer.write(
+                    l_continent
+                            .getD_continentName()
+                            .concat(" ")
+                            .concat(l_continent.getD_continentValue().toString())
+                            + System.lineSeparator());
         }
         l_bordersList.add(l_bordersMetaData);
       }
@@ -520,6 +641,16 @@ public class MapService {
                   .concat(" ")
                   .concat(l_continent.getD_continentValue().toString())
               + System.lineSeparator());
+
+    /**
+     * Set the log of map editor methods.
+     *
+     * @param p_MapServiceLog String containing log
+     * @param p_gameState     current gamestate instance
+     */
+    private void setD_MapServiceLog(String p_MapServiceLog, GameContext p_gameState) {
+        System.out.println(p_MapServiceLog);
+        p_gameState.updateLog(p_MapServiceLog, "effect");
     }
   }
 

@@ -78,6 +78,12 @@ public class IssueOrderPhase extends Phase {
 
     /** {@inheritDoc} */
     @Override
+    public void showCommands() {
+        Command.displayIssueOrderCommands();
+    }
+
+    /** {@inheritDoc} */
+    @Override
     protected void executeDeployOrder(String p_command, Player p_player) throws IOException {
         p_player.createDeployOrder(p_command);
         d_gameContext.updateLog(p_player.getD_playerLog(), "effect");
@@ -97,7 +103,7 @@ public class IssueOrderPhase extends Phase {
                     }
                 }
             }
-        } while (d_playerService.checkForMoreOrders(d_gameContext.getD_players()));
+        } while (d_playerController.checkForMoreOrders(d_gameContext.getD_players()));
 
         d_gameEngine.setOrderExecutionPhase();
     }

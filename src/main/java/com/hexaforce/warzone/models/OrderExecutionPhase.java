@@ -42,6 +42,11 @@ public class OrderExecutionPhase extends Phase {
 
     /** {@inheritDoc} */
     @Override
+    public void showCommands() {
+    }
+
+    /** {@inheritDoc} */
+    @Override
     public void onPhaseInitialization() {
         while (d_gameEngine.getD_currentPhase() instanceof OrderExecutionPhase) {
             executeOrders();
@@ -59,7 +64,7 @@ public class OrderExecutionPhase extends Phase {
                     if (l_continue.equalsIgnoreCase("N")) {
                         break;
                     } else if (l_continue.equalsIgnoreCase("Y")) {
-                        d_playerService.assignArmies(d_gameContext);
+                        d_playerController.assignArmies(d_gameContext);
                         d_gameEngine.setIssueOrderPhase();
                     } else {
                         System.out.println("Invalid Input");
@@ -76,7 +81,7 @@ public class OrderExecutionPhase extends Phase {
         addNeutralPlayer(d_gameContext);
         // Executing orders
         d_gameEngine.setD_gameEngineLog("\nStarting Execution Of Orders.....", "start");
-        while (d_playerService.unexecutedOrdersExists(d_gameContext.getD_players())) {
+        while (d_playerController.unexecutedOrdersExists(d_gameContext.getD_players())) {
             for (Player l_player : d_gameContext.getD_players()) {
                 Order l_order = l_player.next_order();
                 if (l_order != null) {
@@ -86,7 +91,7 @@ public class OrderExecutionPhase extends Phase {
                 }
             }
         }
-        d_playerService.resetPlayersFlag(d_gameContext.getD_players());
+        d_playerController.resetPlayersFlag(d_gameContext.getD_players());
     }
 
     /**

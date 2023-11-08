@@ -4,7 +4,6 @@ import com.hexaforce.warzone.exceptions.InvalidMap;
 import com.hexaforce.warzone.models.*;
 import com.hexaforce.warzone.utils.CommonUtil;
 import com.hexaforce.warzone.utils.Constants;
-
 import java.util.List;
 import org.davidmoten.text.utils.WordWrap;
 
@@ -199,10 +198,7 @@ public class MapView {
      * @param p_player The player's information.
      */
     private void displayPlayerInfo(Integer p_index, Player p_player) {
-        String l_playerInfo = String.format(
-                "%02d. %s %-8s",
-                p_index,
-                p_player.getD_name(), getPlayerArmies(p_player));
+        String l_playerInfo = String.format("%02d. %s %-8s", p_index, p_player.getD_name(), getPlayerArmies(p_player));
         System.out.println(l_playerInfo);
     }
 
@@ -228,6 +224,7 @@ public class MapView {
             l_counter++;
             displayPlayerInfo(l_counter, p);
             displayCardsOwnedByPlayers(p);
+            displayCountriesOwnedByPlayers(p);
 
         }
     }
@@ -249,6 +246,25 @@ public class MapView {
         String l_cardsOwnedByPlayer = "Cards Owned : "
                 + WordWrap.from(l_cards.toString()).maxWidth(Constants.CONSOLE_WIDTH).wrap();
         System.out.println(l_cardsOwnedByPlayer);
+    }
+
+    /**
+     * Display the number of cards owned by the player.
+     *
+     * @param p_player Player Instance
+     */
+    private void displayCountriesOwnedByPlayers(Player p_player) {
+        StringBuilder l_country = new StringBuilder();
+
+        for (int i = 0; i < p_player.getD_countriesOwned().size(); i++) {
+            l_country.append(p_player.getD_countriesOwned().get(i).getD_countryName());
+            if (i < p_player.getD_countriesOwned().size() - 1)
+                l_country.append(", ");
+        }
+
+        String l_countriesOwnedByPlayer = "Countries Owned : "
+                + WordWrap.from(l_country.toString()).maxWidth(Constants.CONSOLE_WIDTH).wrap();
+        System.out.println(l_countriesOwnedByPlayer);
         System.out.println();
     }
 
@@ -290,7 +306,6 @@ public class MapView {
      * .map files.
      */
     public void showMap() {
-        System.out.println(d_players);
         if (d_players != null) {
             displayPlayers();
         }
