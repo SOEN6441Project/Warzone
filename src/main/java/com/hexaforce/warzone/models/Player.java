@@ -509,7 +509,7 @@ public class Player {
    * Handles the Card Commands: creates order and adds them to the list.
    *
    * @param p_commandEntered command entered
-   * @param p_gameContext gamestate instance
+   * @param p_gameContext GameContext instance
    */
   public void handleCardCommands(String p_commandEntered, GameContext p_gameContext) {
     if (checkCardArguments(p_commandEntered)) {
