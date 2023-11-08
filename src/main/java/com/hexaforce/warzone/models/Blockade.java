@@ -139,7 +139,7 @@ public class Blockade implements Card {
   /**
    * Pre-validation of card type order.
    *
-   * @param p_gameContext Gamestate
+   * @param p_gameContext GameContext
    * @return true or false
    */
   @Override
