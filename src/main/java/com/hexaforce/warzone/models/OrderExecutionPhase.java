@@ -95,18 +95,18 @@ public class OrderExecutionPhase extends Phase {
   /**
    * Add a neutral player to game.
    *
-   * @param p_gameContext GameContext
+   * @param p_gameState GameContext
    */
-  public void addNeutralPlayer(GameContext p_gameContext) {
+  public void addNeutralPlayer(GameContext p_gameState) {
     Player l_player =
-        p_gameContext.getD_players().stream()
+        p_gameState.getD_players().stream()
             .filter(l_pl -> l_pl.getPlayerName().equalsIgnoreCase("Neutral"))
             .findFirst()
             .orElse(null);
     if (CommonUtil.isNull(l_player)) {
       Player l_neutralPlayer = new Player("Neutral");
       l_neutralPlayer.setD_moreOrders(false);
-      p_gameContext.getD_players().add(l_neutralPlayer);
+      p_gameState.getD_players().add(l_neutralPlayer);
     } else {
       return;
     }

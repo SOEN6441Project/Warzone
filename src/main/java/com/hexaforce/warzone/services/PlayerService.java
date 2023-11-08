@@ -6,7 +6,6 @@ import com.hexaforce.warzone.models.GameContext;
 import com.hexaforce.warzone.models.Player;
 import com.hexaforce.warzone.utils.CommonUtil;
 import com.hexaforce.warzone.utils.Constants;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -263,18 +262,6 @@ public class PlayerService {
   }
 
   /**
-   * Used to test number of armies entered in deploy command to check that player cannot deploy more
-   * armies that there is in their reinforcement pool.
-   *
-   * @param p_player player to create deploy order
-   * @param p_noOfArmies number of armies to deploy
-   * @return boolean to validate armies to deploy
-   */
-  public boolean validateDeployOrderArmies(Player p_player, String p_noOfArmies) {
-    return p_player.getD_noOfUnallocatedArmies() < Integer.parseInt(p_noOfArmies);
-  }
-
-  /**
    * Calculates armies of player based on countries and continents owned.
    *
    * @param p_player player for which armies have to be calculated
@@ -341,7 +328,7 @@ public class PlayerService {
   }
 
   /**
-   * This method is called by controller to add players, update GameContext.
+   * This method is called by controller to add players, update gameState.
    *
    * @param p_gameContext update game state with players information.
    * @param p_operation operation to add or remove player.

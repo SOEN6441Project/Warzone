@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.1.3</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hexaforce</groupId>
 	<artifactId>Warzone</artifactId>
@@ -30,6 +30,7 @@
 			<artifactId>junit-jupiter</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<!-- log4j2 -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -57,13 +58,13 @@
 			<artifactId>word-wrap</artifactId>
 			<version>0.1.9</version>
 		</dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -86,8 +87,8 @@
 								<include>.gitignore</include>
 								<include>pom.xml</include>
 							</includes>
-							<trimTrailingWhitespace />
-							<endWithNewline />
+							<trimTrailingWhitespace/>
+							<endWithNewline/>
 							<indent>
 								<tabs>true</tabs>
 								<spacesPerTab>4</spacesPerTab>
@@ -100,9 +101,9 @@
 							<reflowLongStrings>true</reflowLongStrings>
 							<groupArtifact>com.google.googlejavaformat:google-java-format</groupArtifact>
 						</googleJavaFormat>
-						<importOrder />
-						<removeUnusedImports />
-						<formatAnnotations />
+						<importOrder/>
+						<removeUnusedImports/>
+						<formatAnnotations/>
 					</java>
 
 				</configuration>

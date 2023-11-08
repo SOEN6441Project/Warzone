@@ -1,97 +1,86 @@
 package com.hexaforce.warzone.models;
 
-import com.hexaforce.warzone.exceptions.InvalidMap;
-import com.hexaforce.warzone.services.MapService;
+import static org.junit.jupiter.api.Assertions.*;
 
-import static org.junit.Assert.assertEquals;
+import com.hexaforce.warzone.controllers.MapController;
+import com.hexaforce.warzone.exceptions.InvalidMap;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * This class serves as a testing suite for evaluating the functionality of the Map class's methods.
- */
 public class MapTest {
+  private Map d_map;
+  private MapController d_mapController;
+  private GameContext d_gameContext;
 
-  Map d_map;
-  MapService d_ms;
-  GameContext d_gameContext;
-
-  /** Initialization of Map Testing */
   @Before
-  public void beforeValidateTest() {
+  public void setUp() {
     d_map = new Map();
     d_gameContext = new GameContext();
-    d_ms = new MapService();
+    d_mapController = new MapController();
   }
 
-  /**
-   * Verifies the behavior of the validate method when there are no continents in the Map.
-   *
-   * @throws InvalidMap Exception
-   */
-  @Test(expected = InvalidMap.class)
+  @Test
   public void testValidateNoContinent() throws InvalidMap {
-    assertEquals(d_map.validate(), false);
+    assertThrows(
+        InvalidMap.class,
+        () -> {
+          assertEquals(d_map.validate(), false);
+        });
   }
 
-  /**
-   * Tests the validate function with both valid and invalid Map instances.
-   *
-   * @throws InvalidMap
-   */
-  @Test(expected = InvalidMap.class)
+  @Test
   public void testValidate() throws InvalidMap {
-    d_map = d_ms.loadMap(d_gameContext, "canada.map");
-
-    assertEquals(d_map.validate(), true);
-    d_map = d_ms.loadMap(d_gameContext, "swiss.map");
-    d_map.validate();
+    assertThrows(
+        InvalidMap.class,
+        () -> {
+          d_map = d_mapController.loadMap(d_gameContext, "canada.map");
+          assertEquals(d_map.validate(), true);
+          d_map = d_mapController.loadMap(d_gameContext, "swiss.map");
+          d_map.validate();
+        });
   }
 
-  /**
-   * Verifies the behavior of the validate method when there are no countries in the Map.
-   *
-   * @throws InvalidMap Exception
-   */
-  @Test(expected = InvalidMap.class)
+  @Test
   public void testValidateNoCountry() throws InvalidMap {
-    Continent l_continent = new Continent();
-    List<Continent> l_continents = new ArrayList<Continent>();
 
-    l_continents.add(l_continent);
-    d_map.setD_continents(l_continents);
-    d_map.validate();
+    assertThrows(
+        InvalidMap.class,
+        () -> {
+          Continent l_continent = new Continent();
+          List<Continent> l_continents = new ArrayList<Continent>();
+          l_continents.add(l_continent);
+          d_map.setD_continents(l_continents);
+          d_map.validate();
+        });
   }
 
-  /**
-   * Checks the connectivity of continents, specifically targeting unconnected continents.
-   *
-   * @throws InvalidMap Exception
-   */
-  @Test(expected = InvalidMap.class)
+  @Test
   public void testContinentConnectivity() throws InvalidMap {
-    d_map = d_ms.loadMap(d_gameContext, "continentConnectivity.map");
-    d_map.validate();
+
+    assertThrows(
+        InvalidMap.class,
+        () -> {
+          d_map = d_mapController.loadMap(d_gameContext, "continentConnectivity.map");
+          d_map.validate();
+        });
   }
 
-  /**
-   * Evaluates the connectivity of countries, focusing on situations where countries are not
-   * connected.
-   *
-   * @throws InvalidMap Exception
-   */
-  @Test(expected = InvalidMap.class)
+  @Test
   public void testCountryConnectivity() throws InvalidMap {
-    d_map.addContinent("Asia", 10);
-    d_map.addCountry("Japan", "Asia");
-    d_map.addCountry("China", "Asia");
-    d_map.addCountry("Korea", "Asia");
-    d_map.addCountryNeighbour("Korea", "China");
-    d_map.addCountryNeighbour("China", "Korea");
-    d_map.addCountry("Korea", "Japan");
-    d_map.checkCountryConnectivity();
+
+    assertThrows(
+        InvalidMap.class,
+        () -> {
+          d_map.addContinent("Asia", 2);
+          d_map.addCountry("India", "Asia");
+          d_map.addCountry("China", "Asia");
+          d_map.addCountry("Pakistan", "Asia");
+          d_map.addCountryNeighbour("India", "China");
+          d_map.addCountryNeighbour("China", "India");
+          d_map.addCountry("India", "Pakistan");
+          d_map.checkCountryConnectivity();
+        });
   }
 }

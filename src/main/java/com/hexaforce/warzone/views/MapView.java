@@ -7,8 +7,6 @@ import com.hexaforce.warzone.utils.Constants;
 import java.util.List;
 import org.davidmoten.text.utils.WordWrap;
 
-import static com.hexaforce.warzone.utils.Constants.CONSOLE_WIDTH;
-
 /** The MapView class is responsible for displaying the map and game state. */
 public class MapView {
   List<Player> d_players;
@@ -26,7 +24,11 @@ public class MapView {
    * @param p_gameContext The current GameContext.
    */
   public MapView(GameContext p_gameContext) {
-    initialize(p_gameContext, null);
+    d_gameContext = p_gameContext;
+    d_players = p_gameContext.getD_players();
+    d_map = p_gameContext.getD_map();
+    d_countries = d_map.getD_countries();
+    d_continents = d_map.getD_continents();
   }
 
   /**
@@ -36,19 +38,8 @@ public class MapView {
    * @param p_players List of Player objects.
    */
   public MapView(GameContext p_gameContext, List<Player> p_players) {
-    initialize(p_gameContext, p_players);
-  }
-
-  /**
-   * Initializes the MapView with the specified GameContext and optional list of players.
-   *
-   * @param p_gameContext The current GameContext to be associated with this MapView.
-   * @param p_players (Optional) List of Player objects. If provided, these players will be
-   *     associated with this MapView; otherwise, players from the GameContext are used.
-   */
-  private void initialize(GameContext p_gameContext, List<Player> p_players) {
     d_gameContext = p_gameContext;
-    d_players = p_players != null ? p_players : p_gameContext.getD_players();
+    d_players = p_gameContext.getD_players();
     d_map = p_gameContext.getD_map();
     d_countries = d_map.getD_countries();
     d_continents = d_map.getD_continents();
@@ -110,7 +101,7 @@ public class MapView {
     if (d_players != null) {
       l_continentName = getColorizedString(getContinentColor(p_continentName), l_continentName);
     }
-    displayCenteredString(CONSOLE_WIDTH, l_continentName);
+    displayCenteredString(80, l_continentName);
     displaySeparator();
   }
 
@@ -149,7 +140,7 @@ public class MapView {
     String l_adjacentCountry =
         "Connections"
             + " : "
-            + WordWrap.from(l_commaSeparatedCountries.toString()).maxWidth(CONSOLE_WIDTH).wrap();
+            + WordWrap.from(l_commaSeparatedCountries.toString()).maxWidth(80).wrap();
     System.out.println(getColorizedString(getCountryColor(p_countryName), l_adjacentCountry));
     System.out.println();
   }
@@ -226,7 +217,7 @@ public class MapView {
     int l_counter = 0;
 
     displaySeparator();
-    displayCenteredString(CONSOLE_WIDTH, "Warzone Players");
+    displayCenteredString(80, "Warzone Players");
     displaySeparator();
 
     for (Player p : d_players) {
@@ -251,7 +242,8 @@ public class MapView {
     }
 
     String l_cardsOwnedByPlayer =
-        "Cards Owned : " + WordWrap.from(l_cards.toString()).maxWidth(CONSOLE_WIDTH).wrap();
+        "Cards Owned : "
+            + WordWrap.from(l_cards.toString()).maxWidth(Constants.CONSOLE_WIDTH).wrap();
     System.out.println(l_cardsOwnedByPlayer);
   }
 
@@ -269,7 +261,8 @@ public class MapView {
     }
 
     String l_countriesOwnedByPlayer =
-        "Countries Owned : " + WordWrap.from(l_country.toString()).maxWidth(CONSOLE_WIDTH).wrap();
+        "Countries Owned : "
+            + WordWrap.from(l_country.toString()).maxWidth(Constants.CONSOLE_WIDTH).wrap();
     System.out.println(l_countriesOwnedByPlayer);
     System.out.println();
   }
