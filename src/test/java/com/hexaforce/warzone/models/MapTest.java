@@ -1,84 +1,86 @@
-// package com.hexaforce.warzone.models;
+package com.hexaforce.warzone.models;
 
-// import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-// import org.junit.jupiter.api.BeforeEach;
-// import org.junit.jupiter.api.Test;
+import com.hexaforce.warzone.controllers.MapController;
+import com.hexaforce.warzone.exceptions.InvalidMap;
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.Before;
+import org.junit.Test;
 
-// /**
-//  * This is the test class for the runner class of the application from which the game is
-// triggered,
-//  * it tests mainly the entry point to the app
-//  *
-//  * @author Usaib Khan
-//  */
-// class MapTest {
-//   private Map map;
+public class MapTest {
+  private Map d_map;
+  private MapController d_mapController;
+  private GameContext d_gameContext;
 
-//   @BeforeEach
-//   void setUp() {
-//     map = new Map(1, "TestMap");
-//   }
+  @Before
+  public void setUp() {
+    d_map = new Map();
+    d_gameContext = new GameContext();
+    d_mapController = new MapController();
+  }
 
-//   @Test
-//   void testMapGetName() {
-//     assertEquals("TestMap", map.getName());
-//   }
+  @Test
+  public void testValidateNoContinent() throws InvalidMap {
+    assertThrows(
+        InvalidMap.class,
+        () -> {
+          assertEquals(d_map.validate(), false);
+        });
+  }
 
-//   @Test
-//   public void testSingleCountryMap() {
-//     // Add a single country to the map
-//     Country country = new Country(1, "Country1", "Continent1");
-//     map.addCountry(country);
+  @Test
+  public void testValidate() throws InvalidMap {
+    assertThrows(
+        InvalidMap.class,
+        () -> {
+          d_map = d_mapController.loadMap(d_gameContext, "canada.map");
+          assertEquals(d_map.validate(), true);
+          d_map = d_mapController.loadMap(d_gameContext, "swiss.map");
+          d_map.validate();
+        });
+  }
 
-//     assertTrue(map.validateMap(), "A map with a single country should be valid.");
-//   }
+  @Test
+  public void testValidateNoCountry() throws InvalidMap {
 
-//   @Test
-//   public void testDisconnectedCountries() {
-//     // Add two disconnected countries to the map
-//     Country country1 = new Country(1, "Country1", "Continent1");
-//     Country country2 = new Country(2, "Country2", "Continent1");
-//     map.addCountry(country1);
-//     map.addCountry(country2);
+    assertThrows(
+        InvalidMap.class,
+        () -> {
+          Continent l_continent = new Continent();
+          List<Continent> l_continents = new ArrayList<Continent>();
+          l_continents.add(l_continent);
+          d_map.setD_continents(l_continents);
+          d_map.validate();
+        });
+  }
 
-//     assertFalse(map.validateMap(), "Disconnected countries should result in an invalid map.");
-//   }
+  @Test
+  public void testContinentConnectivity() throws InvalidMap {
 
-//   @Test
-//   public void testConnectedCountries() {
-//     // Add connected countries to the map
-//     Country country1 = new Country(1, "Country1", "Continent1");
-//     Country country2 = new Country(2, "Country2", "Continent1");
-//     Country country3 = new Country(3, "Country3", "Continent1");
+    assertThrows(
+        InvalidMap.class,
+        () -> {
+          d_map = d_mapController.loadMap(d_gameContext, "continentConnectivity.map");
+          d_map.validate();
+        });
+  }
 
-//     // Connect the countries
-//     country1.addNeighbor(country2);
-//     country2.addNeighbor(country3);
-//     country3.addNeighbor(country1);
+  @Test
+  public void testCountryConnectivity() throws InvalidMap {
 
-//     map.addCountry(country1);
-//     map.addCountry(country2);
-//     map.addCountry(country3);
-
-//     assertTrue(map.validateMap(), "Connected countries should result in a valid map.");
-//   }
-
-//   @Test
-//   public void testPartiallyConnectedCountries() {
-//     // Add partially connected countries to the map
-//     Country country1 = new Country(1, "Country1", "Continent1");
-//     Country country2 = new Country(2, "Country2", "Continent1");
-//     Country country3 = new Country(3, "Country3", "Continent1");
-
-//     // Connect the first two countries but leave the third one disconnected
-//     country1.addNeighbor(country2);
-
-//     map.addCountry(country1);
-//     map.addCountry(country2);
-//     map.addCountry(country3);
-
-//     assertFalse(
-//         map.validateMap(), "Partially connected countries should result in an invalid map.");
-//   }
-// }
+    assertThrows(
+        InvalidMap.class,
+        () -> {
+          d_map.addContinent("Asia", 2);
+          d_map.addCountry("India", "Asia");
+          d_map.addCountry("China", "Asia");
+          d_map.addCountry("Pakistan", "Asia");
+          d_map.addCountryNeighbour("India", "China");
+          d_map.addCountryNeighbour("China", "India");
+          d_map.addCountry("India", "Pakistan");
+          d_map.checkCountryConnectivity();
+        });
+  }
+}
