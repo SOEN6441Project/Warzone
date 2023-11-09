@@ -1,184 +1,101 @@
-// package com.hexaforce.warzone.services;
-//
-// import com.hexaforce.warzone.exceptions.InvalidMap;
-// import com.hexaforce.warzone.models.Continent;
-// import com.hexaforce.warzone.models.Country;
-// import com.hexaforce.warzone.models.GameContext;
-// import com.hexaforce.warzone.models.Map;
-// import com.hexaforce.warzone.utils.CommonUtil;
-// import org.junit.Before;
-// import org.junit.Test;
-//
-// import java.io.File;
-// import java.io.IOException;
-// import java.util.ArrayList;
-// import java.util.Arrays;
-// import java.util.LinkedHashMap;
-// import java.util.List;
-//
-// import static org.junit.Assert.assertEquals;
-// import static org.junit.Assert.assertTrue;
-//
-/// ** This class is used to test functionality of MapService class functions. */
-// public class MapServiceTest {
-//
-//  /** MapService reference to store its object. */
-//  MapService d_mapService;
-//
-//  /** Map reference to store its object. */
-//  Map d_map;
-//
-//  /** GameContext reference to store its object. */
-//  GameContext d_context;
-//
-//  /** Setup before each MapService Operations */
-//  @Before
-//  public void setup() throws InvalidMap {
-//    d_mapService = new MapService();
-//    d_map = new Map();
-//    d_context = new GameContext();
-//    d_map = d_mapService.loadMap(d_context, "europe.map");
-//  }
-//
-//  /**
-//   * This test case is used to test the functionality of EditMap function.
-//   *
-//   * @throws IOException throws IOException
-//   */
-//  @Test
-//  public void testEditMap() throws IOException, InvalidMap {
-//    d_mapService.editMap(d_context, "test.map");
-//    File l_file = new File(CommonUtil.getMapFilePath("test.map"));
-//
-//    assertTrue(l_file.exists());
-//  }
-//
-//  /**
-//   * tests addition of continent via editcontinent operation
-//   *
-//   * @throws IOException Exceptions
-//   * @throws InvalidMap Exception
-//   */
-//  @Test
-//  public void testEditContinentAdd() throws IOException, InvalidMap {
-//    d_context.setD_map(new Map());
-//    Map l_updatedContinents =
-//        d_mapService.addRemoveContinents(d_context.getD_map(), "Add", "Asia 10");
-//
-//    assertEquals(l_updatedContinents.getD_continents().size(), 1);
-//    assertEquals(l_updatedContinents.getD_continents().get(0).getD_continentName(), "Asia");
-//    assertEquals(
-//        l_updatedContinents.getD_continents().get(0).getD_continentValue().toString(), "10");
-//  }
-//
-//  /**
-//   * tests removal of continent via editcontinent operation
-//   *
-//   * @throws IOException Exceptions
-//   * @throws InvalidMap Exception
-//   */
-//  @Test
-//  public void testEditContinentRemove() throws IOException, InvalidMap {
-//    List<Continent> l_continents = new ArrayList<>();
-//    Continent l_c1 = new Continent();
-//    l_c1.setD_continentID(1);
-//    l_c1.setD_continentName("Asia");
-//    l_c1.setD_continentValue(10);
-//
-//    Continent l_c2 = new Continent();
-//    l_c2.setD_continentID(2);
-//    l_c2.setD_continentName("Europe");
-//    l_c2.setD_continentValue(20);
-//
-//    l_continents.add(l_c1);
-//    l_continents.add(l_c2);
-//
-//    Map l_map = new Map();
-//    l_map.setD_continents(l_continents);
-//    d_context.setD_map(l_map);
-//    Map l_updatedContinents =
-//        d_mapService.addRemoveContinents(d_context.getD_map(), "Remove", "Asia");
-//
-//    assertEquals(l_updatedContinents.getD_continents().size(), 1);
-//    assertEquals(l_updatedContinents.getD_continents().get(0).getD_continentName(), "Europe");
-//    assertEquals(
-//        l_updatedContinents.getD_continents().get(0).getD_continentValue().toString(), "20");
-//  }
-//
-//  /** This test case is used to test functionality of Load map continent Id and values. */
-//  @Test
-//  public void testContinentIdAndValues() {
-//    List<Integer> l_actualContinentIdList = new ArrayList<Integer>();
-//    List<Integer> l_actualContinentValueList = new ArrayList<Integer>();
-//
-//    List<Integer> l_expectedContinentIdList = new ArrayList<Integer>();
-//    l_expectedContinentIdList.addAll(Arrays.asList(1, 2, 3, 4));
-//
-//    List<Integer> l_expectedContinentValueList = new ArrayList<Integer>();
-//    l_expectedContinentValueList.addAll(Arrays.asList(5, 4, 5, 3));
-//
-//    for (Continent l_continent : d_map.getD_continents()) {
-//      l_actualContinentIdList.add(l_continent.getD_continentID());
-//      l_actualContinentValueList.add(l_continent.getD_continentValue());
-//    }
-//
-//    assertEquals(l_expectedContinentIdList, l_actualContinentIdList);
-//    assertEquals(l_expectedContinentValueList, l_actualContinentValueList);
-//  }
-//
-//  /** This test case is used to test functionality of Load map country Id and neighbors. */
-//  @Test
-//  public void testCountryIdAndNeighbors() {
-//    List<Integer> l_actualCountryIdList = new ArrayList<Integer>();
-//    LinkedHashMap<Integer, List<Integer>> l_actualCountryNeighbors =
-//        new LinkedHashMap<Integer, List<Integer>>();
-//
-//    List<Integer> l_expectedCountryIdList = new ArrayList<Integer>();
-//    l_expectedCountryIdList.addAll(Arrays.asList(1, 2, 3, 4, 5));
-//
-//    LinkedHashMap<Integer, List<Integer>> l_expectedCountryNeighbors =
-//        new LinkedHashMap<Integer, List<Integer>>() {
-//          {
-//            put(1, new ArrayList<Integer>(Arrays.asList(8, 21, 6, 7, 5, 2, 3, 4)));
-//            put(2, new ArrayList<Integer>(Arrays.asList(8, 1, 3)));
-//            put(3, new ArrayList<Integer>(Arrays.asList(1, 2)));
-//            put(4, new ArrayList<Integer>(Arrays.asList(22, 1, 5)));
-//            put(5, new ArrayList<Integer>(Arrays.asList(1, 4)));
-//          }
-//        };
-//
-//    for (Country l_country : d_map.getD_countries()) {
-//      ArrayList<Integer> l_neighbours = new ArrayList<Integer>();
-//      l_actualCountryIdList.add(l_country.getD_countryId());
-//      l_neighbours.addAll(l_country.getD_adjacentCountryIds());
-//      l_actualCountryNeighbors.put(l_country.getD_countryId(), l_neighbours);
-//    }
-//
-//    assertEquals(l_expectedCountryIdList, l_actualCountryIdList);
-//    assertEquals(l_expectedCountryNeighbors, l_actualCountryNeighbors);
-//  }
-//
-//  /**
-//   * Tests the savemap operation on an Invalid Map
-//   *
-//   * @throws InvalidMap Exception
-//   */
-//  @Test(expected = InvalidMap.class)
-//  public void testSaveInvalidMap() throws InvalidMap {
-//    d_map.setD_mapFile("europe.map");
-//    d_context.setD_map(d_map);
-//    d_mapService.saveMap(d_context, "europe.map");
-//  }
-//
-//
-//  /**
-//   * Tests the Remove Country Operation via editcountry
-//   *
-//   * @throws InvalidMap Exception
-//   */
-//  @Test(expected = InvalidMap.class)
-//  public void testEditCountryRemove() throws InvalidMap {
-//    d_mapService.loadMap(d_context, "test.map");
-//  }
-//
-// }
+package com.hexaforce.warzone.services;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import com.hexaforce.warzone.exceptions.InvalidMap;
+import com.hexaforce.warzone.models.Continent;
+import com.hexaforce.warzone.models.GameContext;
+import com.hexaforce.warzone.models.Map;
+import com.hexaforce.warzone.utils.CommonUtil;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.Before;
+import org.junit.Test;
+
+/** 'MapServiceTest' is used to test functionalities of the class MapService. */
+public class MapServiceTest {
+
+  /** This is a Map service's object. */
+  MapService d_mapService;
+
+  /** This is a Map Model's object. */
+  Map d_map;
+
+  /** This is a GameContext Model's object. */
+  GameContext d_context;
+
+  /** Function setup is called before each test case of this class is executed. */
+  @Before
+  public void setup() throws InvalidMap {
+    d_mapService = new MapService();
+    d_map = new Map();
+    d_context = new GameContext();
+    d_map = d_mapService.loadMap(d_context, "Canada.map");
+  }
+
+  /**
+   * The map edit function is checked.
+   *
+   * @throws IOException throws Input Output Exception.
+   */
+  @Test
+  public void testEditMap() throws IOException, InvalidMap {
+    d_mapService.editMap(d_context, "test.map");
+    File l_file = new File(CommonUtil.getMapFilePath("test.map"));
+
+    assertTrue(l_file.exists());
+  }
+
+  /**
+   * This test checks if more continents are added in the map.
+   *
+   * @throws InvalidMap Invalid map's Exception.
+   */
+  @Test
+  public void testEditContinentAdd() throws InvalidMap {
+    d_context.setD_map(new Map());
+    Map l_updatedContinents =
+        d_mapService.addRemoveContinents(d_context, d_context.getD_map(), "add", "Canada 10");
+
+    assertEquals(l_updatedContinents.getD_continents().size(), 1);
+    assertEquals(l_updatedContinents.getD_continents().get(0).getD_continentName(), "Canada");
+    assertEquals(
+        l_updatedContinents.getD_continents().get(0).getD_continentValue().toString(), "10");
+  }
+
+  /**
+   * This test checks if existing continents are removed from the map.
+   *
+   * @throws InvalidMap Invalid Map'sException
+   */
+  @Test
+  public void testEditContinentRemove() throws InvalidMap {
+    List<Continent> l_continents = new ArrayList<>();
+    Continent l_c1 = new Continent();
+    l_c1.setD_continentID(1);
+    l_c1.setD_continentName("Canada");
+    l_c1.setD_continentValue(10);
+
+    Continent l_c2 = new Continent();
+    l_c2.setD_continentID(2);
+    l_c2.setD_continentName("USA");
+    l_c2.setD_continentValue(20);
+
+    l_continents.add(l_c1);
+    l_continents.add(l_c2);
+
+    Map l_map = new Map();
+    l_map.setD_continents(l_continents);
+    d_context.setD_map(l_map);
+    Map l_updatedContinents =
+        d_mapService.addRemoveContinents(d_context, d_context.getD_map(), "remove", "USA");
+
+    assertEquals(l_updatedContinents.getD_continents().size(), 1);
+    assertEquals(l_updatedContinents.getD_continents().get(0).getD_continentName(), "Canada");
+    assertEquals(
+        l_updatedContinents.getD_continents().get(0).getD_continentValue().toString(), "10");
+  }
+}
