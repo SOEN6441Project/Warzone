@@ -209,8 +209,8 @@ public class Player {
    */
   public List<String> getCountryNames() {
     List<String> l_countryNames = new ArrayList<String>();
-    for (Country c : d_countriesOwned) {
-      l_countryNames.add(c.getD_countryName());
+    for (Country l_countryObject : d_countriesOwned) {
+      l_countryNames.add(l_countryObject.getD_countryName());
     }
     return l_countryNames;
   }
@@ -223,8 +223,8 @@ public class Player {
   public List<String> getContinentNames() {
     List<String> l_continentNames = new ArrayList<String>();
     if (d_continentsOwned != null) {
-      for (Continent c : d_continentsOwned) {
-        l_continentNames.add(c.getD_continentName());
+      for (Continent l_continentObject : d_continentsOwned) {
+        l_continentNames.add(l_continentObject.getD_continentName());
       }
       return l_continentNames;
     }
