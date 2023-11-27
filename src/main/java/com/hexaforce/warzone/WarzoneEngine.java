@@ -65,7 +65,7 @@ public class WarzoneEngine {
         .getD_gameContext()
         .updateLog("Game is Starting..." + System.lineSeparator(), "start");
     Command.displayStartupCommands();
-    l_game.setD_gameEngineLog("Game Startup Phase", "phase");
+    l_game.setD_gameEngineLog("Startup Phase", "phase");
     l_game.getD_currentPhase().onPhaseInitialization();
   }
 }
