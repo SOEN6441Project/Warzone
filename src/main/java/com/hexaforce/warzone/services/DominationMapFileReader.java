@@ -22,7 +22,7 @@ public class DominationMapFileReader implements Serializable {
      * @param p_map         The current Map instance.
      * @param p_linesOfFile All lines in the map document.
      */
-    public void parseMapFile(GameContext p_gameContext, Map p_map, List<String> p_linesOfFile) {
+    public void parseDominationMapFile(GameContext p_gameContext, Map p_map, List<String> p_linesOfFile) {
         // Parses the file and stores information in objects
         List<String> l_continentData = getMetaData(p_linesOfFile, "continent");
         List<Continent> l_continentObjects = parseContinentsMetaData(l_continentData);
