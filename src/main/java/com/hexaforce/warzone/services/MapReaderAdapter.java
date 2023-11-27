@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.hexaforce.warzone.models.GameContext;
 import com.hexaforce.warzone.models.Map;
-
+ 
 /**
  * An adapter class for reading conquest map files.
  *
