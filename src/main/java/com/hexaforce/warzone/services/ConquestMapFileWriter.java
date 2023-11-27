@@ -4,6 +4,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
 
+import com.hexaforce.warzone.models.Continent;
+import com.hexaforce.warzone.models.Country;
 import com.hexaforce.warzone.models.GameContext;
 import com.hexaforce.warzone.utils.Constants;
 
@@ -20,7 +22,7 @@ public class ConquestMapFileWriter implements Serializable {
      * @param p_mapFormat   The format in which the map file has to be saved.
      * @throws IOException Handles IOException.
      */
-    public void parseMapToFile(GameContext p_gameContext, FileWriter p_writer, String p_mapFormat) throws IOException {
+    public void parseConquestMapToFile(GameContext p_gameContext, FileWriter p_writer, String p_mapFormat) throws IOException {
         if (null != p_gameContext.getD_map().getD_continents()
                 && !p_gameContext.getD_map().getD_continents().isEmpty()) {
             writeContinentMetadata(p_gameContext, p_writer);

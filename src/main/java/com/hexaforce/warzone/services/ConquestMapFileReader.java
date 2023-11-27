@@ -21,7 +21,7 @@ public class ConquestMapFileReader implements Serializable {
      * @param p_map         The map to be set.
      * @param p_linesOfFile The lines of the loaded file.
      */
-    public void readConquestFile(GameContext p_gameContext, Map p_map, List<String> p_linesOfFile) {
+    public void readConquestMapFile(GameContext p_gameContext, Map p_map, List<String> p_linesOfFile) {
         // Parses the file and stores information in objects
         List<String> l_continentData = getMetaData(p_linesOfFile, "continent");
         List<Continent> l_continentObjects = parseContinentsMetaData(l_continentData);
