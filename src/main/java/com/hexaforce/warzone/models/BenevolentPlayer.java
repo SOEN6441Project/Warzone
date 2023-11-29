@@ -134,7 +134,9 @@ public class BenevolentPlayer extends PlayerBehaviorStrategy {
         Country l_randomOwnCountry = getRandomCountry(p_player.getD_countriesOwned());
         Country l_randomEnemyNeighbor = p_gameContext.getD_map()
                 .getCountry(randomEnemyNeighbor(p_player, l_randomOwnCountry)
-                        .get(l_random.nextInt(randomEnemyNeighbor(p_player, l_randomOwnCountry).size())));
+                        .get(l_random.nextInt(randomEnemyNeighbor(p_player, l_randomOwnCountry).size() > 0
+                                ? randomEnemyNeighbor(p_player, l_randomOwnCountry).size()
+                                : 0)));
 
         if (l_randomOwnCountry.getD_armies() > 1) {
             l_armiesToSend = l_random.nextInt(l_randomOwnCountry.getD_armies() - 1) + 1;

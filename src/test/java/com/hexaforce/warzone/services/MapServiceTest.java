@@ -33,7 +33,7 @@ public class MapServiceTest {
     d_mapService = new MapService();
     d_map = new Map();
     d_context = new GameContext();
-    d_map = d_mapService.loadMap(d_context, "Canada.map");
+    d_map = d_mapService.loadMap(d_context, "canada.map");
   }
 
   /**

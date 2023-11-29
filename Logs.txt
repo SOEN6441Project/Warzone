@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Game is Starting...
 gameplayer -add a -add b -add c -add d
 tournament -M warzone.map -P Cheater Benevolent -G 2 -D 10
@@ -1040,3 +1041,2836 @@ Initializing the Game ......
 
 =====Game Startup Phase=====
 
+=======
+>>>>>>> 21e3da212386b05116abfd37b84aef24b825c09c
+Log: Advance Order : advance Pakistan China 15 is not executed as armies given in advance order exceeds armies of source country : Pakistan
+Log: Advance Order : advance Canada China 10 is not executed as source country : Canada has 10 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance Jordan China 10 is not executed since Source country : Jordan given in advance command does not belongs to the player : Usaib
+Log: Airlift Operation from Pakistan to China successful!
+Log: Invalid Target Country! It doesn't exist on the map.
+Log: 
+Player : Hammad is executing a blockade on Country :  Pakistan with armies :  15
+Log: Blockade card order : blockade China is not executed since Target country : China given in blockade command does not owned to the player : Hammad The card will have no affect and you don't get the card back.
+Log: 
+Player : Usaib is executing Bomb card on country :  Japan with armies :  4. New armies: 2
+Log: 
+Player : Usaib is executing Bomb card on country :  India with armies :  15. New armies: 7
+Log: 
+Player : Usaib is executing Bomb card on country :  Canada with armies :  1. New armies: 0
+Log: Bomb card order : bomb China is not executed since Target country : China given in the bomb command is owned by the player : Usaib. VALIDATES: You cannot bomb your own territory!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Bomb card order : bomb Pakistan is not executed as Khan has a negotiation pact with the target country's player!
+Log: Country/Continent Assignment:
+ Player : Habeeb is assigned with country : india
+ Player : Habeeb is assigned with country : china
+ Player : Usaib is assigned with country : pakistan
+ Player : Usaib is assigned with country : nepal
+Log: Advance Order : advance Pakistan China 15 is not executed as armies given in advance order exceeds armies of source country : Pakistan
+Log: Advance Order : advance Canada China 10 is not executed as source country : Canada has 10 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance Jordan China 10 is not executed since Source country : Jordan given in advance command does not belongs to the player : Usaib
+Log: Airlift Operation from Pakistan to China successful!
+Log: Invalid Target Country! It doesn't exist on the map.
+Log: 
+Player : Hammad is executing a blockade on Country :  Pakistan with armies :  15
+Log: Blockade card order : blockade China is not executed since Target country : China given in blockade command does not owned to the player : Hammad The card will have no affect and you don't get the card back.
+Log: 
+Player : Usaib is executing Bomb card on country :  Japan with armies :  4. New armies: 2
+Log: 
+Player : Usaib is executing Bomb card on country :  India with armies :  15. New armies: 7
+Log: 
+Player : Usaib is executing Bomb card on country :  Canada with armies :  1. New armies: 0
+Log: Bomb card order : bomb China is not executed since Target country : China given in the bomb command is owned by the player : Usaib. VALIDATES: You cannot bomb your own territory!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Bomb card order : bomb Pakistan is not executed as Khan has a negotiation pact with the target country's player!
+Log: Continent USA removed successfully!
+Log: Continent Canada added successfully!
+Log: test.map already exists and is loaded for editing
+Log: Country/Continent Assignment:
+ Player : Habeeb is assigned with country : nepal
+ Player : Habeeb is assigned with country : china
+ Player : Usaib is assigned with country : pakistan
+ Player : Usaib is assigned with country : india
+Log: Advance Order : advance Pakistan China 15 is not executed as armies given in advance order exceeds armies of source country : Pakistan
+Log: Advance Order : advance Canada China 10 is not executed as source country : Canada has 10 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance Jordan China 10 is not executed since Source country : Jordan given in advance command does not belongs to the player : Usaib
+Log: Airlift Operation from Pakistan to China successful!
+Log: Invalid Target Country! It doesn't exist on the map.
+Log: 
+Player : Hammad is executing a blockade on Country :  Pakistan with armies :  15
+Log: Blockade card order : blockade China is not executed since Target country : China given in blockade command does not owned to the player : Hammad The card will have no affect and you don't get the card back.
+Log: 
+Player : Usaib is executing Bomb card on country :  Japan with armies :  4. New armies: 2
+Log: 
+Player : Usaib is executing Bomb card on country :  India with armies :  15. New armies: 7
+Log: 
+Player : Usaib is executing Bomb card on country :  Canada with armies :  1. New armies: 0
+Log: Bomb card order : bomb China is not executed since Target country : China given in the bomb command is owned by the player : Usaib. VALIDATES: You cannot bomb your own territory!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Bomb card order : bomb Pakistan is not executed as Khan has a negotiation pact with the target country's player!
+Log: Continent USA removed successfully!
+Log: Continent Canada added successfully!
+Log: test.map already exists and is loaded for editing
+Log: Country/Continent Assignment:
+ Player : Habeeb is assigned with country : nepal
+ Player : Habeeb is assigned with country : china
+ Player : Usaib is assigned with country : india
+ Player : Usaib is assigned with country : pakistan
+Log: Continent Asia added successfully!
+Log: Continent Europe added successfully!
+Log: Continent Asia removed successfully!
+Log: Country add could not be Germany Europeed!
+Log: Country add could not be Netherlands Europeed!
+Log: warzone.map has been loaded to start the game
+Log: Player:  a with strategy: Random has been added to the tournament.
+Log: Player:  b with strategy: Random has been added to the tournament.
+Log: Invalid strategy passed in the command. Only Aggressive, Benevolent, Random, Cheater strategies are allowed.
+Log: User entered an invalid number of maps in the command. The range of maps is 1 <= map <= 5
+Log: User entered an invalid number of turns in the command. The range of turns is 10 <= number of turns <= 50
+Log: User entered an invalid number of games in the command. The range of games is 1 <= number of games <= 5
+Log: Advance Order : advance Pakistan China 15 is not executed as armies given in advance order exceeds armies of source country : Pakistan
+Log: Advance Order : advance Canada China 10 is not executed as source country : Canada has 10 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance Jordan China 10 is not executed since Source country : Jordan given in advance command does not belongs to the player : Usaib
+Log: Airlift Operation from Pakistan to China successful!
+Log: Invalid Target Country! It doesn't exist on the map.
+Log: 
+Player : Hammad is executing a blockade on Country :  Pakistan with armies :  15
+Log: Blockade card order : blockade China is not executed since Target country : China given in blockade command does not owned to the player : Hammad The card will have no affect and you don't get the card back.
+Log: 
+Player : Usaib is executing Bomb card on country :  Japan with armies :  4. New armies: 2
+Log: 
+Player : Usaib is executing Bomb card on country :  India with armies :  15. New armies: 7
+Log: 
+Player : Usaib is executing Bomb card on country :  Canada with armies :  1. New armies: 0
+Log: Bomb card order : bomb China is not executed since Target country : China given in the bomb command is owned by the player : Usaib. VALIDATES: You cannot bomb your own territory!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Bomb card order : bomb Pakistan is not executed as Khan has a negotiation pact with the target country's player!
+Log: Continent USA removed successfully!
+Log: Continent Canada added successfully!
+Log: test.map already exists and is loaded for editing
+Log: Country/Continent Assignment:
+ Player : Habeeb is assigned with country : pakistan
+ Player : Habeeb is assigned with country : india
+ Player : Usaib is assigned with country : nepal
+ Player : Usaib is assigned with country : china
+Log: Continent Asia added successfully!
+Log: Continent Europe added successfully!
+Log: Continent Asia removed successfully!
+Log: Country add could not be Germany Europeed!
+Log: Country add could not be Netherlands Europeed!
+Log: Country remove could not be Netherlandsed!
+Log: warzone.map has been loaded to start the game
+Log: Player:  a with strategy: Random has been added to the tournament.
+Log: Player:  b with strategy: Random has been added to the tournament.
+Log: Invalid strategy passed in the command. Only Aggressive, Benevolent, Random, Cheater strategies are allowed.
+Log: User entered an invalid number of maps in the command. The range of maps is 1 <= map <= 5
+Log: User entered an invalid number of turns in the command. The range of turns is 10 <= number of turns <= 50
+Log: User entered an invalid number of games in the command. The range of games is 1 <= number of games <= 5
+Log: Advance Order : advance Pakistan China 15 is not executed as armies given in advance order exceeds armies of source country : Pakistan
+Log: Advance Order : advance Canada China 10 is not executed as source country : Canada has 10 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance Jordan China 10 is not executed since Source country : Jordan given in advance command does not belongs to the player : Usaib
+Log: Airlift Operation from Pakistan to China successful!
+Log: Invalid Target Country! It doesn't exist on the map.
+Log: 
+Player : Hammad is executing a blockade on Country :  Pakistan with armies :  15
+Log: Blockade card order : blockade China is not executed since Target country : China given in blockade command does not owned to the player : Hammad The card will have no affect and you don't get the card back.
+Log: 
+Player : Usaib is executing Bomb card on country :  Japan with armies :  4. New armies: 2
+Log: 
+Player : Usaib is executing Bomb card on country :  India with armies :  15. New armies: 7
+Log: 
+Player : Usaib is executing Bomb card on country :  Canada with armies :  1. New armies: 0
+Log: Bomb card order : bomb China is not executed since Target country : China given in the bomb command is owned by the player : Usaib. VALIDATES: You cannot bomb your own territory!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Bomb card order : bomb Pakistan is not executed as Khan has a negotiation pact with the target country's player!
+Log: Continent USA removed successfully!
+Log: Continent Canada added successfully!
+Log: test.map already exists and is loaded for editing
+Log: Country/Continent Assignment:
+ Player : Habeeb is assigned with country : pakistan
+ Player : Habeeb is assigned with country : china
+ Player : Usaib is assigned with country : nepal
+ Player : Usaib is assigned with country : india
+Log: Continent Asia added successfully!
+Log: Continent Europe added successfully!
+Log: Continent Asia removed successfully!
+Log: Country add could not be Germany Europeed!
+Log: Country add could not be Netherlands Europeed!
+Log: Country remove could not be Netherlandsed!
+Log: warzone.map has been loaded to start the game
+Log: Player:  a with strategy: Random has been added to the tournament.
+Log: Player:  b with strategy: Random has been added to the tournament.
+Log: Invalid strategy passed in the command. Only Aggressive, Benevolent, Random, Cheater strategies are allowed.
+Log: User entered an invalid number of maps in the command. The range of maps is 1 <= map <= 5
+Log: User entered an invalid number of turns in the command. The range of turns is 10 <= number of turns <= 50
+Log: User entered an invalid number of games in the command. The range of games is 1 <= number of games <= 5
+Log: Advance Order : advance Pakistan China 15 is not executed as armies given in advance order exceeds armies of source country : Pakistan
+Log: Advance Order : advance Canada China 10 is not executed as source country : Canada has 10 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance Jordan China 10 is not executed since Source country : Jordan given in advance command does not belongs to the player : Usaib
+Log: Airlift Operation from Pakistan to China successful!
+Log: Invalid Target Country! It doesn't exist on the map.
+Log: 
+Player : Hammad is executing a blockade on Country :  Pakistan with armies :  15
+Log: Blockade card order : blockade China is not executed since Target country : China given in blockade command does not owned to the player : Hammad The card will have no affect and you don't get the card back.
+Log: 
+Player : Usaib is executing Bomb card on country :  Japan with armies :  4. New armies: 2
+Log: 
+Player : Usaib is executing Bomb card on country :  India with armies :  15. New armies: 7
+Log: 
+Player : Usaib is executing Bomb card on country :  Canada with armies :  1. New armies: 0
+Log: Bomb card order : bomb China is not executed since Target country : China given in the bomb command is owned by the player : Usaib. VALIDATES: You cannot bomb your own territory!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Bomb card order : bomb Pakistan is not executed as Khan has a negotiation pact with the target country's player!
+Log: Continent USA removed successfully!
+Log: Continent Canada added successfully!
+Log: test.map already exists and is loaded for editing
+Log: Country/Continent Assignment:
+ Player : Habeeb is assigned with country : pakistan
+ Player : Habeeb is assigned with country : china
+ Player : Usaib is assigned with country : india
+ Player : Usaib is assigned with country : nepal
+Log: Continent Asia added successfully!
+Log: Continent Europe added successfully!
+Log: Continent Asia removed successfully!
+Log: Country add could not be Germany Europeed!
+Log: Country add could not be Netherlands Europeed!
+Log: Country remove could not be Netherlandsed!
+Log: warzone.map has been loaded to start the game
+Log: Player:  a with strategy: Random has been added to the tournament.
+Log: Player:  b with strategy: Random has been added to the tournament.
+Log: Invalid strategy passed in the command. Only Aggressive, Benevolent, Random, Cheater strategies are allowed.
+Log: User entered an invalid number of maps in the command. The range of maps is 1 <= map <= 5
+Log: User entered an invalid number of turns in the command. The range of turns is 10 <= number of turns <= 50
+Log: User entered an invalid number of games in the command. The range of games is 1 <= number of games <= 5
+Log: Advance Order : advance Pakistan China 15 is not executed as armies given in advance order exceeds armies of source country : Pakistan
+Log: Advance Order : advance Canada China 10 is not executed as source country : Canada has 10 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance Jordan China 10 is not executed since Source country : Jordan given in advance command does not belongs to the player : Usaib
+Log: Airlift Operation from Pakistan to China successful!
+Log: Invalid Target Country! It doesn't exist on the map.
+Log: 
+Player : Hammad is executing a blockade on Country :  Pakistan with armies :  15
+Log: Blockade card order : blockade China is not executed since Target country : China given in blockade command does not owned to the player : Hammad The card will have no affect and you don't get the card back.
+Log: 
+Player : Usaib is executing Bomb card on country :  Japan with armies :  4. New armies: 2
+Log: 
+Player : Usaib is executing Bomb card on country :  India with armies :  15. New armies: 7
+Log: 
+Player : Usaib is executing Bomb card on country :  Canada with armies :  1. New armies: 0
+Log: Bomb card order : bomb China is not executed since Target country : China given in the bomb command is owned by the player : Usaib. VALIDATES: You cannot bomb your own territory!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Bomb card order : bomb Pakistan is not executed as Khan has a negotiation pact with the target country's player!
+Log: Continent USA removed successfully!
+Log: Continent Canada added successfully!
+Log: test.map already exists and is loaded for editing
+Log: Country/Continent Assignment:
+ Player : Habeeb is assigned with country : china
+ Player : Habeeb is assigned with country : india
+ Player : Usaib is assigned with country : nepal
+ Player : Usaib is assigned with country : pakistan
+Log: Continent Asia added successfully!
+Log: Continent Europe added successfully!
+Log: Continent Asia removed successfully!
+Log: Country add could not be Germany Europeed!
+Log: Country add could not be Netherlands Europeed!
+Log: Country remove could not be Netherlandsed!
+Log: warzone.map has been loaded to start the game
+Log: Player:  a with strategy: Random has been added to the tournament.
+Log: Player:  b with strategy: Random has been added to the tournament.
+Log: Invalid strategy passed in the command. Only Aggressive, Benevolent, Random, Cheater strategies are allowed.
+Log: User entered an invalid number of maps in the command. The range of maps is 1 <= map <= 5
+Log: User entered an invalid number of turns in the command. The range of turns is 10 <= number of turns <= 50
+Log: User entered an invalid number of games in the command. The range of games is 1 <= number of games <= 5
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : usaib and strategy: Benevolent has been added successfully.
+Log: Player with name : waseem and strategy: Human has been added successfully.
+Log: Player with name : habib and strategy: Human has been added successfully.
+Log: Player with name : a and strategy: Cheater has been added successfully.
+Log: Player with name : b and strategy: Human has been added successfully.
+Log: warzone.map has been loaded to start the game
+Log: Player:  a with strategy: Cheater has been added to the tournament.
+Log: Player:  usaib with strategy: Benevolent has been added to the tournament.
+Log: 
+Starting New Game on map : warzone.map .........
+
+Log: Country/Continent Assignment:
+ Player : a is assigned with country : china
+ Player : a is assigned with country : pakistan
+ Player : usaib is assigned with country : india
+ Player : usaib is assigned with country : nepal
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 3 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 2 armies to  china
+Log: Cheater Player: a assigned 1 armies to  pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 4) in china
+Log: Cheater Player: a doubled the armies ( Now: 2) in pakistan
+
+Order Issued: (Player: usaib) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 8) in china
+Log: Cheater Player: a doubled the armies ( Now: 4) in pakistan
+
+Order Issued: (Player: usaib) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 16) in china
+Log: Cheater Player: a doubled the armies ( Now: 8) in pakistan
+
+Order Issued: (Player: usaib) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 32) in china
+Log: Cheater Player: a doubled the armies ( Now: 16) in pakistan
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 1 armies to nepal
+Log: 1 armies have been successfully deployed to country: nepal
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 1 armies to nepal
+Log: 2 armies have been successfully deployed to country: nepal
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 1 armies to nepal
+Log: 3 armies have been successfully deployed to country: nepal
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 3 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 3 armies to  pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 64) in china
+Log: Cheater Player: a doubled the armies ( Now: 6) in pakistan
+
+Order Issued: (Player: usaib) deploy india 3
+Log: Deploy order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 128) in china
+Log: Cheater Player: a doubled the armies ( Now: 12) in pakistan
+
+Order Issued: (Player: usaib) advance nepal china 2
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 3 armies to india
+Log: 3 armies have been successfully deployed to country: india
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 2 armies from nepal to china
+Log: Country : china is left with 127 armies and is still owned by player : a
+Country : nepal is left with 2 armies and is still owned by player : usaib
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from india to pakistan
+Log: Country : pakistan is left with 11 armies and is still owned by player : a
+Country : india is left with 3 armies and is still owned by player : usaib
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from india to pakistan
+Log: Country : pakistan is left with 11 armies and is still owned by player : a
+Country : india is left with 2 armies and is still owned by player : usaib
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from india to pakistan
+Log: Country : pakistan is left with 11 armies and is still owned by player : a
+Country : india is left with 1 armies and is still owned by player : usaib
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 3 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 2 armies to  pakistan
+Log: Cheater Player: a assigned 1 armies to  china
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 2) in china
+Log: Cheater Player: a doubled the armies ( Now: 4) in pakistan
+
+Order Issued: (Player: usaib) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 4) in china
+Log: Cheater Player: a doubled the armies ( Now: 8) in pakistan
+
+Order Issued: (Player: usaib) deploy india 2
+Log: Deploy order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) deploy india 1
+Log: Deploy order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from nepal to china
+Log: Country : china is left with 4 armies and is still owned by player : a
+Country : nepal is left with 1 armies and is still owned by player : usaib
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 2 armies to india
+Log: 3 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 1 armies to india
+Log: 4 armies have been successfully deployed to country: india
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 3 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 3 armies to  china
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 6) in china
+Log: Cheater Player: a doubled the armies ( Now: 16) in pakistan
+
+Order Issued: (Player: usaib) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 12) in china
+Log: Cheater Player: a doubled the armies ( Now: 32) in pakistan
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 1 armies to nepal
+Log: 2 armies have been successfully deployed to country: nepal
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 5 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 2 armies to  pakistan
+Log: Cheater Player: a assigned 1 armies to  pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 24) in china
+Log: Cheater Player: a doubled the armies ( Now: 2) in pakistan
+
+Order Issued: (Player: usaib) deploy nepal 5
+Log: Deploy order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 48) in china
+Log: Cheater Player: a doubled the armies ( Now: 4) in pakistan
+
+Order Issued: (Player: usaib) advance india pakistan 3
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance india pakistan 3
+Log: Advance order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 5 armies to nepal
+Log: 7 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 3 armies from india to pakistan
+Log: Country : pakistan is left with 1 armies and is still owned by player : a
+Country : india is left with 4 armies and is still owned by player : usaib
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 3 armies from india to pakistan
+Log: Country : pakistan is left with 1 armies and is still owned by player : a
+Country : india is left with 3 armies and is still owned by player : usaib
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 3 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 2 armies to  pakistan
+Log: Cheater Player: a assigned 1 armies to  china
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 2) in china
+Log: Cheater Player: a doubled the armies ( Now: 4) in pakistan
+
+Order Issued: (Player: usaib) advance nepal china 2
+Log: Advance order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 4) in china
+Log: Cheater Player: a doubled the armies ( Now: 8) in pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 8) in china
+Log: Cheater Player: a doubled the armies ( Now: 16) in pakistan
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 2 armies from nepal to china
+Log: Country : china is left with 8 armies and is still owned by player : a
+Country : nepal is left with 5 armies and is still owned by player : usaib
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 6 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 1 armies to  pakistan
+Log: Cheater Player: a assigned 1 armies to  pakistan
+Log: Cheater Player: a assigned 1 armies to  pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 16) in china
+Log: Cheater Player: a doubled the armies ( Now: 2) in pakistan
+
+Order Issued: (Player: usaib) advance india pakistan 2
+Log: Advance order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 32) in china
+Log: Cheater Player: a doubled the armies ( Now: 4) in pakistan
+
+Order Issued: (Player: usaib) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 2 armies from india to pakistan
+Log: Country : pakistan is left with 4 armies and is still owned by player : a
+Country : india is left with 1 armies and is still owned by player : usaib
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from india to pakistan
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from nepal to china
+Log: Country : china is left with 32 armies and is still owned by player : a
+Country : nepal is left with 4 armies and is still owned by player : usaib
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 9 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 1 armies to  china
+Log: Cheater Player: a assigned 2 armies to  pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 2) in china
+Log: Cheater Player: a doubled the armies ( Now: 4) in pakistan
+
+Order Issued: (Player: usaib) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from nepal to china
+Log: Country : china is left with 2 armies and is still owned by player : a
+Country : nepal is left with 3 armies and is still owned by player : usaib
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 12 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 1 armies to  pakistan
+Log: Cheater Player: a assigned 1 armies to  china
+Log: Cheater Player: a assigned 1 armies to  pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 2) in china
+Log: Cheater Player: a doubled the armies ( Now: 2) in pakistan
+
+Order Issued: (Player: usaib) deploy india 8
+Log: Deploy order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 8 armies to india
+Log: 9 armies have been successfully deployed to country: india
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from india to pakistan
+Log: Country : pakistan is left with 2 armies and is still owned by player : a
+Country : india is left with 8 armies and is still owned by player : usaib
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 7 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 2 armies to  pakistan
+Log: Cheater Player: a assigned 1 armies to  china
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 2) in china
+Log: Cheater Player: a doubled the armies ( Now: 4) in pakistan
+
+Order Issued: (Player: usaib) advance india china 1
+Log: Advance order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 4) in china
+Log: Cheater Player: a doubled the armies ( Now: 8) in pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 8) in china
+Log: Cheater Player: a doubled the armies ( Now: 16) in pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 16) in china
+Log: Cheater Player: a doubled the armies ( Now: 32) in pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 32) in china
+Log: Cheater Player: a doubled the armies ( Now: 64) in pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 64) in china
+Log: Cheater Player: a doubled the armies ( Now: 128) in pakistan
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from india to china
+Log: Country : china is left with 64 armies and is still owned by player : a
+Country : india is left with 7 armies and is still owned by player : usaib
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 10 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 2 armies to  pakistan
+Log: Cheater Player: a assigned 1 armies to  china
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Log: Cheater Player: a doubled the armies ( Now: 2) in china
+Log: Cheater Player: a doubled the armies ( Now: 4) in pakistan
+
+Order Issued: (Player: usaib) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from nepal to china
+Log: Country : china is left with 2 armies and is still owned by player : a
+Country : nepal is left with 2 armies and is still owned by player : usaib
+
+=====Start Up Phase=====
+
+Log: 
+Game Completed on map : warzone.map .........
+
+Log: 
+Starting New Game on map : warzone.map .........
+
+Log: Country/Continent Assignment:
+ Player : a is assigned with country : china
+ Player : a is assigned with country : pakistan
+ Player : usaib is assigned with country : india
+ Player : usaib is assigned with country : nepal
+ Player : a is assigned with country : nepal
+ Player : a is assigned with country : india
+ Player : usaib is assigned with country : pakistan
+ Player : usaib is assigned with country : china
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 3 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 2 armies to  nepal
+Log: Cheater Player: a assigned 1 armies to  nepal
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 2) in nepal
+
+Order Issued: (Player: usaib) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 4) in nepal
+
+Order Issued: (Player: usaib) deploy pakistan 2
+Log: Deploy order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 1 armies to pakistan
+Log: 1 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 2 armies to pakistan
+Log: 3 armies have been successfully deployed to country: pakistan
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 3 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 2 armies to  india
+Log: Cheater Player: a assigned 1 armies to  nepal
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 2) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 4) in india
+
+Order Issued: (Player: usaib) advance pakistan china 2
+Log: Advance order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 4) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 8) in india
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 8) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 16) in india
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 16) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 32) in india
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 2 armies from pakistan to china
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 6 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 1 armies to  nepal
+Log: Cheater Player: a assigned 1 armies to  nepal
+Log: Cheater Player: a assigned 1 armies to  nepal
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 2) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 64) in india
+
+Order Issued: (Player: usaib) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 4) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 128) in india
+
+Order Issued: (Player: usaib) deploy pakistan 5
+Log: Deploy order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 1 armies to pakistan
+Log: 2 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 5 armies to pakistan
+Log: 7 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from pakistan to china
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from pakistan to china
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from pakistan to china
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from pakistan to china
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 3 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 1 armies to  nepal
+Log: Cheater Player: a assigned 2 armies to  india
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 2) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 4) in india
+
+Order Issued: (Player: usaib) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 1 armies to pakistan
+Log: 4 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from pakistan to india
+Log: Country : india is left with 3 armies and is still owned by player : a
+Country : pakistan is left with 4 armies and is still owned by player : usaib
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 5 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 3 armies to  nepal
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 6) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 6) in india
+
+Order Issued: (Player: usaib) deploy pakistan 5
+Log: Deploy order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 5 armies to pakistan
+Log: 9 armies have been successfully deployed to country: pakistan
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 3 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 1 armies to  nepal
+Log: Cheater Player: a assigned 2 armies to  india
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 2) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 4) in india
+
+Order Issued: (Player: usaib) advance pakistan india 5
+Log: Advance order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 5 armies from pakistan to india
+Log: Country : india is left with 3 armies and is still owned by player : a
+Country : pakistan is left with 6 armies and is still owned by player : usaib
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 6 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 1 armies to  nepal
+Log: Cheater Player: a assigned 1 armies to  india
+Log: Cheater Player: a assigned 1 armies to  india
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 2) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 2) in india
+
+Order Issued: (Player: usaib) advance pakistan india 5
+Log: Advance order has been added to queue for execution. For player: usaib
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 4) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 4) in india
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 8) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 8) in india
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 16) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 16) in india
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 5 armies from pakistan to india
+Log: Country : india is left with 15 armies and is still owned by player : a
+Country : pakistan is left with 2 armies and is still owned by player : usaib
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 9 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 1 armies to  india
+Log: Cheater Player: a assigned 1 armies to  india
+Log: Cheater Player: a assigned 1 armies to  india
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a Now owns pakistan
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 32) in nepal
+Log: Cheater Player: a doubled the armies ( Now: 2) in india
+
+Order Issued: (Player: usaib) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) deploy pakistan 9
+Log: Deploy order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+Order Issued: (Player: usaib) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: usaib
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from pakistan to india
+Log: Country : india is left with 2 armies and is still owned by player : a
+Country : pakistan is left with 1 armies and is still owned by player : usaib
+Log: 
+---------- Deploy order issued by player usaib ----------
+
+Deploy 9 armies to pakistan
+Log: 10 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from pakistan to india
+Log: Country : india is left with 2 armies and is still owned by player : a
+Country : pakistan is left with 9 armies and is still owned by player : usaib
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from pakistan to india
+Log: Country : india is left with 2 armies and is still owned by player : a
+Country : pakistan is left with 8 armies and is still owned by player : usaib
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from pakistan to india
+Log: Country : india is left with 2 armies and is still owned by player : a
+Country : pakistan is left with 7 armies and is still owned by player : usaib
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from pakistan to india
+Log: Country : india is left with 1 armies and is still owned by player : a
+Country : pakistan is left with 7 armies and is still owned by player : usaib
+Log: 
+---------- Advance order issued by player usaib ----------
+
+Move 1 armies from pakistan to india
+Log: Player : usaib is assigned with Country : india and armies : 1
+Log: Player : a has been assigned with 3 armies
+Log: Player : usaib has been assigned with 3 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 3 armies to  nepal
+Log: Cheater Player: a Now owns china
+Log: Cheater Player: a doubled the armies ( Now: 6) in nepal
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : a and strategy: Aggressive has been added successfully.
+Log: Player with name : b and strategy: Random has been added successfully.
+Log: Player with name : c and strategy: Aggressive has been added successfully.
+Log: Player with name : d and strategy: Aggressive has been added successfully.
+Log: warzone.map has been loaded to start the game
+Log: Player:  a with strategy: Aggressive has been added to the tournament.
+Log: Player:  c with strategy: Aggressive has been added to the tournament.
+Log: Player:  d with strategy: Aggressive has been added to the tournament.
+Log: Player:  b with strategy: Random has been added to the tournament.
+Log: 
+Starting New Game on map : warzone.map .........
+
+Log: Country/Continent Assignment:
+ Player : a is assigned with country : china
+ Player : c is assigned with country : pakistan
+ Player : d is assigned with country : nepal
+ Player : b is assigned with country : india
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 3 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy china 3
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 3
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) deploy india 1
+Log: Deploy order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: d) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: d
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 3 armies to china
+Log: 3 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 1 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 3 armies to nepal
+Log: 3 armies have been successfully deployed to country: nepal
+Log: 
+---------- Deploy order issued by player b ----------
+
+Deploy 1 armies to india
+Log: 1 armies have been successfully deployed to country: india
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 3 armies and is still owned by player : d
+Country : china is left with 2 armies and is still owned by player : a
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 1 armies from nepal to china
+Log: Country : china is left with 1 armies and is still owned by player : a
+Country : nepal is left with 3 armies and is still owned by player : d
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 5 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 5 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy china 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 5
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: d) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: d
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to china
+Log: 3 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 5 armies to pakistan
+Log: 6 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 2 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from india to pakistan
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 1 armies to nepal
+Log: 3 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 1 armies from nepal to china
+Log: Country : china is left with 3 armies and is still owned by player : a
+Country : nepal is left with 2 armies and is still owned by player : d
+Log: Player : a has been assigned with 4 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 8 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy china 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 2
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: d
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to china
+Log: 5 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 2 armies to pakistan
+Log: 8 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 1 armies to nepal
+Log: 1 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from india to pakistan
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 3 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 1 armies from nepal to china
+Log: Country : china is left with 4 armies and is still owned by player : a
+Country : nepal is left with 3 armies and is still owned by player : d
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 1 armies from nepal to china
+Log: Country : china is left with 4 armies and is still owned by player : a
+Country : nepal is left with 2 armies and is still owned by player : d
+Log: Player : a has been assigned with 5 armies
+Log: Player : c has been assigned with 4 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 11 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy china 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 4
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) deploy india 4
+Log: Deploy order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) deploy china 4
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: d) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to china
+Log: 1 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 4 armies to pakistan
+Log: 12 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 4 armies have been successfully deployed to country: nepal
+Log: 
+---------- Deploy order issued by player b ----------
+
+Deploy 4 armies to india
+Log: 5 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 4 armies to china
+Log: 5 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 1 armies to nepal
+Log: 5 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 5 armies and is still owned by player : d
+Country : china is left with 4 armies and is still owned by player : a
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 10 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy china 3
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 2
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance india china 3
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 3 armies to china
+Log: 3 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 2 armies to pakistan
+Log: 14 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 7 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 3 armies from india to china
+Log: Country : china is left with 3 armies and is still owned by player : a
+Country : india is left with 2 armies and is still owned by player : b
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 7 armies and is still owned by player : d
+Country : china is left with 2 armies and is still owned by player : a
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 6 armies and is still owned by player : d
+Country : china is left with 2 armies and is still owned by player : a
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 4 armies
+Log: Player : d has been assigned with 4 armies
+Log: Player : b has been assigned with 13 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy china 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 3
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 3
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance india china 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) deploy china 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: c) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: c
+
+Order Issued: (Player: c) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: c
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to china
+Log: 4 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 3 armies to pakistan
+Log: 3 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 3 armies to nepal
+Log: 9 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from india to china
+Log: Country : china is left with 4 armies and is still owned by player : a
+Country : india is left with 1 armies and is still owned by player : b
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to china
+Log: 5 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 4 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 1 armies to nepal
+Log: 10 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from india to pakistan
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to china
+Log: Country : china is left with 4 armies and is still owned by player : a
+Country : pakistan is left with 4 armies and is still owned by player : c
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to china
+Log: Country : china is left with 3 armies and is still owned by player : a
+Country : pakistan is left with 4 armies and is still owned by player : c
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 16 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy china 3
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance india china 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 3 armies to china
+Log: 6 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 5 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 12 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from india to china
+Log: Advance Order : advance india china 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance india china 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 6 armies have been successfully deployed to country: pakistan
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 4 armies
+Log: Player : d has been assigned with 4 armies
+Log: Player : b has been assigned with 19 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy china 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 4
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) deploy india 13
+Log: Deploy order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) deploy china 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: c
+
+Order Issued: (Player: b) advance india china 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to china
+Log: 2 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 4 armies to pakistan
+Log: 4 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 14 armies have been successfully deployed to country: nepal
+Log: 
+---------- Deploy order issued by player b ----------
+
+Deploy 13 armies to india
+Log: 14 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to china
+Log: 3 armies have been successfully deployed to country: china
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to india
+Log: Country : india is left with 14 armies and is still owned by player : b
+Country : pakistan is left with 3 armies and is still owned by player : c
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from india to china
+Log: Country : china is left with 2 armies and is still owned by player : a
+Country : india is left with 14 armies and is still owned by player : b
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 14 armies and is still owned by player : d
+Country : china is left with 1 armies and is still owned by player : a
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 5 armies
+Log: Player : b has been assigned with 9 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy china 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 3
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance india pakistan 10
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) deploy china 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: c
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: c
+
+Order Issued: (Player: c) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: c
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to china
+Log: 2 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 3 armies to pakistan
+Log: 3 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 16 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 10 armies from india to pakistan
+Log: Country : pakistan is left with 2 armies and is still owned by player : c
+Country : india is left with 12 armies and is still owned by player : b
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to china
+Log: 3 armies have been successfully deployed to country: china
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to india
+Log: Country : india is left with 12 armies and is still owned by player : b
+Country : pakistan is left with 1 armies and is still owned by player : c
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 15 armies and is still owned by player : d
+Country : china is left with 3 armies and is still owned by player : a
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to china
+Log: Advance Order : advance pakistan china 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance pakistan china 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to india
+Log: Advance Order : advance pakistan india 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance pakistan india 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 6 armies
+Log: Player : b has been assigned with 12 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy china 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 3
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) deploy india 2
+Log: Deploy order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) deploy china 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: c
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to china
+Log: 5 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 3 armies to pakistan
+Log: 3 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 1 armies to nepal
+Log: 16 armies have been successfully deployed to country: nepal
+Log: 
+---------- Deploy order issued by player b ----------
+
+Deploy 2 armies to india
+Log: 14 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to china
+Log: 6 armies have been successfully deployed to country: china
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to china
+Log: Country : china is left with 6 armies and is still owned by player : a
+Country : pakistan is left with 2 armies and is still owned by player : c
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 8 armies
+Log: Player : b has been assigned with 13 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy china 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 2
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 6
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) deploy india 11
+Log: Deploy order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) deploy china 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: c) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: c
+
+Order Issued: (Player: c) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: c
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to china
+Log: 7 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 2 armies to pakistan
+Log: 2 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 6 armies to nepal
+Log: 22 armies have been successfully deployed to country: nepal
+Log: 
+---------- Deploy order issued by player b ----------
+
+Deploy 11 armies to india
+Log: 25 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to china
+Log: 9 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 3 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to china
+Log: Country : china is left with 9 armies and is still owned by player : a
+Country : pakistan is left with 2 armies and is still owned by player : c
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to china
+Log: Country : china is left with 9 armies and is still owned by player : a
+Country : pakistan is left with 1 armies and is still owned by player : c
+
+=====Start Up Phase=====
+
+Log: 
+Game Completed on map : warzone.map .........
+
+Log: 
+Starting New Game on map : warzone.map .........
+
+Log: Country/Continent Assignment:
+ Player : a is assigned with country : china
+ Player : c is assigned with country : pakistan
+ Player : d is assigned with country : nepal
+ Player : b is assigned with country : india
+ Player : a is assigned with country : india
+ Player : c is assigned with country : pakistan
+ Player : d is assigned with country : nepal
+ Player : b is assigned with country : china
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 3 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy india 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 3
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) deploy china 3
+Log: Deploy order has been added to queue for execution. For player: b
+
+Order Issued: (Player: d) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: d) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: b
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to india
+Log: 2 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 1 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 3 armies to nepal
+Log: 3 armies have been successfully deployed to country: nepal
+Log: 
+---------- Deploy order issued by player b ----------
+
+Deploy 3 armies to china
+Log: 3 armies have been successfully deployed to country: china
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 1 armies from nepal to china
+Log: Country : china is left with 3 armies and is still owned by player : b
+Country : nepal is left with 2 armies and is still owned by player : d
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 2 armies and is still owned by player : d
+Country : china is left with 2 armies and is still owned by player : b
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 1 armies from nepal to china
+Log: Country : china is left with 2 armies and is still owned by player : b
+Country : nepal is left with 1 armies and is still owned by player : d
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 1 armies and is still owned by player : d
+Country : china is left with 1 armies and is still owned by player : b
+Log: Player : a has been assigned with 4 armies
+Log: Player : c has been assigned with 5 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 3 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy india 3
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 3
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) deploy india 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance india china 1
+Log: Advance order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 3 armies to india
+Log: 3 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 3 armies to pakistan
+Log: 4 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 3 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from china to nepal
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to india
+Log: 4 armies have been successfully deployed to country: india
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from india to china
+Log: Country : china is left with 1 armies and is still owned by player : b
+Country : india is left with 3 armies and is still owned by player : a
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 5 armies
+Log: Player : d has been assigned with 4 armies
+Log: Player : b has been assigned with 6 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy india 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 2
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 3
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: c) deploy pakistan 2
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: c) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: c
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to india
+Log: 5 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 2 armies to pakistan
+Log: 2 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 3 armies to nepal
+Log: 6 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from china to nepal
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 2 armies to pakistan
+Log: 4 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 5 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to china
+Log: Country : china is left with 1 armies and is still owned by player : b
+Country : pakistan is left with 4 armies and is still owned by player : c
+Log: Player : a has been assigned with 4 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 4 armies
+Log: Player : b has been assigned with 9 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy india 4
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 2
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: d) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) advance india china 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance india china 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance india china 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance india pakistan 1
+Log: Advance order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 4 armies to india
+Log: 4 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 2 armies to pakistan
+Log: 6 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 8 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from china to nepal
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from india to pakistan
+Log: Country : pakistan is left with 6 armies and is still owned by player : c
+Country : india is left with 3 armies and is still owned by player : a
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 1 armies to nepal
+Log: 9 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from china to nepal
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from india to china
+Log: Country : china is left with 1 armies and is still owned by player : b
+Country : india is left with 2 armies and is still owned by player : a
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from india to pakistan
+Log: Country : pakistan is left with 6 armies and is still owned by player : c
+Country : india is left with 1 armies and is still owned by player : a
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from india to china
+Log: Advance Order : advance india china 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance india china 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from india to pakistan
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from india to china
+Log: Advance Order : advance india china 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance india china 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from india to pakistan
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from india to pakistan
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from india to pakistan
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance india pakistan 1 is not executed as source country : india has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 4 armies
+Log: Player : d has been assigned with 4 armies
+Log: Player : b has been assigned with 12 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy india 3
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 4
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 3
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) deploy china 2
+Log: Deploy order has been added to queue for execution. For player: b
+
+Order Issued: (Player: c) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: c
+
+Order Issued: (Player: b) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: c) advance pakistan china 1
+Log: Advance order has been added to queue for execution. For player: c
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 3 armies to india
+Log: 4 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 4 armies to pakistan
+Log: 4 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 3 armies to nepal
+Log: 12 armies have been successfully deployed to country: nepal
+Log: 
+---------- Deploy order issued by player b ----------
+
+Deploy 2 armies to china
+Log: 3 armies have been successfully deployed to country: china
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to india
+Log: Country : india is left with 4 armies and is still owned by player : a
+Country : pakistan is left with 3 armies and is still owned by player : c
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 12 armies and is still owned by player : d
+Country : china is left with 2 armies and is still owned by player : b
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to china
+Log: Country : china is left with 1 armies and is still owned by player : b
+Country : pakistan is left with 3 armies and is still owned by player : c
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 4 armies
+Log: Player : b has been assigned with 13 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy india 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 3
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) deploy india 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: d) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: d
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to india
+Log: 5 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 3 armies to pakistan
+Log: 6 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 1 armies to nepal
+Log: 13 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from china to nepal
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to india
+Log: 6 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 1 armies to nepal
+Log: 14 armies have been successfully deployed to country: nepal
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 1 armies to nepal
+Log: 15 armies have been successfully deployed to country: nepal
+Log: Player : a has been assigned with 4 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 4 armies
+Log: Player : b has been assigned with 16 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy india 4
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: b) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: b
+
+Order Issued: (Player: a) advance india china 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 2
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: c) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: c
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 4 armies to india
+Log: 4 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 1 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 17 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player b ----------
+
+Move 1 armies from china to nepal
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance china nepal 1 is not executed as source country : china has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from india to china
+Log: Player : a is assigned with Country : china and armies : 1
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 2 armies to pakistan
+Log: 3 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 19 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to india
+Log: Country : india is left with 2 armies and is still owned by player : a
+Country : pakistan is left with 3 armies and is still owned by player : c
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 16 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy india 3
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 3
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 3
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: a) negotiate com.hexaforce.warzone.models.Player@6193b845
+Log: The player to negotiate with doesn't exist!
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 3 armies to india
+Log: 5 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 3 armies to pakistan
+Log: 6 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 3 armies to nepal
+Log: 22 armies have been successfully deployed to country: nepal
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 16 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy india 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 3
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) advance nepal china 1
+Log: Advance order has been added to queue for execution. For player: d
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to india
+Log: 6 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 7 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 3 armies to nepal
+Log: 3 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 1 armies from nepal to china
+Log: Country : china is left with 1 armies and is still owned by player : a
+Country : nepal is left with 2 armies and is still owned by player : d
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 1 armies from nepal to china
+Log: Player : d is assigned with Country : china and armies : 1
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 1 armies from nepal to china
+Log: Advance Order : advance nepal china 1 is not executed as source country : nepal has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance nepal china 1 is not executed as source country : nepal has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 1 armies from nepal to china
+Log: Advance Order : advance nepal china 1 is not executed as source country : nepal has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance nepal china 1 is not executed as source country : nepal has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Player : a has been assigned with 5 armies
+Log: Player : c has been assigned with 5 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 16 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy india 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 5
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 2
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: a) deploy india 4
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy nepal 1
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) advance nepal china 2
+Log: Advance order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) airlift nepal china 2
+Log: Card Command Added to Queue for Execution Successfully!
+
+Order Issued: (Player: d) advance nepal china 3
+Log: Advance order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) airlift nepal china 3
+Log: Card Command Added to Queue for Execution Successfully!
+
+Order Issued: (Player: d) airlift nepal nepal 3
+Log: Card Command Added to Queue for Execution Successfully!
+
+Order Issued: (Player: d) advance nepal china 4
+Log: Advance order has been added to queue for execution. For player: d
+
+Order Issued: (Player: d) airlift nepal china 4
+Log: Card Command Added to Queue for Execution Successfully!
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to india
+Log: 7 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 5 armies to pakistan
+Log: 5 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 2 armies to nepal
+Log: 6 armies have been successfully deployed to country: nepal
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 4 armies to india
+Log: 11 armies have been successfully deployed to country: india
+Log: 
+---------- Advance order issued by player c ----------
+
+Move 1 armies from pakistan to india
+Log: Country : india is left with 11 armies and is still owned by player : a
+Country : pakistan is left with 4 armies and is still owned by player : c
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 1 armies to nepal
+Log: 7 armies have been successfully deployed to country: nepal
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 2 armies from nepal to china
+Log: ----------Airlift order issued by player d----------
+Move 2 armies from nepal to china
+Log: Airlift Operation from nepal to china successful!
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 3 armies from nepal to china
+Log: Advance Order : advance nepal china 3 is not executed as source country : nepal has 3 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance nepal china 3 is not executed as source country : nepal has 3 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: ----------Airlift order issued by player d----------
+Move 3 armies from nepal to china
+Log: Airlift Operation from nepal to china successful!
+Log: ----------Airlift order issued by player d----------
+Move 3 armies from nepal to nepal
+Log: Airlift Order : airlift nepal nepal 3 is not executed as the number of armies specified in the card order exceeds the armies of the source country : nepal
+Log: Cannot Complete Execution of the provided Airlift Command!
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 4 armies from nepal to china
+Log: Advance Order : advance nepal china 4 is not executed as armies given in advance order exceeds armies of source country : nepal
+Log: Advance Order : advance nepal china 4 is not executed as armies given in advance order exceeds armies of source country : nepal
+Log: ----------Airlift order issued by player d----------
+Move 4 armies from nepal to china
+Log: Airlift Order : airlift nepal china 4 is not executed as the number of armies specified in the card order exceeds the armies of the source country : nepal
+Log: Cannot Complete Execution of the provided Airlift Command!
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : b has been assigned with 16 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+
+Order Issued: (Player: a) deploy india 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) deploy china 3
+Log: Deploy order has been added to queue for execution. For player: d
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+Order Issued: (Player: d) advance nepal china 8
+Log: Advance order has been added to queue for execution. For player: d
+
+Order Issued: (Player: c) deploy pakistan 1
+Log: Deploy order has been added to queue for execution. For player: c
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to india
+Log: 13 armies have been successfully deployed to country: india
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 5 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Deploy order issued by player d ----------
+
+Deploy 3 armies to china
+Log: 11 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 6 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Advance order issued by player d ----------
+
+Move 8 armies from nepal to china
+Log: Advance Order : advance nepal china 8 is not executed as source country : nepal has 8 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance nepal china 8 is not executed as source country : nepal has 8 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Deploy order issued by player c ----------
+
+Deploy 1 armies to pakistan
+Log: 7 armies have been successfully deployed to country: pakistan
+
+=====Start Up Phase=====
+
+Log: 
+Game Completed on map : warzone.map .........
+
+Log: ************ Tournament Completed ************
