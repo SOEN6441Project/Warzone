@@ -3,6 +3,8 @@ package com.hexaforce.warzone.models;
 import com.hexaforce.warzone.exceptions.InvalidCommand;
 import com.hexaforce.warzone.exceptions.InvalidMap;
 import com.hexaforce.warzone.utils.CommonUtil;
+import com.hexaforce.warzone.utils.Constants;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -182,6 +184,18 @@ public class Player {
     }
 
     /**
+     * Get Player Order according to its Strategy.
+     *
+     * @param p_gameContext Current GameContext Object
+     * @return String representing Order
+     * @throws IOException Exception
+     */
+    public String getPlayerOrder(GameContext p_gameContext) throws IOException {
+        String l_stringOrder = this.d_playerBehaviorStrategy.createOrder(this, p_gameContext);
+        return l_stringOrder;
+    }
+
+    /**
      * Create the list of IDs of countries owned by the player.
      *
      * @return list of country Ids
@@ -220,6 +234,15 @@ public class Player {
      */
     public void setD_oneCardPerTurn(Boolean p_value) {
         this.d_oneCardPerTurn = p_value;
+    }
+
+    /**
+     * Returns the boolean if player has earned a card or not.
+     *
+     * @return bool if player has earned one card
+     */
+    public boolean getD_oneCardPerTurn() {
+        return d_oneCardPerTurn;
     }
 
     /**
@@ -272,18 +295,6 @@ public class Player {
      */
     public String getD_playerLog() {
         return this.d_playerLog;
-    }
-    
-    /**
-     * Get Player Order according to its Strategy.
-     *
-     * @param p_gameState Current GameContext Object
-     * @return String representing Order
-     * @throws IOException Exception
-     */
-    public String getPlayerOrder(GameContext p_gameState) throws IOException {
-        String l_stringOrder = this.d_playerBehaviorStrategy.createOrder(this, p_gameState);
-        return l_stringOrder;
     }
 
     /**
@@ -427,7 +438,7 @@ public class Player {
             this.setD_playerLog(
                     "Country : "
                             + p_countryName
-                            + " given in advance order doesnt exists in map. Order given is ignored.",
+                            + " given in advance order does'nt exists in map. Order given is ignored.",
                     "error");
             return false;
         }
@@ -483,23 +494,10 @@ public class Player {
      * conquers a territory.
      */
     public void assignCard() {
-        if (!d_oneCardPerTurn) {
-            Random l_random = new Random();
-            this.d_cardsOwnedByPlayer.add(CARDS.get(l_random.nextInt(SIZE)));
-            this.setD_playerLog(
-                    "Player: "
-                            + this.d_name
-                            + " has earned card as reward for the successful conquest- "
-                            + this.d_cardsOwnedByPlayer.get(this.d_cardsOwnedByPlayer.size() - 1),
-                    "log");
-            this.setD_oneCardPerTurn(true);
-        } else {
-            this.setD_playerLog(
-                    "Player: "
-                            + this.d_name
-                            + " has already earned maximum cards that can be allotted in a turn",
-                    "error");
-        }
+        Random l_random = new Random();
+        this.d_cardsOwnedByPlayer.add(Constants.CARDS.get(l_random.nextInt(Constants.SIZE)));
+        this.setD_playerLog("Player: " + this.d_name + " has earned card as reward for the successful conquest- "
+                + this.d_cardsOwnedByPlayer.get(this.d_cardsOwnedByPlayer.size() - 1), "log");
     }
 
     /**

@@ -137,7 +137,7 @@ public abstract class Phase {
                 break;
             }
             case "assigncountries": {
-                validateAssignCountries(l_command, p_player);
+                validateAssignCountries(l_command, p_player, false, d_gameContext);
                 break;
             }
             case "showmap": {
@@ -240,7 +240,7 @@ public abstract class Phase {
      */
     protected abstract void executeAdvanceOrder(String command, Player player) throws IOException;
 
-    protected abstract void tournamentGamePlay(Command p_command) throws InvalidCommand, InvalidMap;
+    protected abstract void tournamentGamePlay(Command p_command) throws InvalidCommand, InvalidMap, IOException;
 
     /** Main method executed when the game phase changes. */
     public abstract void onPhaseInitialization(boolean p_isTournamentMode);
@@ -275,7 +275,8 @@ public abstract class Phase {
      * @throws InvalidMap     Indicates if map is invalid.
      * @throws IOException
      */
-    protected abstract void validateAssignCountries(Command command, Player player)
+    protected abstract void validateAssignCountries(Command command, Player player,
+            boolean p_istournamentmode, GameContext p_gameContext)
             throws InvalidCommand, InvalidMap, IOException;
 
     /**

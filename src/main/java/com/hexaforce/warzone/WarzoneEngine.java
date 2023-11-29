@@ -7,7 +7,6 @@ import com.hexaforce.warzone.models.IssueOrderPhase;
 import com.hexaforce.warzone.models.OrderExecutionPhase;
 import com.hexaforce.warzone.models.Phase;
 import com.hexaforce.warzone.models.StartupPhase;
-import com.hexaforce.warzone.utils.Command;
 import lombok.Getter;
 import lombok.Setter;
 

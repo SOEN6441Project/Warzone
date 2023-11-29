@@ -152,7 +152,8 @@ public class IssueOrderPhase extends Phase {
      * @throws IOException
      */
     @Override
-    protected void validateAssignCountries(Command p_command, Player p_player)
+    protected void validateAssignCountries(Command p_command, Player p_player, boolean isTournamentMode,
+            GameContext p_gameContext)
             throws InvalidCommand, InvalidMap, IOException {
         printInvalidCommandInCurrentState();
         promptForOrders(p_player);

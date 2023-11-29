@@ -8,6 +8,8 @@ import com.hexaforce.warzone.utils.Command;
 import com.hexaforce.warzone.utils.CommonUtil;
 import com.hexaforce.warzone.utils.Constants;
 import com.hexaforce.warzone.views.MapView;
+import com.hexaforce.warzone.views.TournamentModeView;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -346,22 +348,65 @@ public class StartupPhase extends Phase {
     /** {@inheritDoc} */
     @Override
     public void validateAssignCountries(Command p_command, Player p_player, boolean p_istournamentmode,
-            GameState p_gameState) throws InvalidCommand {
-        if (p_gameState.getD_loadCommand()) {
-            List<Map<String, String>> l_operations_list = p_command.getOperationsAndArguments();
-            Thread.setDefaultUncaughtExceptionHandler(new ExceptionLogHandler(d_gameState));
+            GameContext p_gameContext) throws InvalidCommand, InvalidMap, IOException {
+        if (p_gameContext.getD_loadCommand()) {
+            List<java.util.Map<String, String>> l_operations_list = p_command.getOperationsAndArguments();
             if (CommonUtil.isCollectionEmpty(l_operations_list) || p_istournamentmode) {
-                d_gameEngine.setD_gameState(p_gameState);
+                d_gameEngine.setD_gameContext(p_gameContext);
                 d_gameEngine.setD_isTournamentMode(p_istournamentmode);
-                d_playerService.assignCountries(p_gameState);
-                d_playerService.assignColors(p_gameState);
-                d_playerService.assignArmies(p_gameState);
+                d_playerController.assignCountries(p_gameContext);
+                d_playerController.assignColors(p_gameContext);
+                d_playerController.assignArmies(p_gameContext);
                 d_gameEngine.setIssueOrderPhase(p_istournamentmode);
             } else {
                 throw new InvalidCommand(Constants.INVALID_COMMAND_ERROR_ASSIGNCOUNTRIES);
             }
         } else {
             d_gameEngine.setD_gameEngineLog("Please load a valid map first via loadmap command!", "effect");
+        }
+    }
+
+    @Override
+    protected void tournamentGamePlay(Command p_command) throws InvalidCommand, InvalidMap, IOException {
+        if (d_gameContext.getD_players() != null && d_gameContext.getD_players().size() > 1) {
+            List<java.util.Map<String, String>> l_operations_list = p_command.getOperationsAndArguments();
+            boolean l_parsingSuccessful = false;
+
+            if (CommonUtil.isCollectionEmpty(l_operations_list)
+                    && !d_tournament.requiredTournamentArgPresent(l_operations_list, p_command)) {
+                throw new InvalidCommand(Constants.INVALID_COMMAND_TOURNAMENT_MODE);
+            } else {
+                for (java.util.Map<String, String> l_map : l_operations_list) {
+                    if (p_command.checkRequiredKeysPresent(Constants.ARGUMENTS, l_map)
+                            && p_command.checkRequiredKeysPresent(Constants.OPERATION, l_map)) {
+                        l_parsingSuccessful = d_tournament.parseTournamentCommand(d_gameContext,
+                                l_map.get(Constants.OPERATION), l_map.get(Constants.ARGUMENTS),
+                                d_gameEngine);
+                        if (!l_parsingSuccessful)
+                            break;
+
+                    } else {
+                        throw new InvalidCommand(Constants.INVALID_COMMAND_TOURNAMENT_MODE);
+                    }
+                }
+            }
+            if (l_parsingSuccessful) {
+                for (GameContext l_gameState : d_tournament.getD_gameStateList()) {
+                    d_gameEngine.setD_gameEngineLog(
+                            "\nStarting New Game on map : " + l_gameState.getD_map().getD_mapFile() + " .........\n",
+                            "effect");
+                    validateAssignCountries(new Command("assigncountries"), null, true, l_gameState);
+
+                    d_gameEngine.setD_gameEngineLog(
+                            "\nGame Completed on map : " + l_gameState.getD_map().getD_mapFile() + " .........\n",
+                            "effect");
+                }
+                d_gameEngine.setD_gameEngineLog("************ Tournament Completed ************", "effect");
+                TournamentModeView l_tournamentView = new TournamentModeView(d_tournament);
+                l_tournamentView.viewTournament();
+            }
+        } else {
+            d_gameEngine.setD_gameEngineLog("Please add 2 or more players first in the game.", "effect");
         }
     }
 }

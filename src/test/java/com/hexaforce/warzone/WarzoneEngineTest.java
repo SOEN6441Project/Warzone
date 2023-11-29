@@ -28,7 +28,7 @@ class WarzoneEngineTest {
   public void setup() {
     d_map = new Map();
     d_gameEngine = new WarzoneEngine();
-    d_currentPhase = d_gameEngine.getD_currentPhase();
+    d_currentPhase = d_gameEngine.getD_CurrentPhase();
   }
 
   @Test
@@ -99,7 +99,7 @@ class WarzoneEngineTest {
 
   @Test
   public void testCorrectStartupPhase() {
-    assertTrue(d_gameEngine.getD_currentPhase() instanceof StartupPhase);
+    assertTrue(d_gameEngine.getD_CurrentPhase() instanceof StartupPhase);
   }
 
   @Test

@@ -169,7 +169,8 @@ public class OrderExecutionPhase extends Phase {
      * {@inheritDoc}
      */
     @Override
-    protected void validateAssignCountries(Command command, Player player)
+    protected void validateAssignCountries(Command command, Player player, boolean isTournamentMode,
+            GameContext p_gameContext)
             throws InvalidCommand, InvalidMap, IOException {
         printInvalidCommandInCurrentState();
     }

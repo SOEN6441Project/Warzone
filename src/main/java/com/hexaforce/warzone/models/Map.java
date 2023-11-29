@@ -81,6 +81,15 @@ public class Map {
     }
 
     /**
+     * check the existing continents.
+     */
+    public void checkContinents() {
+        for (Continent c : d_continents) {
+            System.out.println(c.getD_continentID());
+        }
+    }
+
+    /**
      * Validate the entire map for correctness.
      *
      * @return A Boolean value indicating map validity.
@@ -424,7 +433,7 @@ public class Map {
     /**
      * Returns Country for a given country ID.
      * 
-     * @param p_countryID Country Id 
+     * @param p_countryID Country Id
      * @return country object
      */
     public Country getCountryByID(Integer p_countryID) {
