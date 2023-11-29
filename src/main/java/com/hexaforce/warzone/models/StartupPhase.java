@@ -300,30 +300,19 @@ public class StartupPhase extends Phase {
     /** {@inheritDoc} */
     @Override
     public void manageGamePlayers(Command p_command, Player p_player) throws InvalidCommand {
-        if (!l_isMapLoaded) {
-            d_gameEngine.setD_gameEngineLog(
-                    "No map found, Please `loadmap` before adding game players", "effect");
-            return;
-        }
-
         List<java.util.Map<String, String>> l_operations_list = p_command.getOperationsAndArguments();
 
         if (CommonUtil.isCollectionEmpty(l_operations_list)) {
             throw new InvalidCommand(Constants.INVALID_COMMAND_ERROR_GAMEPLAYER);
         } else {
-            if (d_gameContext.getD_loadCommand()) {
-                for (java.util.Map<String, String> l_map : l_operations_list) {
-                    if (p_command.checkRequiredKeysPresent(Constants.ARGUMENTS, l_map)
-                            && p_command.checkRequiredKeysPresent(Constants.OPERATION, l_map)) {
-                        d_playerController.updatePlayers(
-                                d_gameContext, l_map.get(Constants.OPERATION), l_map.get(Constants.ARGUMENTS));
-                    } else {
-                        throw new InvalidCommand(Constants.INVALID_COMMAND_ERROR_GAMEPLAYER);
-                    }
+            for (java.util.Map<String, String> l_map : l_operations_list) {
+                if (p_command.checkRequiredKeysPresent(Constants.ARGUMENTS, l_map)
+                        && p_command.checkRequiredKeysPresent(Constants.OPERATION, l_map)) {
+                    d_playerController.updatePlayers(d_gameContext, l_map.get(Constants.OPERATION),
+                            l_map.get(Constants.ARGUMENTS));
+                } else {
+                    throw new InvalidCommand(Constants.INVALID_COMMAND_ERROR_GAMEPLAYER);
                 }
-            } else {
-                d_gameEngine.setD_gameEngineLog(
-                        "Please load a valid map first via loadmap command!", "effect");
             }
         }
     }

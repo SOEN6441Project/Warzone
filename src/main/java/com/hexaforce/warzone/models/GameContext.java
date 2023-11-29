@@ -1,5 +1,6 @@
 package com.hexaforce.warzone.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -11,7 +12,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class GameContext {
+public class GameContext implements Serializable {
 
     /** The game's map object. */
     Map d_map;
@@ -26,7 +27,7 @@ public class GameContext {
     String d_error;
 
     /** Checks if user has loaded map. */
-    Boolean d_loadCommand = false;
+    boolean d_loadCommand = false;
 
     /** Log Entries for current game state. */
     LogEntryBuffer d_logEntryBuffer = new LogEntryBuffer();
@@ -77,5 +78,21 @@ public class GameContext {
      */
     public String retrieveRecentLogMessage() {
         return d_logEntryBuffer.getD_logMessage();
+    }
+
+    /**
+     * Sets the Boolean load map variable.
+     */
+    public void setD_loadCommand() {
+        d_loadCommand = true;
+    }
+
+    /**
+     * Returns if load command is used.
+     *
+     * @return bool value if map is loaded
+     */
+    public boolean getD_loadCommand() {
+        return d_loadCommand;
     }
 }

@@ -11,12 +11,14 @@ import com.hexaforce.warzone.models.Player;
 import com.hexaforce.warzone.models.RandomPlayer;
 import com.hexaforce.warzone.utils.CommonUtil;
 import com.hexaforce.warzone.utils.Constants;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 /** This service class handles the players. */
-public class PlayerService {
+public class PlayerService  implements Serializable {
 
     /** Log of Player operations in player methods. */
     String d_playerLog;
@@ -117,9 +119,9 @@ public class PlayerService {
             setD_playerLog("Player with name : " + p_enteredPlayerName + " already Exists. Changes are not made.");
         } else {
             Player l_addNewPlayer = new Player(p_enteredPlayerName);
-            String l_playerStrategy = "Benevolent";
-            // String l_playerStrategy =
-            // Constants.PLAYER_BEHAVIORS.get(l_random.nextInt(Constants.PLAYER_BEHAVIORS.size()));
+            // String l_playerStrategy = "Benevolent";
+            String l_playerStrategy =
+            Constants.PLAYER_BEHAVIORS.get(l_random.nextInt(Constants.PLAYER_BEHAVIORS.size()));
 
             switch (l_playerStrategy) {
                 case "Human":

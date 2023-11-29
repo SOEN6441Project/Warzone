@@ -6,12 +6,13 @@ import com.hexaforce.warzone.models.GameContext;
 import com.hexaforce.warzone.models.Map;
 import com.hexaforce.warzone.services.MapService;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * The MapController class is responsible for managing map-related operations in the Warzone game.
  */
-public class MapController {
+public class MapController  implements Serializable {
 
   private final MapService mapService;
 

@@ -2,6 +2,8 @@ package com.hexaforce.warzone.models;
 
 import com.hexaforce.warzone.exceptions.InvalidMap;
 import com.hexaforce.warzone.utils.CommonUtil;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,7 +19,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Map {
+public class Map implements Serializable {
 
     /** The name of the map file. */
     String d_mapFile;

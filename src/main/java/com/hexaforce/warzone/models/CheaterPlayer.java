@@ -77,7 +77,7 @@ public class CheaterPlayer extends PlayerBehaviorStrategy {
             if (countryEnemies.size() == 0)
                 continue;
 
-            Integer armiesInTerritory = ownedCountry.getD_armies();
+            int armiesInTerritory = ownedCountry.getD_armies();
 
             if (armiesInTerritory == 0)
                 continue;

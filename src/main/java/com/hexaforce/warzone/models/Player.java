@@ -8,6 +8,7 @@ import com.hexaforce.warzone.utils.Constants;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +19,7 @@ import lombok.Setter;
 /** This class depicts player's information and services. */
 @Getter
 @Setter
-public class Player {
+public class Player implements Serializable {
     public static final List<String> CARDS = Arrays.asList("bomb", "blockade", "airlift", "negotiate");
     public static final int SIZE = CARDS.size();
     /** color to show details with on map. */

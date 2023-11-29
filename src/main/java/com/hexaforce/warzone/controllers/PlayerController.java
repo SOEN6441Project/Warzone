@@ -4,6 +4,8 @@ import com.hexaforce.warzone.models.Continent;
 import com.hexaforce.warzone.models.GameContext;
 import com.hexaforce.warzone.models.Player;
 import com.hexaforce.warzone.services.PlayerService;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,7 +13,7 @@ import java.util.List;
  * operations in the Warzone
  * game.
  */
-public class PlayerController {
+public class PlayerController implements Serializable {
 
     private PlayerService playerService;
 

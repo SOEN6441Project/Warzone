@@ -114,7 +114,7 @@ public class Tournament implements Serializable {
                     List<Player> playersToCopy = getPlayersToAdd(p_gameContext.getD_players());
                     gameStateToAdd.setD_players(playersToCopy);
 
-                    gameStateToAdd.setD_loadCommand(null);
+                    gameStateToAdd.setD_loadCommand();
                     additionalGameStates.add(gameStateToAdd);
                 }
             }
@@ -244,7 +244,7 @@ public class Tournament implements Serializable {
                 Map loadedMap = d_mapService.loadMap(p_gameContext, mapToLoad);
                 loadedMap.setD_mapFile(mapToLoad);
                 if (loadedMap.validate()) {
-                    p_gameContext.setD_loadCommand(null);
+                    p_gameContext.setD_loadCommand();
                     p_gameEngine.setD_gameEngineLog(mapToLoad + " has been loaded to start the game", "effect");
                     d_gameStateList.add(p_gameContext);
                 } else {

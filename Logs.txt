@@ -1,4 +1,7 @@
 Game is Starting...
+gameplayer -add a -add b -add c -add d
+tournament -M warzone.map -P Cheater Benevolent -G 2 -D 10
+
 
 
 =====Startup Phase=====
@@ -64,3 +67,976 @@ Log: Country/Continent Assignment:
  Player : Habeeb is assigned with country : pakistan
  Player : Usaib is assigned with country : india
  Player : Usaib is assigned with country : china
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Map File not Found!
+Log: The map must have at least one continent!
+Log: warzone.map has been loaded to start the game
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: No map found, Please `loadmap` before adding game players
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : usaib and strategy: Cheater has been added successfully.
+Log: Invalid command. Kindly provide command in Format of : gameplayer -add playername -remove playername
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : usaib and strategy: Benevolent has been added successfully.
+Log: Player with name : waseem and strategy: Aggressive has been added successfully.
+Log: warzone.map has been loaded to start the game
+Log: Player:  waseem with strategy: Aggressive has been added to the tournament.
+Log: Player:  usaib with strategy: Benevolent has been added to the tournament.
+Log: Invalid Command. Kindly provide command in format of : tournament -M listofmapfiles -P listofplayerstrategies -G numberofgames -D maxnumberofturns
+Log: warzone.map has been loaded to start the game
+Log: Player:  waseem with strategy: Aggressive has been added to the tournament.
+Log: Player:  usaib with strategy: Benevolent has been added to the tournament.
+Log: Invalid Command. Kindly provide command in format of : tournament -M listofmapfiles -P listofplayerstrategies -G numberofgames -D maxnumberofturns
+Log: warzone.map has been loaded to start the game
+Log: Player:  waseem with strategy: Aggressive has been added to the tournament.
+Log: Player:  usaib with strategy: Benevolent has been added to the tournament.
+Log: 
+Starting New Game on map : warzone.map .........
+
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : usaib and strategy: Human has been added successfully.
+Log: Player with name : habeeb and strategy: Aggressive has been added successfully.
+Log: Player with name : waseem and strategy: Random has been added successfully.
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : a and strategy: Cheater has been added successfully.
+Log: Player with name : b and strategy: Human has been added successfully.
+Log: Player with name : c and strategy: Cheater has been added successfully.
+Log: Player with name : d and strategy: Cheater has been added successfully.
+Log: Player with name : e and strategy: Benevolent has been added successfully.
+Log: warzone.map has been loaded to start the game
+Log: Player:  a with strategy: Cheater has been added to the tournament.
+Log: Player:  c with strategy: Cheater has been added to the tournament.
+Log: Player:  d with strategy: Cheater has been added to the tournament.
+Log: Player:  e with strategy: Benevolent has been added to the tournament.
+Log: Invalid Command. Kindly provide command in format of : tournament -M listofmapfiles -P listofplayerstrategies -G numberofgames -D maxnumberofturns
+Log: warzone.map has been loaded to start the game
+Log: Player:  a with strategy: Cheater has been added to the tournament.
+Log: Player:  c with strategy: Cheater has been added to the tournament.
+Log: Player:  d with strategy: Cheater has been added to the tournament.
+Log: Player:  e with strategy: Benevolent has been added to the tournament.
+Log: 
+Starting New Game on map : warzone.map .........
+
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : a and strategy: Human has been added successfully.
+Log: Player with name : b and strategy: Random has been added successfully.
+Log: Player with name : c and strategy: Benevolent has been added successfully.
+Log: Player with name : d and strategy: Cheater has been added successfully.
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : a and strategy: Human has been added successfully.
+Log: Player with name : b and strategy: Cheater has been added successfully.
+Log: Player with name : c and strategy: Benevolent has been added successfully.
+Log: Player with name : d and strategy: Cheater has been added successfully.
+Log: warzone.map has been loaded to start the game
+Log: Player:  b with strategy: Cheater has been added to the tournament.
+Log: Player:  d with strategy: Cheater has been added to the tournament.
+Log: Player:  c with strategy: Benevolent has been added to the tournament.
+Log: 
+Starting New Game on map : warzone.map .........
+
+Log: Country/Continent Assignment:
+ Player : b is assigned with country : pakistan
+ Player : d is assigned with country : india
+ Player : c is assigned with country : nepal
+ Player : b is assigned with country : china
+Log: Player : b has been assigned with 3 armies
+Log: Player : d has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 2 armies to  pakistan
+Log: Cheater Player: b assigned 1 armies to  pakistan
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 2) in pakistan
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : a and strategy: Aggressive has been added successfully.
+Log: Player with name : b and strategy: Random has been added successfully.
+Log: Player with name : c and strategy: Human has been added successfully.
+Log: Player with name : d and strategy: Random has been added successfully.
+Log: warzone.map has been loaded to start the game
+Log: There has to be at least 2 or more non-human players eligible to play the tournament.
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : a and strategy: Cheater has been added successfully.
+Log: Player with name : b and strategy: Random has been added successfully.
+Log: Player with name : c and strategy: Benevolent has been added successfully.
+Log: Player with name : d and strategy: Human has been added successfully.
+Log: warzone.map has been loaded to start the game
+Log: Player:  a with strategy: Cheater has been added to the tournament.
+Log: Player:  c with strategy: Benevolent has been added to the tournament.
+Log: 
+Starting New Game on map : warzone.map .........
+
+Log: Country/Continent Assignment:
+ Player : a is assigned with country : china
+ Player : a is assigned with country : pakistan
+ Player : c is assigned with country : nepal
+ Player : c is assigned with country : india
+Log: Player : a has been assigned with 3 armies
+Log: Player : c has been assigned with 3 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: a assigned 3 armies to  pakistan
+Log: Cheater Player: a Now owns nepal
+Log: Cheater Player: a Now owns india
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: warzone.map has been loaded to start the game
+Log: The loaded map is valid!
+Log: Player with name : a and strategy: Benevolent has been added successfully.
+Log: Player with name : b and strategy: Benevolent has been added successfully.
+Log: Player with name : c and strategy: Aggressive has been added successfully.
+Log: Player with name : d and strategy: Benevolent has been added successfully.
+Log: warzone.map has been loaded to start the game
+Log: Player:  c with strategy: Aggressive has been added to the tournament.
+Log: Player:  a with strategy: Benevolent has been added to the tournament.
+Log: Player:  b with strategy: Benevolent has been added to the tournament.
+Log: Player:  d with strategy: Benevolent has been added to the tournament.
+Log: 
+Starting New Game on map : warzone.map .........
+
+Log: Country/Continent Assignment:
+ Player : c is assigned with country : nepal
+ Player : a is assigned with country : india
+ Player : b is assigned with country : china
+ Player : d is assigned with country : pakistan
+Log: Player : c has been assigned with 3 armies
+Log: Player : a has been assigned with 3 armies
+Log: Player : b has been assigned with 3 armies
+Log: Player : d has been assigned with 3 armies
+
+=====Issue Order Phase=====
+
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : a and strategy: Benevolent has been added successfully.
+Log: Player with name : b and strategy: Cheater has been added successfully.
+Log: Player with name : c and strategy: Random has been added successfully.
+Log: Player with name : d and strategy: Human has been added successfully.
+Log: warzone.map has been loaded to start the game
+Log: Player:  b with strategy: Cheater has been added to the tournament.
+Log: Player:  a with strategy: Benevolent has been added to the tournament.
+Log: 
+Starting New Game on map : warzone.map .........
+
+Log: Country/Continent Assignment:
+ Player : b is assigned with country : india
+ Player : b is assigned with country : china
+ Player : a is assigned with country : nepal
+ Player : a is assigned with country : pakistan
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 3 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 1 armies to  china
+Log: Cheater Player: b assigned 1 armies to  china
+Log: Cheater Player: b assigned 1 armies to  china
+Log: Cheater Player: b Now owns pakistan
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 2) in china
+
+Order Issued: (Player: a) deploy pakistan 3
+Log: Deploy order has been added to queue for execution. For player: a
+Log: Cheater Player: b Now owns pakistan
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 4) in china
+
+Order Issued: (Player: a) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance pakistan india 1
+Log: Advance order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 3 armies to pakistan
+Log: 3 armies have been successfully deployed to country: pakistan
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from pakistan to india
+Log: Player : a is assigned with Country : india and armies : 1
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from pakistan to india
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from pakistan to india
+Log: Advance Order : advance pakistan india 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance pakistan india 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from pakistan to india
+Log: Advance Order : advance pakistan india 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance pakistan india 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from pakistan to india
+Log: Advance Order : advance pakistan india 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance pakistan india 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from pakistan to india
+Log: Advance Order : advance pakistan india 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance pakistan india 1 is not executed as source country : pakistan has 1 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 3 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 3 armies to  china
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 6) in china
+
+Order Issued: (Player: a) bomb false
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 12) in china
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 24) in china
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 48) in china
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 96) in china
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 192) in china
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 6 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 2 armies to  china
+Log: Cheater Player: b assigned 1 armies to  china
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 2) in china
+
+Order Issued: (Player: a) bomb false
+
+Order Issued: (Player: a) bomb false
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 9 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 1 armies to  china
+Log: Cheater Player: b assigned 2 armies to  china
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 4) in china
+
+Order Issued: (Player: a) bomb false
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 12 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 2 armies to  china
+Log: Cheater Player: b assigned 1 armies to  china
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 2) in china
+
+Order Issued: (Player: a) bomb false
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 4) in china
+
+Order Issued: (Player: a) bomb false
+
+Order Issued: (Player: a) bomb false
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 15 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 3 armies to  china
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 6) in china
+
+Order Issued: (Player: a) deploy nepal 3
+Log: Deploy order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 3 armies to nepal
+Log: 3 armies have been successfully deployed to country: nepal
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 15 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 3 armies to  china
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 6) in china
+
+Order Issued: (Player: a) deploy pakistan 4
+Log: Deploy order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 4 armies to pakistan
+Log: 5 armies have been successfully deployed to country: pakistan
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 14 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 2 armies to  china
+Log: Cheater Player: b assigned 1 armies to  china
+Log: Cheater Player: b Now owns nepal
+Log: Cheater Player: b doubled the armies ( Now: 2) in china
+
+Order Issued: (Player: a) advance nepal china 2
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) bomb false
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 2 armies from nepal to china
+Log: Player : a is assigned with Country : china and armies : 2
+Player : a has won the Game by conquering all countries. Exiting the Game .....
+Log: 
+Game Completed on map : warzone.map .........
+
+Log: 
+Starting New Game on map : warzone.map .........
+
+Log: Country/Continent Assignment:
+ Player : b is assigned with country : india
+ Player : b is assigned with country : china
+ Player : a is assigned with country : nepal
+ Player : a is assigned with country : pakistan
+ Player : b is assigned with country : nepal
+ Player : b is assigned with country : pakistan
+ Player : a is assigned with country : india
+ Player : a is assigned with country : china
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 3 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 3 armies to  nepal
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 6) in nepal
+
+Order Issued: (Player: a) deploy china 2
+Log: Deploy order has been added to queue for execution. For player: a
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 12) in nepal
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 24) in nepal
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to china
+Log: 2 armies have been successfully deployed to country: china
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 4 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 3 armies to  nepal
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 6) in nepal
+
+Order Issued: (Player: a) deploy india 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to india
+Log: 2 armies have been successfully deployed to country: india
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 5 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 3 armies to  nepal
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 6) in nepal
+
+Order Issued: (Player: a) deploy china 3
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) deploy china 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 3 armies to china
+Log: 5 armies have been successfully deployed to country: china
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 6 armies and is still owned by player : b
+Country : china is left with 4 armies and is still owned by player : a
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to china
+Log: 5 armies have been successfully deployed to country: china
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 4 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 1 armies to  nepal
+Log: Cheater Player: b assigned 1 armies to  pakistan
+Log: Cheater Player: b assigned 1 armies to  pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 2) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 2) in pakistan
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance china nepal 4
+Log: Advance order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 1 armies and is still owned by player : b
+Country : china is left with 5 armies and is still owned by player : a
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 4 armies from china to nepal
+Log: Country : nepal is left with 1 armies and is still owned by player : b
+Country : china is left with 4 armies and is still owned by player : a
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 7 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 3 armies to  pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 2) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 6) in pakistan
+
+Order Issued: (Player: a) deploy india 4
+Log: Deploy order has been added to queue for execution. For player: a
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 4) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 12) in pakistan
+
+Order Issued: (Player: a) advance china nepal 2
+Log: Advance order has been added to queue for execution. For player: a
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 8) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 24) in pakistan
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 4 armies to india
+Log: 6 armies have been successfully deployed to country: india
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 2 armies from china to nepal
+Log: Country : nepal is left with 8 armies and is still owned by player : b
+Country : china is left with 2 armies and is still owned by player : a
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 6 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 2 armies to  pakistan
+Log: Cheater Player: b assigned 1 armies to  nepal
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 2) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 4) in pakistan
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 4) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 8) in pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 8) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 16) in pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 16) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 32) in pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 32) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 64) in pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 64) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 128) in pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 128) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 256) in pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 256) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 512) in pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 512) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 1024) in pakistan
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 512 armies and is still owned by player : b
+Country : china is left with 1 armies and is still owned by player : a
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 9 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 2 armies to  pakistan
+Log: Cheater Player: b assigned 1 armies to  nepal
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 2) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 4) in pakistan
+
+Order Issued: (Player: a) deploy china 8
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) deploy china 1
+Log: Deploy order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance china nepal 1
+Log: Advance order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 8 armies to china
+Log: 9 armies have been successfully deployed to country: china
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 1 armies to china
+Log: 10 armies have been successfully deployed to country: china
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 1 armies from china to nepal
+Log: Country : nepal is left with 2 armies and is still owned by player : b
+Country : china is left with 9 armies and is still owned by player : a
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 3 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 1 armies to  nepal
+Log: Cheater Player: b assigned 1 armies to  nepal
+Log: Cheater Player: b assigned 1 armies to  nepal
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 2) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 8) in pakistan
+
+Order Issued: (Player: a) advance china nepal 3
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance india pakistan 5
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) advance china nepal 2
+Log: Advance order has been added to queue for execution. For player: a
+
+Order Issued: (Player: a) deploy india 2
+Log: Deploy order has been added to queue for execution. For player: a
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 3 armies from china to nepal
+Log: Country : nepal is left with 1 armies and is still owned by player : b
+Country : china is left with 8 armies and is still owned by player : a
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 5 armies from india to pakistan
+Log: Country : pakistan is left with 6 armies and is still owned by player : b
+Country : india is left with 3 armies and is still owned by player : a
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 2 armies from china to nepal
+Log: Country : nepal is left with 1 armies and is still owned by player : b
+Country : china is left with 7 armies and is still owned by player : a
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to india
+Log: 5 armies have been successfully deployed to country: india
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 4 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 2 armies to  pakistan
+Log: Cheater Player: b assigned 1 armies to  pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 2) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 2) in pakistan
+
+Order Issued: (Player: a) deploy india 2
+Log: Deploy order has been added to queue for execution. For player: a
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 4) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 4) in pakistan
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Deploy order issued by player a ----------
+
+Deploy 2 armies to india
+Log: 7 armies have been successfully deployed to country: india
+Log: Player : b has been assigned with 3 armies
+Log: Player : a has been assigned with 5 armies
+Log: Player : Neutral has been assigned with 0 armies
+
+=====Issue Order Phase=====
+
+Log: Cheater Player: b assigned 3 armies to  pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 8) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 6) in pakistan
+
+Order Issued: (Player: a) advance china nepal 3
+Log: Advance order has been added to queue for execution. For player: a
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 16) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 12) in pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 32) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 24) in pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 64) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 48) in pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 128) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 96) in pakistan
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns china
+Log: Cheater Player: b Now owns india
+Log: Cheater Player: b doubled the armies ( Now: 256) in nepal
+Log: Cheater Player: b doubled the armies ( Now: 192) in pakistan
+
+=====Order Execution Phase=====
+
+
+Starting Execution Of Orders.....
+Log: 
+---------- Advance order issued by player a ----------
+
+Move 3 armies from china to nepal
+Log: Country : nepal is left with 256 armies and is still owned by player : b
+Country : china is left with 4 armies and is still owned by player : a
+
+=====Start Up Phase=====
+
+Log: 
+Game Completed on map : warzone.map .........
+
+Log: ************ Tournament Completed ************
+Log: Game Saved Successfully to tour
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: writing aborted; java.io.NotSerializableException: com.hexaforce.warzone.models.StartupPhase
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: writing aborted; java.io.NotSerializableException: com.hexaforce.warzone.models.StartupPhase
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: writing aborted; java.io.NotSerializableException: com.hexaforce.warzone.models.StartupPhase
+Log: Player with name : usaib and strategy: Random has been added successfully.
+Log: Player with name : habib and strategy: Random has been added successfully.
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: warzone.map has been loaded to start the game
+Log: Player with name : was and strategy: Random has been added successfully.
+Log: Player with name : eem and strategy: Benevolent has been added successfully.
+Log: Game Saved Successfully to testgame
+Log: Game Saved Successfully to testgame
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: warzone.map has been loaded to start the game
+Log: Player with name : was and strategy: Cheater has been added successfully.
+Log: Player with name : eem and strategy: Random has been added successfully.
+Log: Game Saved Successfully to testgame
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: warzone.map has been loaded to start the game
+Log: Player with name : wa and strategy: Aggressive has been added successfully.
+Log: Player with name : seem and strategy: Aggressive has been added successfully.
+Log: Game Saved Successfully to test
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: warzone.map has been loaded to start the game
+Log: Player with name : wa and strategy: Random has been added successfully.
+Log: Player with name : seem and strategy: Human has been added successfully.
+Log: Game Saved Successfully to testgame
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: Player with name : was and strategy: Benevolent has been added successfully.
+Log: Player with name : eem and strategy: Human has been added successfully.
+Log: Game Saved Successfully to new
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+
+Log: warzone.map has been loaded to start the game
+Log: Player with name : was and strategy: Human has been added successfully.
+Log: Player with name : eem and strategy: Random has been added successfully.
+Log: Game Saved Successfully to testgame
+Initializing the Game ......
+
+
+=====Game Startup Phase=====
+

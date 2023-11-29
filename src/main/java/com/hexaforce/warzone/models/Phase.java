@@ -7,13 +7,16 @@ import com.hexaforce.warzone.exceptions.InvalidCommand;
 import com.hexaforce.warzone.exceptions.InvalidMap;
 import com.hexaforce.warzone.utils.Command;
 import java.io.IOException;
+import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 
 /** State Class for phases in game which enforce state specific methods */
 @Getter
 @Setter
-public abstract class Phase {
+public abstract class Phase implements Serializable {
+
     /**
      * The variable d_gameContext holds information about the current state of the
      * gameplay.
