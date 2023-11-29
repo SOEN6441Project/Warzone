@@ -1,17 +1,23 @@
 package com.hexaforce.warzone.services;
 
+import com.hexaforce.warzone.models.AggressivePlayer;
+import com.hexaforce.warzone.models.BenevolentPlayer;
+import com.hexaforce.warzone.models.CheaterPlayer;
 import com.hexaforce.warzone.models.Continent;
 import com.hexaforce.warzone.models.Country;
 import com.hexaforce.warzone.models.GameContext;
+import com.hexaforce.warzone.models.HumanPlayer;
 import com.hexaforce.warzone.models.Player;
+import com.hexaforce.warzone.models.RandomPlayer;
 import com.hexaforce.warzone.utils.CommonUtil;
 import com.hexaforce.warzone.utils.Constants;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 /** This service class handles the players. */
-public class PlayerService {
+public class PlayerService implements Serializable {
 
   /** Log of Player operations in player methods. */
   String d_playerLog;
@@ -107,14 +113,44 @@ public class PlayerService {
    */
   private void addGamePlayer(
       List<Player> p_updatedPlayers, String p_enteredPlayerName, boolean p_playerNameAlreadyExist) {
+    Random l_random = new Random();
 
     if (p_playerNameAlreadyExist) {
       setD_playerLog(
           "Player with name : " + p_enteredPlayerName + " already Exists. Changes are not made.");
     } else {
       Player l_addNewPlayer = new Player(p_enteredPlayerName);
+      // String l_playerStrategy = "Benevolent";
+      String l_playerStrategy =
+          Constants.PLAYER_BEHAVIORS.get(l_random.nextInt(Constants.PLAYER_BEHAVIORS.size()));
+
+      switch (l_playerStrategy) {
+        case "Human":
+          l_addNewPlayer.setD_playerBehaviorStrategy(new HumanPlayer());
+          break;
+        case "Aggressive":
+          l_addNewPlayer.setD_playerBehaviorStrategy(new AggressivePlayer());
+          break;
+        case "Random":
+          l_addNewPlayer.setD_playerBehaviorStrategy(new RandomPlayer());
+          break;
+        case "Benevolent":
+          l_addNewPlayer.setD_playerBehaviorStrategy(new BenevolentPlayer());
+          break;
+        case "Cheater":
+          l_addNewPlayer.setD_playerBehaviorStrategy(new CheaterPlayer());
+          break;
+        default:
+          setD_playerLog("Invalid Player Behavior");
+          break;
+      }
       p_updatedPlayers.add(l_addNewPlayer);
-      setD_playerLog("Player with name : " + p_enteredPlayerName + " has been added successfully.");
+      setD_playerLog(
+          "Player with name : "
+              + p_enteredPlayerName
+              + " and strategy: "
+              + l_playerStrategy
+              + " has been added successfully.");
     }
   }
 
@@ -335,13 +371,9 @@ public class PlayerService {
    * @param p_argument name of player to add or remove.
    */
   public void updatePlayers(GameContext p_gameContext, String p_operation, String p_argument) {
-    if (!isMapLoaded(p_gameContext)) {
-      this.setD_playerLog("Kindly load the map first to add player: " + p_argument);
-      p_gameContext.updateLog(this.d_playerLog, "effect");
-      return;
-    }
     List<Player> l_updatedPlayers =
         this.addRemovePlayers(p_gameContext.getD_players(), p_operation, p_argument);
+
     if (!CommonUtil.isNull(l_updatedPlayers)) {
       p_gameContext.setD_players(l_updatedPlayers);
       p_gameContext.updateLog(d_playerLog, "effect");
@@ -379,7 +411,10 @@ public class PlayerService {
   public void resetPlayersFlag(List<Player> p_playersList) {
     for (Player l_player : p_playersList) {
       if (!l_player.getPlayerName().equalsIgnoreCase("Neutral")) l_player.setD_moreOrders(true);
-      l_player.setD_oneCardPerTurn(false);
+      if (l_player.getD_oneCardPerTurn()) {
+        l_player.assignCard();
+        l_player.setD_oneCardPerTurn(false);
+      }
       l_player.resetNegotiation();
     }
   }

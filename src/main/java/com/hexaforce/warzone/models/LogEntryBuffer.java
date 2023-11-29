@@ -1,6 +1,7 @@
 package com.hexaforce.warzone.models;
 
 import com.hexaforce.warzone.utils.Logger;
+import java.io.Serializable;
 import java.util.Observable;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +9,7 @@ import lombok.Setter;
 /** The Logging Class that record every action takes place while game play. */
 @Getter
 @Setter
-public class LogEntryBuffer extends Observable {
+public class LogEntryBuffer extends Observable implements Serializable {
   /** Log message to be stored. */
   String d_logMessage;
 

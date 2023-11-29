@@ -1,6 +1,8 @@
 package com.hexaforce.warzone.testSuite;
 
 import com.hexaforce.warzone.models.*;
+import com.hexaforce.warzone.services.ConquestMapFileReaderTest;
+import com.hexaforce.warzone.services.DominationMapFileReaderTest;
 import com.hexaforce.warzone.services.MapServiceTest;
 import com.hexaforce.warzone.services.PlayerServiceTest;
 import org.junit.runner.RunWith;
@@ -17,6 +19,10 @@ import org.junit.runners.Suite;
   DiplomacyTest.class,
   OrderExecutionPhaseTest.class,
   MapServiceTest.class,
-  PlayerServiceTest.class
+  PlayerServiceTest.class,
+  ConquestMapFileReaderTest.class,
+  DominationMapFileReaderTest.class,
+  AggressivePlayerTest.class,
+  TournamentTest.class,
 })
 public class GameEngineTestSuit {}

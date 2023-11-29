@@ -1,5 +1,6 @@
 package com.hexaforce.warzone.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -8,7 +9,7 @@ import lombok.Setter;
 /** This class represents individual countries on the map. */
 @Getter
 @Setter
-public class Country {
+public class Country implements Serializable {
 
   /** The number of armies stationed in the country. */
   Integer d_armies;
@@ -36,6 +37,8 @@ public class Country {
     d_countryId = p_countryId;
     d_countryName = p_countryName;
     d_continentId = p_continentId;
+    d_adjacentCountryIds = new ArrayList<>();
+    d_armies = 0;
   }
 
   /**

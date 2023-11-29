@@ -1,7 +1,9 @@
 package com.hexaforce.warzone.models;
 
+import java.io.Serializable;
+
 /** A concrete implementation of the Command pattern representing the 'Deploy' order. */
-public class Deploy implements Order {
+public class Deploy implements Order, Serializable {
   /** The name of the target country. */
   String d_targetCountryName;
 

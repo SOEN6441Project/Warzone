@@ -7,13 +7,15 @@ import com.hexaforce.warzone.exceptions.InvalidCommand;
 import com.hexaforce.warzone.exceptions.InvalidMap;
 import com.hexaforce.warzone.utils.Command;
 import java.io.IOException;
+import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 
 /** State Class for phases in game which enforce state specific methods */
 @Getter
 @Setter
-public abstract class Phase {
+public abstract class Phase implements Serializable {
+
   /** The variable d_gameContext holds information about the current state of the gameplay. */
   GameContext d_gameContext;
 
@@ -31,6 +33,8 @@ public abstract class Phase {
 
   /** A boolean flag to indicate whether the map has been loaded. */
   boolean l_isMapLoaded;
+
+  Tournament d_tournament = new Tournament();
 
   /**
    * Constructor for initializing the current game engine with the given parameters.
@@ -130,7 +134,7 @@ public abstract class Phase {
         }
       case "assigncountries":
         {
-          validateAssignCountries(l_command, p_player);
+          validateAssignCountries(l_command, p_player, false, d_gameContext);
           break;
         }
       case "showmap":
@@ -148,12 +152,27 @@ public abstract class Phase {
           executeAdvanceOrder(p_enteredCommand, p_player);
           break;
         }
+      case "savegame":
+        {
+          manageSaveGame(l_command, p_player);
+          break;
+        }
+      case "loadgame":
+        {
+          manageLoadGame(l_command, p_player);
+          break;
+        }
       case "airlift":
       case "blockade":
       case "negotiate":
       case "bomb":
         {
           handleCardCommands(p_enteredCommand, p_player);
+          break;
+        }
+      case "tournament":
+        {
+          tournamentGamePlay(l_command);
           break;
         }
       case "exit":
@@ -172,6 +191,30 @@ public abstract class Phase {
         }
     }
   }
+
+  /**
+   * Handles Game Load Feature.
+   *
+   * @param p_command command entered by user
+   * @param p_player player instance
+   * @throws InvalidCommand indicates command is invalid
+   * @throws InvalidMap indicates map is invalid
+   * @throws IOException indicates failure in I/O operation
+   */
+  protected abstract void manageLoadGame(Command p_command, Player p_player)
+      throws InvalidCommand, InvalidMap, IOException;
+
+  /**
+   * Handles Game Save Feature.
+   *
+   * @param p_command command entered by user
+   * @param p_player player instance
+   * @throws InvalidCommand indicates command is invalid
+   * @throws InvalidMap indicates map is invalid
+   * @throws IOException indicates failure in I/O operation
+   */
+  protected abstract void manageSaveGame(Command p_command, Player p_player)
+      throws InvalidCommand, InvalidMap, IOException;
 
   /**
    * Handles card-related commands.
@@ -204,8 +247,11 @@ public abstract class Phase {
    */
   protected abstract void executeAdvanceOrder(String command, Player player) throws IOException;
 
+  protected abstract void tournamentGamePlay(Command p_command)
+      throws InvalidCommand, InvalidMap, IOException;
+
   /** Main method executed when the game phase changes. */
-  public abstract void onPhaseInitialization();
+  public abstract void onPhaseInitialization(boolean p_isTournamentMode);
 
   /** Show commands according to the current game phase. */
   public abstract void showCommands();
@@ -232,9 +278,11 @@ public abstract class Phase {
    * @param player Player instance.
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates if map is invalid.
+   * @throws IOException
    */
-  protected abstract void validateAssignCountries(Command command, Player player)
-      throws InvalidCommand, InvalidMap;
+  protected abstract void validateAssignCountries(
+      Command command, Player player, boolean p_istournamentmode, GameContext p_gameContext)
+      throws InvalidCommand, InvalidMap, IOException;
 
   /**
    * Performs basic validation for the "gameplayer" command, checking required arguments and
@@ -244,9 +292,10 @@ public abstract class Phase {
    * @param player Player instance.
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates if map is invalid.
+   * @throws IOException
    */
   protected abstract void manageGamePlayers(Command command, Player player)
-      throws InvalidCommand, InvalidMap;
+      throws InvalidCommand, InvalidMap, IOException;
 
   /**
    * Performs basic validation for the "editneighbor" command, checking required arguments and
@@ -282,9 +331,10 @@ public abstract class Phase {
    * @param player Player instance.
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates that the map is invalid.
+   * @throws IOException
    */
   protected abstract void validateMapValidation(Command command, Player player)
-      throws InvalidMap, InvalidCommand;
+      throws InvalidMap, InvalidCommand, IOException;
 
   /**
    * Performs basic validation for the "loadmap" command, checking required arguments and directing
@@ -294,9 +344,10 @@ public abstract class Phase {
    * @param player Player instance.
    * @throws InvalidCommand Indicates that the command is invalid.
    * @throws InvalidMap Indicates that the map is invalid.
+   * @throws IOException
    */
   protected abstract void validateLoadMap(Command command, Player player)
-      throws InvalidCommand, InvalidMap;
+      throws InvalidCommand, InvalidMap, IOException;
 
   /**
    * Performs basic validation for the "savemap" command, checking required arguments and directing

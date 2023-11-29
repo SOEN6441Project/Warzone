@@ -1,13 +1,14 @@
 package com.hexaforce.warzone.models;
 
 import com.hexaforce.warzone.utils.CommonUtil;
+import java.io.Serializable;
 
 /**
  * This class represents the implementation of a Blockade order. Blockade cards are used to change
  * one of your territories into a neutral territory and triple the number of armies on that
  * territory.
  */
-public class Blockade implements Card {
+public class Blockade implements Card, Serializable {
   /** The player who owns the blockade card. */
   Player d_playerInitiator;
 

@@ -1,13 +1,14 @@
 package com.hexaforce.warzone.models;
 
 import com.hexaforce.warzone.services.PlayerService;
+import java.io.Serializable;
 
 /**
  * This class represents the implementation of a Diplomacy card order. The Diplomacy Card enforces
  * peace between two players for a variable number of turns. While peace is enforced, neither player
  * will be able to attack the other. The card takes effect the turn after it is played.
  */
-public class Diplomacy implements Card {
+public class Diplomacy implements Card, Serializable {
   /** The player who issues the diplomatic order. */
   Player d_IssuingPlayer;
 

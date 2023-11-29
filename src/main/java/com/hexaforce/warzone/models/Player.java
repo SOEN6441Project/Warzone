@@ -3,9 +3,11 @@ package com.hexaforce.warzone.models;
 import com.hexaforce.warzone.exceptions.InvalidCommand;
 import com.hexaforce.warzone.exceptions.InvalidMap;
 import com.hexaforce.warzone.utils.CommonUtil;
+import com.hexaforce.warzone.utils.Constants;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +18,7 @@ import lombok.Setter;
 /** This class depicts player's information and services. */
 @Getter
 @Setter
-public class Player {
+public class Player implements Serializable {
   public static final List<String> CARDS =
       Arrays.asList("bomb", "blockade", "airlift", "negotiate");
   public static final int SIZE = CARDS.size();
@@ -52,6 +54,9 @@ public class Player {
 
   /** List of players to not attack if negotiated with. */
   List<Player> d_negotiatedWith = new ArrayList<Player>();
+
+  /** Object of Player Behavior Strategy class. */
+  PlayerBehaviorStrategy d_playerBehaviorStrategy;
 
   /**
    * This parameterized constructor is used to create player with name and default armies.
@@ -176,6 +181,31 @@ public class Player {
   }
 
   /**
+   * Get Player Order according to its Strategy.
+   *
+   * @param p_gameContext Current GameContext Object
+   * @return String representing Order
+   * @throws IOException Exception
+   */
+  public String getPlayerOrder(GameContext p_gameContext) throws IOException {
+    String l_stringOrder = this.d_playerBehaviorStrategy.createOrder(this, p_gameContext);
+    return l_stringOrder;
+  }
+
+  /**
+   * Create the list of IDs of countries owned by the player.
+   *
+   * @return list of country Ids
+   */
+  public List<Integer> getCountryIDs() {
+    List<Integer> l_countryIDs = new ArrayList<Integer>();
+    for (Country c : d_countriesOwned) {
+      l_countryIDs.add(c.getD_countryId());
+    }
+    return l_countryIDs;
+  }
+
+  /**
    * Sets info about more orders from player are to be accepted or not.
    *
    * @param p_moreOrders Boolean true if player wants to give more order or else false
@@ -200,6 +230,15 @@ public class Player {
    */
   public void setD_oneCardPerTurn(Boolean p_value) {
     this.d_oneCardPerTurn = p_value;
+  }
+
+  /**
+   * Returns the boolean if player has earned a card or not.
+   *
+   * @return bool if player has earned one card
+   */
+  public boolean getD_oneCardPerTurn() {
+    return d_oneCardPerTurn;
   }
 
   /**
@@ -257,18 +296,28 @@ public class Player {
    *
    * @throws IOException exception in reading inputs from user
    */
-  void checkForMoreOrders() throws IOException {
-    BufferedReader l_reader = new BufferedReader(new InputStreamReader(System.in));
-    System.out.println(
-        "\nDo you still want to give order for player : "
-            + this.getPlayerName()
-            + " in next turn ? \nPress Y for Yes or N for No");
-    String l_nextOrderCheck = l_reader.readLine();
-    if (l_nextOrderCheck.equalsIgnoreCase("Y") || l_nextOrderCheck.equalsIgnoreCase("N")) {
-      this.setD_moreOrders(l_nextOrderCheck.equalsIgnoreCase("Y") ? true : false);
+  void checkForMoreOrders(boolean p_isTournamentMode) throws IOException {
+    String l_nextOrderCheck = new String();
+    if (p_isTournamentMode
+        || !this.getD_playerBehaviorStrategy().getPlayerBehavior().equalsIgnoreCase("Human")) {
+      Random l_random = new Random();
+      System.out.println("Trying to execute next boolean logic");
+      boolean l_moreOrders = l_random.nextBoolean();
+      this.setD_moreOrders(l_moreOrders);
     } else {
-      System.err.println("Invalid Input Passed.");
-      this.checkForMoreOrders();
+      BufferedReader l_reader = new BufferedReader(new InputStreamReader(System.in));
+      System.out.println(
+          "\nDo you still want to give order for player : "
+              + this.getPlayerName()
+              + " in next turn ? \nPress Y for Yes or N for No");
+      l_nextOrderCheck = l_reader.readLine();
+
+      if (l_nextOrderCheck.equalsIgnoreCase("Y") || l_nextOrderCheck.equalsIgnoreCase("N")) {
+        this.setD_moreOrders(l_nextOrderCheck.equalsIgnoreCase("Y") ? true : false);
+      } else {
+        System.err.println("Invalid Input Passed.");
+        this.checkForMoreOrders(p_isTournamentMode);
+      }
     }
   }
 
@@ -384,7 +433,7 @@ public class Player {
       this.setD_playerLog(
           "Country : "
               + p_countryName
-              + " given in advance order doesnt exists in map. Order given is ignored.",
+              + " given in advance order does'nt exists in map. Order given is ignored.",
           "error");
       return false;
     }
@@ -440,23 +489,14 @@ public class Player {
    * conquers a territory.
    */
   public void assignCard() {
-    if (!d_oneCardPerTurn) {
-      Random l_random = new Random();
-      this.d_cardsOwnedByPlayer.add(CARDS.get(l_random.nextInt(SIZE)));
-      this.setD_playerLog(
-          "Player: "
-              + this.d_name
-              + " has earned card as reward for the successful conquest- "
-              + this.d_cardsOwnedByPlayer.get(this.d_cardsOwnedByPlayer.size() - 1),
-          "log");
-      this.setD_oneCardPerTurn(true);
-    } else {
-      this.setD_playerLog(
-          "Player: "
-              + this.d_name
-              + " has already earned maximum cards that can be allotted in a turn",
-          "error");
-    }
+    Random l_random = new Random();
+    this.d_cardsOwnedByPlayer.add(Constants.CARDS.get(l_random.nextInt(Constants.SIZE)));
+    this.setD_playerLog(
+        "Player: "
+            + this.d_name
+            + " has earned card as reward for the successful conquest- "
+            + this.d_cardsOwnedByPlayer.get(this.d_cardsOwnedByPlayer.size() - 1),
+        "log");
   }
 
   /**

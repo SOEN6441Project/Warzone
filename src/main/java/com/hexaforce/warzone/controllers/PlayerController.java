@@ -4,15 +4,19 @@ import com.hexaforce.warzone.models.Continent;
 import com.hexaforce.warzone.models.GameContext;
 import com.hexaforce.warzone.models.Player;
 import com.hexaforce.warzone.services.PlayerService;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * The PlayerController class is responsible for managing player-related operations in the Warzone
  * game.
  */
-public class PlayerController {
+public class PlayerController implements Serializable {
 
   private PlayerService playerService;
+
+  /** Log of Player operations in player methods. */
+  String d_playerLog;
 
   /** Constructs a new PlayerController and initializes the associated PlayerService. */
   public PlayerController() {
@@ -39,6 +43,35 @@ public class PlayerController {
    */
   public void updatePlayers(GameContext gameContext, String operation, String argument) {
     playerService.updatePlayers(gameContext, operation, argument);
+  }
+
+  /**
+   * Adds the lost player to the failed list in gamestate.
+   *
+   * @param gameContext gamestate object.
+   */
+  public void updatePlayersInGame(GameContext gameContext) {
+    for (Player l_player : gameContext.getD_players()) {
+      if (l_player.getD_countriesOwned().size() == 0
+          && !l_player.getPlayerName().equals("Neutral")
+          && !gameContext.getD_playersFailed().contains(l_player)) {
+        this.setD_playerLog(
+            "Player: "
+                + l_player.getPlayerName()
+                + " has lost the game and is left with no countries!");
+        gameContext.removePlayer(l_player);
+      }
+    }
+  }
+
+  /**
+   * Sets the Player Log in player methods.
+   *
+   * @param p_playerLog Player Operation Log.
+   */
+  public void setD_playerLog(String p_playerLog) {
+    this.d_playerLog = p_playerLog;
+    System.out.println(p_playerLog);
   }
 
   /**
