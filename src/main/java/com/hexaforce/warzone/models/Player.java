@@ -53,6 +53,11 @@ public class Player {
     List<Player> d_negotiatedWith = new ArrayList<Player>();
 
     /**
+     * Object of Player Behavior Strategy class.
+     */
+    PlayerBehaviorStrategy d_playerBehaviorStrategy;
+
+    /**
      * This parameterized constructor is used to create player with name and default
      * armies.
      *
