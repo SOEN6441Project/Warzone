@@ -21,7 +21,7 @@ public class ConquestMapFileReaderTest {
 	MapService d_mapservice; // Reference to MapService to store its object.
 	List<String> d_mapLines; // Reference to store lines of the Map.
 	Map d_map; // Reference to store the Map object.
-	GameContext d_state; // Reference to store the GameContext object.
+	GameContext d_context; // Reference to store the GameContext object.
 	ConquestMapFileReader d_conquestMapFileReader; // Conquest file reader to parse the map file.
 
 	/**
@@ -34,7 +34,7 @@ public class ConquestMapFileReaderTest {
 		d_conquestMapFileReader = new ConquestMapFileReader();
 		d_mapservice = new MapService();
 		d_map = new Map();
-		d_state = new GameContext();
+		d_context = new GameContext();
 		d_mapLines = d_mapservice.loadFile("testconquest1.map");
 	}
 
@@ -46,11 +46,11 @@ public class ConquestMapFileReaderTest {
 	 */
 	@Test
 	public void testReadConquestFile() throws IOException, InvalidMap {
-		d_conquestMapFileReader.readConquestMapFile(d_state, d_map, d_mapLines);
+		d_conquestMapFileReader.readConquestMapFile(d_context, d_map, d_mapLines);
 
-		assertNotNull(d_state.getD_map());
-		assertEquals(d_state.getD_map().getD_continents().size(), 8);
-		assertEquals(d_state.getD_map().getD_countries().size(), 99);
+		assertNotNull(d_context.getD_map());
+		assertEquals(d_context.getD_map().getD_continents().size(), 8);
+		assertEquals(d_context.getD_map().getD_countries().size(), 99);
 	}
 
 	/**
@@ -62,22 +62,22 @@ public class ConquestMapFileReaderTest {
 	 */
 	@Test
 	public void testEditMap() throws IOException, InvalidMap, InvalidCommand {
-		d_conquestMapFileReader.readConquestMapFile(d_state, d_map, d_mapLines);
-		Map l_updatedContinents = d_mapservice.addRemoveContinents(d_state, d_state.getD_map(), "Add", "Asia 10");
-		l_updatedContinents = d_mapservice.addRemoveContinents(d_state, d_state.getD_map(), "Add", "Europe 20");
+		d_conquestMapFileReader.readConquestMapFile(d_context, d_map, d_mapLines);
+		Map l_updatedContinents = d_mapservice.addRemoveContinents(d_context, d_context.getD_map(), "Add", "Asia 10");
+		l_updatedContinents = d_mapservice.addRemoveContinents(d_context, d_context.getD_map(), "Add", "Europe 20");
 
 		assertEquals(l_updatedContinents.getD_continents().size(), 10);
 		assertEquals(l_updatedContinents.getD_continents().get(8).getD_continentName(), "Asia");
 		assertEquals(l_updatedContinents.getD_continents().get(8).getD_continentValue().toString(), "10");
 
-		l_updatedContinents = d_mapservice.addRemoveContinents(d_state, d_state.getD_map(), "Remove", "Asia");
+		l_updatedContinents = d_mapservice.addRemoveContinents(d_context, d_context.getD_map(), "Remove", "Asia");
 		assertEquals(l_updatedContinents.getD_continents().size(), 9);
 
-		d_mapservice.editFunctions(d_state, "add", "Germany Europe", 2);
-		d_mapservice.editFunctions(d_state, "add", "Netherlands Europe", 2);
-		assertEquals(d_state.getD_map().getD_countries().size(), 101);
+		d_mapservice.editFunctions(d_context, "add", "Germany Europe", 2);
+		d_mapservice.editFunctions(d_context, "add", "Netherlands Europe", 2);
+		assertEquals(d_context.getD_map().getD_countries().size(), 101);
 
-		d_mapservice.editFunctions(d_state, "remove", "Netherlands", 2);
-		assertEquals(d_state.getD_map().getD_countries().size(), 100);
+		d_mapservice.editFunctions(d_context, "remove", "Netherlands", 2);
+		assertEquals(d_context.getD_map().getD_countries().size(), 100);
 	}
 }
