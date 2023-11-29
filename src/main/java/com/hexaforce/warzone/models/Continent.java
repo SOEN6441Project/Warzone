@@ -1,7 +1,6 @@
 package com.hexaforce.warzone.models;
 
 import com.hexaforce.warzone.utils.CommonUtil;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Continent implements Serializable  {
+public class Continent implements Serializable {
 
   /** The unique identifier for this continent. */
   Integer d_continentID;

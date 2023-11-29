@@ -1,14 +1,13 @@
 package com.hexaforce.warzone.models;
 
-import java.io.Serializable;
-
 import com.hexaforce.warzone.utils.CommonUtil;
+import java.io.Serializable;
 
 /**
  * This is the Bomb Card Class which is when used by player the target country loses half of its
  * army units.
  */
-public class Bomb implements Card,  Serializable  {
+public class Bomb implements Card, Serializable {
   /** The player who owns the Bomb card. */
   Player d_playerInitiator;
 

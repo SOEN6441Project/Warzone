@@ -3,11 +3,10 @@ package com.hexaforce.warzone.models;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
-import java.util.Arrays;
-
 import com.hexaforce.warzone.WarzoneEngine;
 import com.hexaforce.warzone.exceptions.InvalidCommand;
 import com.hexaforce.warzone.exceptions.InvalidMap;
+import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 

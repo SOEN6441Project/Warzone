@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * The MapController class is responsible for managing map-related operations in the Warzone game.
  */
-public class MapController  implements Serializable {
+public class MapController implements Serializable {
 
   private final MapService mapService;
 

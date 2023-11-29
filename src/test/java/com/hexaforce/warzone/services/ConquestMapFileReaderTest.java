@@ -1,17 +1,16 @@
 package com.hexaforce.warzone.services;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.hexaforce.warzone.exceptions.InvalidCommand;
 import com.hexaforce.warzone.exceptions.InvalidMap;
 import com.hexaforce.warzone.models.GameContext;
 import com.hexaforce.warzone.models.Map;
-import org.junit.Before;
-import org.junit.Test;
-
 import java.io.IOException;
 import java.util.List;
-
-import static org.junit.Assert.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
 
 /** Test suite aimed at evaluating the parsing functionality of conquest map files. */
 public class ConquestMapFileReaderTest {
