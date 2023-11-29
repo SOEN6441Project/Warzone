@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Test suite designed for parsing map files into a game state map.
  */
-public class MapFileReaderTest {
+public class DominationMapFileReaderTest {
 	/**
 	 * Reference to MapService to store its object.
 	 */
