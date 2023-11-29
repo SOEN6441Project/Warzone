@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Constants {
+    public static final String INVALID_COMMAND_ERROR_SAVEGAME = "Invalid command. Kindly provide command in Format of : savegame filename";
+    public static final String INVALID_COMMAND_ERROR_LOADGAME = "Invalid command. Kindly provide command in Format of : loadgame filename";
     public static final String CONQUEST_CONTINENTS = "[Continents]";
     public static final String CONQUEST_TERRITORIES = "[Territories]";
 

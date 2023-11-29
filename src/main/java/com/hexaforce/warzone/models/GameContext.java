@@ -62,6 +62,15 @@ public class GameContext {
     }
 
     /**
+     * Adds the Failed Player in GameState.
+     *
+     * @param p_player player instance to remove
+     */
+    public void removePlayer(Player p_player) {
+        d_playersFailed.add(p_player);
+    }
+
+    /**
      * Fetches the latest log message from the current game state's log.
      *
      * @return The most recent log message.

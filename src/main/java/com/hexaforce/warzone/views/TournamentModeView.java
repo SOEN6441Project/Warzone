@@ -2,6 +2,8 @@ package com.hexaforce.warzone.views;
 
 import java.util.List;
 
+import org.davidmoten.text.utils.WordWrap;
+
 import com.hexaforce.warzone.models.*;
 import com.hexaforce.warzone.utils.Constants;;
 
@@ -30,22 +32,9 @@ public class TournamentModeView {
      *
      * @param tournament Tournament object.
      */
-    public TournamentView(Tournament tournament) {
+    public TournamentModeView(Tournament tournament) {
         this.tournament = tournament;
         this.gameStateObjects = tournament.getD_gameStateList();
-    }
-
-    /**
-     * Returns the colorized string.
-     *
-     * @param color Color to be changed to.
-     * @param s     String to be changed the color of.
-     * @return Colored string.
-     */
-    private String getColorizedString(String color, String s) {
-        if (color == null)
-            return s;
-        return color + s + ANSI_RESET;
     }
 
     /**

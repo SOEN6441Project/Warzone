@@ -11,42 +11,29 @@ import com.hexaforce.warzone.services.MapService;
 import com.hexaforce.warzone.utils.Command;
 import com.hexaforce.warzone.utils.Constants;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * Represents a tournament and holds information about map service, game states,
  * and tournament-related operations.
  * Implements Serializable for object serialization.
  * 
- * @author admin
+ * @author Usaib Khan
  */
+@Getter
+@Setter
 public class Tournament implements Serializable {
 
     /**
      * Map service object.
      */
-    MapService mapService = new MapService();
+    MapService d_mapService = new MapService();
 
     /**
      * List of game states in the tournament.
      */
-    List<GameContext> gameStateList = new ArrayList<GameContext>();
-
-    /**
-     * Gets the list of game states.
-     * 
-     * @return List of game states
-     */
-    public List<GameContext> getGameStateList() {
-        return gameStateList;
-    }
-
-    /**
-     * Sets the list of game states.
-     * 
-     * @param gameStateList List of game states
-     */
-    public void setGameStateList(List<GameContext> gameStateList) {
-        this.gameStateList = gameStateList;
-    }
+    List<GameContext> d_gameStateList = new ArrayList<GameContext>();
 
     /**
      * Parses a tournament command into a tournament object.
@@ -91,7 +78,7 @@ public class Tournament implements Serializable {
     private boolean parseNoOfTurnsArguments(String p_argument, WarzoneEngine p_gameEngine) {
         int maxTurns = Integer.parseInt(p_argument.split(" ")[0]);
         if (maxTurns >= 10 && maxTurns <= 50) {
-            for (GameContext p_gameContext : gameStateList) {
+            for (GameContext p_gameContext : d_gameStateList) {
                 p_gameContext.setD_maxNumberOfTurns(maxTurns);
                 p_gameContext.setD_numberOfTurnsLeft(maxTurns);
             }
@@ -119,9 +106,9 @@ public class Tournament implements Serializable {
             List<GameContext> additionalGameStates = new ArrayList<>();
 
             for (int gameNumber = 0; gameNumber < noOfGames - 1; gameNumber++) {
-                for (GameContext p_gameContext : gameStateList) {
+                for (GameContext p_gameContext : d_gameStateList) {
                     GameContext gameStateToAdd = new GameContext();
-                    Map loadedMap = mapService.loadMap(gameStateToAdd, p_gameContext.getD_map().getD_mapFile());
+                    Map loadedMap = d_mapService.loadMap(gameStateToAdd, p_gameContext.getD_map().getD_mapFile());
                     loadedMap.setD_mapFile(p_gameContext.getD_map().getD_mapFile());
 
                     List<Player> playersToCopy = getPlayersToAdd(p_gameContext.getD_players());
@@ -131,7 +118,7 @@ public class Tournament implements Serializable {
                     additionalGameStates.add(gameStateToAdd);
                 }
             }
-            gameStateList.addAll(additionalGameStates);
+            d_gameStateList.addAll(additionalGameStates);
             return true;
         } else {
             p_gameEngine.setD_gameEngineLog(
@@ -210,7 +197,7 @@ public class Tournament implements Serializable {
                     "There has to be at least 2 or more non-human players eligible to play the tournament.", "effect");
             return false;
         }
-        for (GameContext l_gameState : gameStateList) {
+        for (GameContext l_gameState : d_gameStateList) {
             l_gameState.setD_players(getPlayersToAdd(playersInTheGame));
         }
         return true;
@@ -254,14 +241,14 @@ public class Tournament implements Serializable {
             for (String mapToLoad : listOfMapFiles) {
                 GameContext p_gameContext = new GameContext();
                 // Loads the map if it is valid or resets the game state
-                Map loadedMap = mapService.loadMap(p_gameContext, mapToLoad);
+                Map loadedMap = d_mapService.loadMap(p_gameContext, mapToLoad);
                 loadedMap.setD_mapFile(mapToLoad);
                 if (loadedMap.validate()) {
                     p_gameContext.setD_loadCommand(null);
                     p_gameEngine.setD_gameEngineLog(mapToLoad + " has been loaded to start the game", "effect");
-                    gameStateList.add(p_gameContext);
+                    d_gameStateList.add(p_gameContext);
                 } else {
-                    mapService.resetMap(p_gameContext, mapToLoad);
+                    d_mapService.resetMap(p_gameContext, mapToLoad);
                     return false;
                 }
             }

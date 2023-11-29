@@ -273,6 +273,18 @@ public class Player {
     public String getD_playerLog() {
         return this.d_playerLog;
     }
+    
+    /**
+     * Get Player Order according to its Strategy.
+     *
+     * @param p_gameState Current GameContext Object
+     * @return String representing Order
+     * @throws IOException Exception
+     */
+    public String getPlayerOrder(GameContext p_gameState) throws IOException {
+        String l_stringOrder = this.d_playerBehaviorStrategy.createOrder(this, p_gameState);
+        return l_stringOrder;
+    }
 
     /**
      * Checks if there are more order to be accepted for player in next turn or not.
