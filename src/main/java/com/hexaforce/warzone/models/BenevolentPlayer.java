@@ -208,7 +208,7 @@ public class BenevolentPlayer extends PlayerBehaviorStrategy {
   /**
    * Returns the weakest neighbor where the source country can advance armies.
    *
-   * @param randomSourceCountry Source country
+   * @param l_randomSourceCountry Source country
    * @param p_gameContext GameContext
    * @return Weakest neighbor
    */
@@ -230,7 +230,7 @@ public class BenevolentPlayer extends PlayerBehaviorStrategy {
   /**
    * Calculates the weakest country from a list of countries.
    *
-   * @param listOfCountries List of countries
+   * @param l_listOfCountries List of countries
    * @return Weakest country
    */
   public Country calculateWeakestCountry(List<Country> l_listOfCountries) {
