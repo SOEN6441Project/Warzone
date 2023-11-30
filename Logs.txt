@@ -3874,3 +3874,42 @@ Log:
 Game Completed on map : warzone.map .........
 
 Log: ************ Tournament Completed ************
+Log: Advance Order : advance Pakistan China 15 is not executed as armies given in advance order exceeds armies of source country : Pakistan
+Log: Advance Order : advance Canada China 10 is not executed as source country : Canada has 10 army units and all of those cannot be given advance order, atleast one army unit has to retain the territory.
+Log: Advance Order : advance Jordan China 10 is not executed since Source country : Jordan given in advance command does not belongs to the player : Usaib
+Log: Airlift Operation from Pakistan to China successful!
+Log: Invalid Target Country! It doesn't exist on the map.
+Log: 
+Player : Hammad is executing a blockade on Country :  Pakistan with armies :  15
+Log: Blockade card order : blockade China is not executed since Target country : China given in blockade command does not owned to the player : Hammad The card will have no affect and you don't get the card back.
+Log: 
+Player : Usaib is executing Bomb card on country :  Japan with armies :  4. New armies: 2
+Log: 
+Player : Usaib is executing Bomb card on country :  India with armies :  15. New armies: 7
+Log: 
+Player : Usaib is executing Bomb card on country :  Canada with armies :  1. New armies: 0
+Log: Bomb card order : bomb China is not executed since Target country : China given in the bomb command is owned by the player : Usaib. VALIDATES: You cannot bomb your own territory!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Negotiation with Khan initiated by Usaib was successful!
+Log: Bomb card order : bomb Pakistan is not executed as Khan has a negotiation pact with the target country's player!
+Log: Continent USA removed successfully!
+Log: Continent Canada added successfully!
+Log: test.map already exists and is loaded for editing
+Log: Country/Continent Assignment:
+ Player : Habeeb is assigned with country : china
+ Player : Habeeb is assigned with country : india
+ Player : Usaib is assigned with country : pakistan
+ Player : Usaib is assigned with country : nepal
+Log: Continent Asia added successfully!
+Log: Continent Europe added successfully!
+Log: Continent Asia removed successfully!
+Log: Country add could not be Germany Europeed!
+Log: Country add could not be Netherlands Europeed!
+Log: Country remove could not be Netherlandsed!
+Log: warzone.map has been loaded to start the game
+Log: Player:  a with strategy: Random has been added to the tournament.
+Log: Player:  b with strategy: Random has been added to the tournament.
+Log: Invalid strategy passed in the command. Only Aggressive, Benevolent, Random, Cheater strategies are allowed.
+Log: User entered an invalid number of maps in the command. The range of maps is 1 <= map <= 5
+Log: User entered an invalid number of turns in the command. The range of turns is 10 <= number of turns <= 50
+Log: User entered an invalid number of games in the command. The range of games is 1 <= number of games <= 5
